@@ -25,6 +25,15 @@ class Theme_Options implements Service {
   const THEME_OPTIONS_SLUG = 'ts-blog-options';
 
   /**
+   * Blog accent color
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const BLOG_ACCENT_COLOR_FILED = 'blog_accent_color';
+
+  /**
    * Theme options mail url
    *
    * @var string
@@ -147,6 +156,37 @@ class Theme_Options implements Service {
           'key'                   => 'group_59b6769d4340b',
           'title'                 => 'Options',
           'fields'                => array(
+            array(
+              'key' => 'field_59fddad7t652b',
+              'label' => 'Blog',
+              'name' => '',
+              'type' => 'tab',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'placement' => 'top',
+              'endpoint' => 0,
+            ),
+            array(
+              'key' => 'field_5d72ewea4f489',
+              'label' => 'Accent Color',
+              'name' => static::BLOG_ACCENT_COLOR_FILED,
+              'type' => 'color_picker',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => '',
+            ),
             array(
               'key' => 'field_59eddad7t652b',
               'label' => 'Header',

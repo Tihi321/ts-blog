@@ -5,3 +5,19 @@ If you want to override it just define it with new value here.
 All variables are available here:
 https://github.com/infinum/eightshift-frontend-libs/blob/develop/scss/_core.scss
 */
+
+$media-breakpoints: (
+  small: 0 480,
+  mobile: 481 767,
+  tablet: 768 991,
+  desktop: 992
+);
+
+//Base
+$base-font-family: 'Karla', Arial, sans-serif;
+$secondary-font-family: 'Rubik', sans-serif;
+$base-icons-font-family: 'portfolio';
+
+// Container
+$base-container-size: 1024px;
+$base-gutter-size: 24px;

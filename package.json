@@ -6,7 +6,7 @@
   "scripts": {
     "lintStyle": "stylelint src/blocks/**/*.scss",
     "lintJs": "eslint src/blocks/**/*.js",
-    "lint": "npm run lintJs && npm run lintStyle && bash ../../../bin/lintPhp.sh",
+    "lint": "npm run lintJs && npm run lintStyle && bash ./bin/lintPhp.sh",
     "precommit": "npm run lint",
     "start": "webpack --progress --watch --display-error-details --display-reasons --mode development",
     "build": "webpack --progress --mode production"

@@ -13,12 +13,6 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 // All Plugins used in production and development build.
 const plugins = [
 
-  // Provide global variables to window object.
-  new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-  }),
-
   // Create manifest.json file.
   new ManifestPlugin({
     seed: {},

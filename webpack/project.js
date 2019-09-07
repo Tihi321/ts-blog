@@ -5,7 +5,7 @@ const config = require('./config');
 
 // Main Webpack build setup - Website.
 const project = {
-  context: config.appPath,
+  context: config.absolutePath,
   entry: {
     application: [config.assetsEntry],
     applicationAdmin: [config.assetsAdminEntry],
@@ -13,7 +13,7 @@ const project = {
     applicationBlocksEditor: [config.blocksEditorEntry],
   },
   output: {
-    path: config.output,
+    path: config.outputPath,
     publicPath: config.publicPath,
     filename: '[name]-[hash].js',
   },

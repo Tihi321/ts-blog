@@ -149,7 +149,7 @@ class Theme_Options implements Service {
           'fields'                => array(
             array(
               'key' => 'field_59eddad7t652b',
-              'label' => 'Menu',
+              'label' => 'Header',
               'name' => '',
               'type' => 'tab',
               'instructions' => '',

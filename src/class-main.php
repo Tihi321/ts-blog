@@ -70,7 +70,7 @@ class Main extends LibMain {
       Plugins\Acf\Menu_Options::class,
 
       // Rest.
-      Routes\Get_Menus::class,
+      Routes\Get_Header::class,
     ];
   }
 }

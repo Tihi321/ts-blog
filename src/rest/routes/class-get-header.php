@@ -1,6 +1,6 @@
 <?php
 /**
- * The class file that contains method for getting menus, menu position should be with - instead of _
+ * The class file that contains method for getting header info, menu position should be with - instead of _
  *
  * @since   1.0.0
  * @package TS_Blog\Routes
@@ -9,15 +9,16 @@
 namespace TS_Blog\Routes;
 
 use Eightshift_Libs\Routes\Callable_Route;
+use TS_Blog\Assets\Manifest_Helper;
 use TS_Blog\Routes\Base_Route;
 use TS_Blog\Admin\Menu\Menu;
 use TS_Blog\Plugins\Acf\Theme_Options;
 
 /**
- * Class Get_Menus
+ * Class Get_Header
  */
-class Get_Menus extends Base_Route implements Callable_Route {
-  const ROUTE_NAME = '/menus/(?P<menu_position>[a-zA-Z0-9-]+)';
+class Get_Header extends Base_Route implements Callable_Route {
+  const ROUTE_NAME = '/header/(?P<menu_position>[a-zA-Z0-9-]+)';
 
   /**
    * Get callback arguments array
@@ -69,10 +70,19 @@ class Get_Menus extends Base_Route implements Callable_Route {
     $youtube_url     = get_field( Theme_Options::YOUTUBE_URL_FIELD, 'option' );
     $github_url      = get_field( Theme_Options::GITHUB_URL_FIELD, 'option' );
 
+    $logo_url    = Manifest_Helper::get_assets_manifest_item( 'logo.svg' );
     $description = get_field( Theme_Options::PAGE_DESCRIPTION, 'option' );
+
+    $blog_name        = get_bloginfo( 'name' );
+    $blog_description = get_bloginfo( 'description' );
+    $logo_info        = $blog_name . ' - ' . $blog_description;
 
     $output =
     [
+      'home_url' => \esc_url( home_url() ),
+      'blog_name' => \esc_attr( $blog_name ),
+      'blog_info' => \esc_attr( $logo_info ),
+      'logo' => \esc_url( $logo_url ),
       'menu' => $menu_items,
       'social' => [
         'mail' => \esc_html( $mail ),

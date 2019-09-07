@@ -1,0 +1,7 @@
+// This is a main entrypoint for project style for admin area only.
+
+// Utils Shared across project.
+@import 'shared';
+
+// Admin specific.
+@import 'admin/login';

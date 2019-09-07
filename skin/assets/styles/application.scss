@@ -1,0 +1,18 @@
+// This is a main entrypoint for project style for theme area only that are not related to blocks.
+
+// Vendors - node modules
+@import 'normalize-scss';
+@include normalize(); // stylelint-disable-line at-rule-empty-line-before
+
+// Utils Shared across project.
+@import 'shared';
+
+// Core resets.
+@import 'core';
+
+// Header.
+@import 'components/header/wp-admin-bar';
+@import 'components/header/header';
+
+// Footer.
+@import 'components/footer/footer';

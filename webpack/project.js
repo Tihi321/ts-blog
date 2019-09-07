@@ -3,9 +3,6 @@
 // Other build files.
 const config = require('./config');
 
-// Plugins.
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
 // Main Webpack build setup - Website.
 const project = {
   context: config.appPath,

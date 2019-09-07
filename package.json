@@ -4,14 +4,12 @@
   "author": "Team Eightshift",
   "main": "",
   "scripts": {
-    "__eslintTheme": "eslint wp-content/themes/ts-blog/**/*.js",
-    "__stylelintTheme": "stylelint wp-content/themes/ts-blog/**/*.scss",
-    "lintStyle": "npm run __stylelintTheme",
-    "lintJs": "npm run __eslintTheme",
-    "lint": "npm run lintJs && npm run lintStyle && bash bin/lintPhp.sh",
+    "lintStyle": "stylelint src/blocks/**/*.scss",
+    "lintJs": "eslint src/blocks/**/*.js",
+    "lint": "npm run lintJs && npm run lintStyle && bash ../../../bin/lintPhp.sh",
+    "precommit": "npm run lint",
     "start": "webpack --progress --watch --display-error-details --display-reasons --mode development",
-    "build": "webpack --progress --mode production",
-    "export": "node bin/export.js"
+    "build": "webpack --progress --mode production"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",

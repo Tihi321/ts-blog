@@ -5,6 +5,7 @@ const blockConfig = require('./../vendor/infinum/eightshift-blocks/webpack/confi
 
 // Generate all paths required for Webpack build to work.
 function getConfig(assetsPath) {
+
   // Clear all shalshes and set project path the correct way.
   const relativePath = assetsPath.replace(/^\/|\/$/g, '');
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import classNames from 'classnames';
+import React, { useState } from 'react';
+import { useTween } from 'react-use';
 
 import Menu from '../Menu';
 import SocialBar from '../SocialBar';
@@ -14,28 +14,28 @@ import {
   menuButtonsText,
 } from './style.scss';
 
-const Navbar = ({
-  options,
-  menuItems,
-  colors,
-  openNav,
-  openNavCallback,
-}) => {
+const Navbar = (props) => {
 
-  const modalClass = classNames({
-    modalClass: true,
-    modalActive: openNav,
-  });
+  console.log(props);
+
+  const componentClass = 'modal';
+
+  const [openNav, setOpenNav] = useState(false);
+
+  const value = useTween('inOutExpo', 350, 200);
+  const openMenuIcontranslate = (100 - (value * 100));
+
+  const modalClassName = (openNav) ? `${componentClass} is-active` : componentClass;
 
   const setActiveToggle = () => {
-    openNavCallback(!openNav);
+    setOpenNav(!openNav);
   };
 
   return (
-    <div className={modalGlobal}>
+    <div className={`${componentClass}__parent`}>
       {(openNav) &&
       (
-        <style jsx global>
+        <style>
           {`
             :root {
               overflow: hidden;
@@ -44,16 +44,24 @@ const Navbar = ({
         </style>
       )}
       <div className={navBarClass}>
-        <button id="open-menu" type="button" className={menuIconClass} onClick={setActiveToggle}>
-          <span className={menuButtonsText}>
+        <button
+          style={{
+            transform: `translateY(-${openMenuIcontranslate}%)`,
+          }}
+          id="open-menu"
+          type="button"
+          className={`${componentClass}__open`}
+          onClick={setActiveToggle}
+        >
+          <span className={`${componentClass}__btn-text`}>
             Open Menu
           </span>
         </button>
       </div>
-      <div className={modalClass}>
+      <div className={modalClassName}>
         <div className={navBarClass}>
-          <button type="button" className={menuIconCloseClass} onClick={setActiveToggle}>
-            <span className={menuButtonsText}>
+          <button type="button" className={`${componentClass}__close`} onClick={setActiveToggle}>
+            <span className={`${componentClass}__btn-text`}>
               Close Menu
             </span>
           </button>
@@ -61,13 +69,6 @@ const Navbar = ({
         <h1 className={titleClass}>
           Tihomir Selak
         </h1>
-        <Menu
-          colors={colors}
-          items={menuItems}
-        />
-        <SocialBar
-          options={options}
-        />
         <div className={disclaimerClass}>
           NextJs Frontend, Wordpress Backend
         </div>

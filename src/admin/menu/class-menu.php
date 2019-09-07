@@ -225,6 +225,7 @@ class Menu implements Service {
         'title'               => \esc_html( $menu_item->title ),
         'id'                  => (int) $menu_item->ID,
         'url'                 => \esc_url( $url ),
+        'custom_accent_color' => $custom_accent_color_check,
         'accent_color'        => \esc_html( $accent_color ),
         'parent'              => (int) $menu_item->menu_item_parent,
       ];

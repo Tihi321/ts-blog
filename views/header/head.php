@@ -13,6 +13,10 @@ use TS_Blog\Assets\Manifest_Helper;
 
 $logo_img = Manifest_Helper::get_assets_manifest_item( 'logo.svg' );
 $favicon  = Manifest_Helper::get_assets_manifest_item( 'logo.svg' );
+
+use TS_Blog\Plugins\Acf\Theme_Options;
+
+$accent_color = get_field( Theme_Options::BLOG_ACCENT_COLOR_FILED, 'option' );
 ?>
 
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -49,6 +53,12 @@ $favicon  = Manifest_Helper::get_assets_manifest_item( 'logo.svg' );
 
 <!-- General -->
 <link rel="shortcut icon" href="<?php echo esc_url( $favicon ); ?>" />
+
+<style>
+  :root {
+    --accent-color: <?php echo esc_html( $accent_color ); ?>;
+  }
+</style>
 
 <?php
 get_template_part( 'views/tracking/head' );

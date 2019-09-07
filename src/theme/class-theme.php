@@ -93,7 +93,8 @@ class Theme implements Service {
       TB_THEME_NAME . '-scripts',
       'themeLocalization',
       [
-        'menusApi' => \rest_url( TB_THEME_NAME . '/' . API_VERSION . '/header' ),
+        'headerEndpoint' => \esc_html( TB_THEME_NAME . '/' . API_VERSION . '/header' ),
+        'restUrl' => \rest_url(),
         'ajaxurl' => \admin_url( 'admin-ajax.php' ),
         'nonce' => wp_create_nonce( 'wp_rest' ),
       ]

@@ -9,8 +9,13 @@ export class Header {
 
   init() {
     if (this.headerElement) {
+      const {
+        accentColor,
+      } = this.headerElement.dataset;
       render(
-        <App />,
+        <App
+          accentColor={accentColor}
+        />,
         this.headerElement
       );
     }

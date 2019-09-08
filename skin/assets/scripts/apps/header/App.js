@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAsync } from 'react-use';
 import { getHeader } from '../../services/header';
-import Navbar from './Components/Navbar';
+import Navbar from '../components/navbar';
 
 const App = (props) => {
   const {

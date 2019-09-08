@@ -1,22 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { useTween } from 'react-use';
 
-import Menu from '../Menu';
-import SocialBar from '../SocialBar';
-
-import {
-  menuIconClass,
-  navBarClass,
-  menuIconCloseClass,
-  modalGlobal,
-  titleClass,
-  disclaimerClass,
-  menuButtonsText,
-} from './style.scss';
-
 const Navbar = (props) => {
-
-  console.log(props);
 
   const componentClass = 'modal';
 
@@ -32,7 +17,7 @@ const Navbar = (props) => {
   };
 
   return (
-    <div className={`${componentClass}__parent`}>
+    <Fragment>
       {(openNav) &&
       (
         <style>
@@ -43,14 +28,14 @@ const Navbar = (props) => {
           `}
         </style>
       )}
-      <div className={navBarClass}>
+      <div className={`${componentClass}__navbar`}>
         <button
           style={{
             transform: `translateY(-${openMenuIcontranslate}%)`,
           }}
           id="open-menu"
           type="button"
-          className={`${componentClass}__open`}
+          className={`${componentClass}__btn-open`}
           onClick={setActiveToggle}
         >
           <span className={`${componentClass}__btn-text`}>
@@ -59,21 +44,25 @@ const Navbar = (props) => {
         </button>
       </div>
       <div className={modalClassName}>
-        <div className={navBarClass}>
-          <button type="button" className={`${componentClass}__close`} onClick={setActiveToggle}>
+        <div className={`${componentClass}__navbar`}>
+          <button
+            type="button"
+            className={`${componentClass}__btn-close`}
+            onClick={setActiveToggle}
+          >
             <span className={`${componentClass}__btn-text`}>
               Close Menu
             </span>
           </button>
         </div>
-        <h1 className={titleClass}>
+        <h1 className={`${componentClass}__title`}>
           Tihomir Selak
         </h1>
-        <div className={disclaimerClass}>
+        <div className={`${componentClass}__disclaimer`}>
           NextJs Frontend, Wordpress Backend
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

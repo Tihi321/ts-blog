@@ -16,3 +16,6 @@
 
 // Footer.
 @import 'components/footer/footer';
+
+// Find all components inside apps and import their styles.
+@import '../scripts/apps/components/*/style.scss';

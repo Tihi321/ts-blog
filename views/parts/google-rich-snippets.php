@@ -11,7 +11,7 @@
 
 use TS_Blog\Assets\Manifest_Helper;
 
-$logo_img = Manifest_Helper::get_assets_manifest_item( 'logo.svg' );
+$logo_img = Manifest_Helper::get_assets_manifest_item( 'assets/logo.svg' );
 ?>
 
 <!-- Google Rich Snippets -->

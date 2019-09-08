@@ -12,29 +12,24 @@ function getConfig(assetsPath) {
   // Create absolute path from the projects relative path.
   const absolutePath = `${path.resolve(`/${__dirname}`, '..')}`;
 
-  // Define projects relative path for file locations.
-  const relativePathFiles = `${relativePath}/src/blocks`;
-
-  // Define projects absolute path for file locations.
-  const absolutePathFiles = `${absolutePath}/src/blocks`;
+  // Create public path.
+  const publicPath = `/${relativePath}/skin/public/`;
 
   // Load Blocks configuration.
   const blocks = blockConfig('', absolutePath);
 
   return {
     absolutePath,
-    relativePathFiles,
-    absolutePathFiles,
 
     // Output files absolute location.
     outputPath: `${absolutePath}/skin/public/`,
 
     // Output files relative location, added before every output file in manifes.json. Should start and end with "/".
-    publicPath: `/${relativePath}/skin/public/`,
+    publicPath,
 
     // Source files relative locations.
-    assetsPath: `/${relativePathFiles}/assets`,
-    fontsPath: `/${relativePathFiles}/assets/fonts`,
+    assetsPath: `${publicPath}assets`,
+    fontsPath: `${publicPath}fonts`,
 
     // Source files entries absolute locations.
     assetsEntry: `${absolutePath}/skin/assets/application.js`,

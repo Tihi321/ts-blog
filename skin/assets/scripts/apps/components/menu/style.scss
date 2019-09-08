@@ -1,12 +1,9 @@
-@import '../../../../../styles/shared';
-
 $menu-vars: (
   outline-color: $base-white-color,
   text-color: $base-white-color,
   font-family: $secondary-font-family,
   text-shadow: rgba(0, 0, 0, 0.4),
 );
-
 
 .menuClass {
   flex: 1;

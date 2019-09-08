@@ -85,7 +85,7 @@ class Theme_Options implements Service {
    *
    * @since 1.0.0
    */
-  const PAGE_DESCRIPTION = 'page_description';
+  const DISCLAIMER = 'disclaimer';
 
   /**
    * Theme options listing description
@@ -300,8 +300,8 @@ class Theme_Options implements Service {
             ),
             array(
               'key' => 'field_4d4434542f1b2',
-              'label' => 'Page Description',
-              'name' => static::PAGE_DESCRIPTION,
+              'label' => 'Disclaimer',
+              'name' => static::DISCLAIMER,
               'type' => 'text',
               'instructions' => '',
               'required' => 0,

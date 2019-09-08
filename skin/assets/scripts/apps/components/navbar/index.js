@@ -39,11 +39,13 @@ const Navbar = ({
           `}
         </style>
       )}
-      <div className={`${componentClass}__navbar`}>
+      <div
+        style={{
+          transform: `translateY(-${openMenuIcontranslate}%)`,
+        }}
+        className={`${componentClass}__navbar`}
+      >
         <button
-          style={{
-            transform: `translateY(-${openMenuIcontranslate}%)`,
-          }}
           id="open-menu"
           type="button"
           className={`${componentClass}__btn-open`}

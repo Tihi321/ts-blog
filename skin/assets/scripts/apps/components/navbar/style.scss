@@ -94,6 +94,21 @@ $navbar-vars: (
     left: -999999999999px;
   }
 
+  &__link {
+    color: map-get-strict($navbar-vars, 'text-color');
+    display: inline-block;
+    margin: 0 auto;
+    margin: {
+      top: 30px;
+      bottom: 30px;
+    };
+    text-decoration: none;
+
+    &-image {
+      max-width: 250px;
+    }
+  }
+
   &__title {
     @include responsive-deep($navbar-vars, 'title', 'sizes');
     font-weight: normal;

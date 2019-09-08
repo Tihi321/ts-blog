@@ -66,18 +66,24 @@ const Navbar = ({
             </span>
           </button>
         </div>
-        <a
-          href={home_url}
-        >
-          {(!logo) ?
-            <h1 className={`${componentClass}__title`}>Tihomimir Selak</h1> :
+        {(!logo) ?
+          <a
+            href={logo}
+            className={`${componentClass}__link`}
+          >
+            <h1 className={`${componentClass}__title`}>Tihomimir Selak</h1>
+          </a> :
+          <a
+            href={logo}
+            className={`${componentClass}__link ${componentClass}__link-image`}
+          >
             <img
               src={logo}
               className={`${componentClass}__logo`}
               alt={blog_info}
             />
-          }
-        </a>
+          </a>
+        }
         <Menu
           items={menu.items}
         />

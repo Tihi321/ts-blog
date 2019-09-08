@@ -44,7 +44,7 @@ const SocialBar = ({ options }) => {
       <a
         alt="googlePlay"
         className={`${componentClass}__icon ${componentClass}__icon--google-play`}
-        href={options.googlePlay}
+        href={options.google_play}
       >
         <span
           className={`${componentClass}__link-content`}
@@ -55,7 +55,7 @@ const SocialBar = ({ options }) => {
       <a
         alt="e-mail"
         className={`${componentClass}__icon ${componentClass}__icon--mail`}
-        href={`mailto:${options.contactMail}`}
+        href={`mailto:${options.mail}`}
       >
         <span
           className={`${componentClass}__link-content`}

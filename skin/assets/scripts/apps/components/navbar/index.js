@@ -2,16 +2,17 @@
 import React, { useState, Fragment } from 'react';
 import { useTween } from 'react-use';
 
-const Navbar = (props) => {
+import Menu from '../menu';
+import SocialBar from '../socialbar';
 
-  const {
-    logo,
-    home_url,
-    disclaimer,
-    blog_info,
-  } = props;
-
-  console.log(props);
+const Navbar = ({
+  logo,
+  home_url,
+  disclaimer,
+  blog_info,
+  menu,
+  social,
+}) => {
 
   const componentClass = 'modal';
 
@@ -77,6 +78,12 @@ const Navbar = (props) => {
             />
           }
         </a>
+        <Menu
+          items={menu.items}
+        />
+        <SocialBar
+          options={social}
+        />
         <div className={`${componentClass}__disclaimer`}>
           {disclaimer}
         </div>

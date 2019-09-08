@@ -2,3 +2,6 @@
 
 import '@babel/polyfill';
 import 'whatwg-fetch';
+
+// Import React apps
+import './apps';

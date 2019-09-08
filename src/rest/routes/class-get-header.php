@@ -1,6 +1,6 @@
 <?php
 /**
- * The class file that contains method for getting menus, menu position should be with - instead of _
+ * The class file that contains method for getting header info, menu position should be with - instead of _
  *
  * @since   1.0.0
  * @package TS_Blog\Routes
@@ -9,14 +9,16 @@
 namespace TS_Blog\Routes;
 
 use Eightshift_Libs\Routes\Callable_Route;
+use TS_Blog\Assets\Manifest_Helper;
 use TS_Blog\Routes\Base_Route;
 use TS_Blog\Admin\Menu\Menu;
+use TS_Blog\Plugins\Acf\Theme_Options;
 
 /**
- * Class Get_Menus
+ * Class Get_Header
  */
-class Get_Menus extends Base_Route implements Callable_Route {
-  const ROUTE_NAME = '/menus/(?P<menu_position>[a-zA-Z0-9-]+)';
+class Get_Header extends Base_Route implements Callable_Route {
+  const ROUTE_NAME = '/header/(?P<menu_position>[a-zA-Z0-9-]+)';
 
   /**
    * Get callback arguments array
@@ -61,9 +63,35 @@ class Get_Menus extends Base_Route implements Callable_Route {
     $custom_menu = new Menu();
     $menu_items  = $custom_menu->get_menu_by_position( $menu_position );
 
+    // Social fields.
+    $mail            = get_field( Theme_Options::MAIL_URL_FIELD, 'option' );
+    $google_play_url = get_field( Theme_Options::GOOGLE_PLAY_URL_FIELD, 'option' );
+    $linkedin_url    = get_field( Theme_Options::LINKEDIN_URL_FIELD, 'option' );
+    $youtube_url     = get_field( Theme_Options::YOUTUBE_URL_FIELD, 'option' );
+    $github_url      = get_field( Theme_Options::GITHUB_URL_FIELD, 'option' );
+
+    $logo       = get_field( Theme_Options::BLOG_LOGO, 'option' );
+    $logo_url   = $logo['url'] ?? '';
+    $disclaimer = get_field( Theme_Options::DISCLAIMER, 'option' );
+
+    $blog_name        = get_bloginfo( 'name' );
+    $blog_description = get_bloginfo( 'description' );
+    $logo_info        = $blog_name . ' - ' . $blog_description;
+
     $output =
     [
+      'home_url' => \esc_url( home_url() ),
+      'blog_info' => \esc_attr( $logo_info ),
+      'logo' => \esc_url( $logo_url ),
       'menu' => $menu_items,
+      'social' => [
+        'mail' => \esc_html( $mail ),
+        'google_play' => \esc_url( $google_play_url ),
+        'linkedin' => \esc_url( $linkedin_url ),
+        'youtube' => \esc_url( $youtube_url ),
+        'github' => \esc_url( $github_url ),
+      ],
+      'disclaimer' => \esc_html( $disclaimer ),
     ];
 
     return \rest_ensure_response( $output );

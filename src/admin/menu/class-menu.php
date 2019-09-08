@@ -9,7 +9,7 @@
 namespace TS_Blog\Admin\Menu;
 
 use Eightshift_Libs\Core\Service;
-use TS_Blog\Plugins\Acf\Menu_Options;
+use TS_Blog\Plugins\Acf;
 
 /**
  * Class Menu
@@ -89,6 +89,7 @@ class Menu implements Service {
         if ( empty( $item['items'] ) ) {
           break;
         }
+
         $output = $item;
       }
     }
@@ -191,7 +192,7 @@ class Menu implements Service {
     }
 
     // Filter output to match requirements.
-    $output = array();
+    $output = [];
     foreach ( $menu_items as $menu_item ) {
       $url = '/';
 
@@ -214,15 +215,20 @@ class Menu implements Service {
       }
 
       // Get featured color.
-      $featured_color = get_field( Menu_Options::FEATURED_COLOR_FILED, $menu_item );
+      $blog_accent_color         = get_field( Acf\Theme_Options::BLOG_ACCENT_COLOR_FILED, 'options' );
+      $custom_accent_color_check = get_field( Acf\Menu_Options::CUSTOM_ACCENT_COLOR_FILED, $menu_item );
+      $custom_accent_color       = get_field( Acf\Menu_Options::ACCENT_COLOR_FILED, $menu_item );
 
-      $output[] = array(
-        'title'          => $menu_item->title,
-        'id'             => $menu_item->ID,
-        'url'            => $url,
-        'featured_color' => $featured_color,
-        'parent'         => (int) $menu_item->menu_item_parent,
-      );
+      $accent_color = ( $custom_accent_color_check ) ? $custom_accent_color : $blog_accent_color;
+
+      $output[] = [
+        'title'               => \esc_html( $menu_item->title ),
+        'id'                  => (int) $menu_item->ID,
+        'url'                 => \esc_url( $url ),
+        'custom_accent_color' => $custom_accent_color_check,
+        'accent_color'        => \esc_html( $accent_color ),
+        'parent'              => (int) $menu_item->menu_item_parent,
+      ];
 
     }
 

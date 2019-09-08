@@ -1,0 +1,86 @@
+$social-vars: (
+  outline-color: $base-white-color,
+  text: (
+    color: $base-white-color,
+    sizes: (
+      mobile: (
+        font-size: 36px,
+        line-height: 1.25,
+      ),
+      tablet: (
+        font-size: 40px,
+      ),
+    ),
+  ),
+);
+
+.social {
+  &__bar {
+    text-align: center;
+  }
+
+  &__icon {
+    @include responsive-deep($social-vars, 'text', 'sizes');
+
+    @extend %font-icon;
+    @extend %button-reset;
+    background: none;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+
+    &::before {
+      color: map-get-deep($social-vars, 'text', 'color');
+    }
+
+    &:focus {
+      outline: 1px solid map-get-strict($social-vars, 'outline-color');
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__icon--mail {
+    &::before {
+      content: unicode($icon--message);
+    }
+  }
+
+  &__icon--youtube {
+    &::before {
+      content: unicode($icon--youtube);
+    }
+  }
+
+  &__icon--github {
+    &::before {
+      content: unicode($icon--github);
+    }
+  }
+
+  &__icon--linkedin {
+    &::before {
+      content: unicode($icon--linkedin);
+    }
+  }
+
+  &__icon--google-play {
+    &::before {
+      content: unicode($icon--google-play);
+    }
+  }
+
+  &__link-content {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: -999999999999px;
+  }
+}

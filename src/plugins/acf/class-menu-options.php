@@ -16,13 +16,31 @@ use Eightshift_Libs\Core\Service;
 class Menu_Options implements Service {
 
   /**
-   * Featured link color
+   * Accent link color
    *
    * @var string
    *
    * @since 1.0.0
    */
-  const FEATURED_COLOR_FILED = 'featured_color';
+  const CUSTOM_ACCENT_COLOR_KEY = 'field_5d73ac53a7bdc';
+
+  /**
+   * Accent link color
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const CUSTOM_ACCENT_COLOR_FILED = 'custom_accent_color';
+
+  /**
+   * Accent link color
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const ACCENT_COLOR_FILED = 'accent_color';
 
   /**
    * Register all the hooks
@@ -43,16 +61,43 @@ class Menu_Options implements Service {
       acf_add_local_field_group(
         array(
           'key' => 'group_5d72dde11ab61',
-          'title' => 'Color',
+          'title' => 'Accent Color',
           'fields' => array(
             array(
-              'key' => 'field_5d72ddea4f489',
-              'label' => 'Featured color',
-              'name' => static::FEATURED_COLOR_FILED,
-              'type' => 'color_picker',
+              'key' => static::CUSTOM_ACCENT_COLOR_KEY,
+              'label' => 'Custom Accent Color',
+              'name' => static::CUSTOM_ACCENT_COLOR_FILED,
+              'type' => 'true_false',
               'instructions' => '',
               'required' => 0,
               'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'message' => '',
+              'default_value' => 0,
+              'ui' => 1,
+              'ui_on_text' => '',
+              'ui_off_text' => '',
+            ),
+            array(
+              'key' => 'field_5d72ddea4f489',
+              'label' => 'Accent Color',
+              'name' => static::ACCENT_COLOR_FILED,
+              'type' => 'color_picker',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => array(
+                array(
+                  array(
+                    'field' => static::CUSTOM_ACCENT_COLOR_KEY,
+                    'operator' => '==',
+                    'value' => '1',
+                  ),
+                ),
+              ),
               'wrapper' => array(
                 'width' => '',
                 'class' => '',

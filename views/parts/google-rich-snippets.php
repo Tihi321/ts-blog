@@ -9,9 +9,10 @@
  * TODO: Create this as a class with attributes.
  */
 
-use TS_Blog\Assets\Manifest_Helper;
+use TS_Blog\Plugins\Acf\Theme_Options;
 
-$logo_img = Manifest_Helper::get_assets_manifest_item( 'logo.svg' );
+$logo_img     = get_field( Theme_Options::BLOG_LOGO, 'option' );
+$logo_img_url = $logo_img['url'] ?? '';
 ?>
 
 <!-- Google Rich Snippets -->
@@ -43,7 +44,7 @@ $logo_img = Manifest_Helper::get_assets_manifest_item( 'logo.svg' );
     "name": "<?php echo esc_html( get_bloginfo( 'name' ) ); ?>",
     "logo": {
     "@type": "ImageObject",
-    "url": "<?php echo esc_url( $logo_img ); ?>",
+    "url": "<?php echo esc_url( $logo_img_url ); ?>",
     "width": 220,
     "height": 60
     }

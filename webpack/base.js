@@ -39,12 +39,20 @@ const loaders = {
     {
       test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
       exclude: [/fonts/, /node_modules/],
-      use: 'file-loader?name=[name].[ext]',
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        outputPath: 'assets',
+      },
     },
     {
       test: /\.(eot|otf|ttf|woff|woff2|svg)$/,
       exclude: [/images/, /node_modules/],
-      use: 'file-loader?name=[name].[ext]',
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        outputPath: 'fonts',
+      },
     },
     {
       test: /\.scss$/,

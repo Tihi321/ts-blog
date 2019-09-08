@@ -10,13 +10,36 @@
 get_header();
 
 if ( have_posts() ) {
-  while ( have_posts() ) {
-    the_post();
-    the_title();
-    the_content();
+    $hero_template = locate_template( 'views/hero/hero.php' );
+
+  if ( ! empty( $hero_template ) ) {
+    include $hero_template;
   }
 
-  require locate_template( 'views/parts/google-rich-snippets.php' );
-}
+  ?>
+  <section class="article-grid">
+  <?php
+
+  while ( have_posts() ) {
+    the_post();
+    get_template_part( 'views/listing/articles/grid' );
+  }
+
+  the_posts_pagination(
+    array(
+      'screen_reader_text' => esc_html__( 'Pagination', 'ts-blog' ),
+    )
+  );
+
+  ?>
+</section>
+  <?php
+} else {
+
+  get_template_part( 'views/listing/articles/empty' );
+
+};
 
 get_footer();
+
+

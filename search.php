@@ -1,7 +1,6 @@
 <?php
 /**
- * Display regular search page with
- * title and regular listing sorted by date
+ * Display search page
  *
  * @package TS_Blog
  *
@@ -10,33 +9,37 @@
 
 get_header();
 
-if ( have_posts() ) { ?>
-
-  <!-- Page Title -->
-  <header>
-    <h1>
-      <?php
-      // translators: 1: Search Query.
-      printf( esc_html__( 'Search Results for: %s', 'ts-blog' ), '<span>' . get_search_query() . '</span>' );
-      ?>
-    </h1>
-  </header>
-<?php } ?>
-
-<!-- Listing Section -->
-
-<?php
 if ( have_posts() ) {
+    $hero_template = locate_template( 'views/hero/hero.php' );
+
+  if ( ! empty( $hero_template ) ) {
+    include $hero_template;
+  }
+
+  ?>
+  <section class="article-list">
+  <?php
+
   while ( have_posts() ) {
     the_post();
-    get_template_part( 'views/listing/articles/grid' );
-  };
+    get_template_part( 'views/listing/articles/list' );
+  }
 
-  the_posts_pagination();
+  the_posts_pagination(
+    array(
+      'screen_reader_text' => esc_html__( 'Pagination', 'ts-blog' ),
+    )
+  );
 
+  ?>
+</section>
+  <?php
 } else {
+
   get_template_part( 'views/listing/articles/empty' );
 
 };
 
 get_footer();
+
+

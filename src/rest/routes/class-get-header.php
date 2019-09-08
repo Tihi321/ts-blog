@@ -70,7 +70,8 @@ class Get_Header extends Base_Route implements Callable_Route {
     $youtube_url     = get_field( Theme_Options::YOUTUBE_URL_FIELD, 'option' );
     $github_url      = get_field( Theme_Options::GITHUB_URL_FIELD, 'option' );
 
-    $logo_url   = Manifest_Helper::get_assets_manifest_item( 'assets/logo.svg' );
+    $logo       = get_field( Theme_Options::BLOG_LOGO, 'option' );
+    $logo_url   = $logo['url'] ?? '';
     $disclaimer = get_field( Theme_Options::DISCLAIMER, 'option' );
 
     $blog_name        = get_bloginfo( 'name' );
@@ -80,7 +81,6 @@ class Get_Header extends Base_Route implements Callable_Route {
     $output =
     [
       'home_url' => \esc_url( home_url() ),
-      'blog_name' => \esc_attr( $blog_name ),
       'blog_info' => \esc_attr( $logo_info ),
       'logo' => \esc_url( $logo_url ),
       'menu' => $menu_items,

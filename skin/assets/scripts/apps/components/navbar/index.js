@@ -1,7 +1,17 @@
+/* eslint-disable camelcase */
 import React, { useState, Fragment } from 'react';
 import { useTween } from 'react-use';
 
 const Navbar = (props) => {
+
+  const {
+    logo,
+    home_url,
+    disclaimer,
+    blog_info,
+  } = props;
+
+  console.log(props);
 
   const componentClass = 'modal';
 
@@ -55,11 +65,20 @@ const Navbar = (props) => {
             </span>
           </button>
         </div>
-        <h1 className={`${componentClass}__title`}>
-          Tihomir Selak
-        </h1>
+        <a
+          href={home_url}
+        >
+          {(!logo) ?
+            <h1 className={`${componentClass}__title`}>Tihomimir Selak</h1> :
+            <img
+              src={logo}
+              className={`${componentClass}__logo`}
+              alt={blog_info}
+            />
+          }
+        </a>
         <div className={`${componentClass}__disclaimer`}>
-          NextJs Frontend, Wordpress Backend
+          {disclaimer}
         </div>
       </div>
     </Fragment>

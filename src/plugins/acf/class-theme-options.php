@@ -25,6 +25,24 @@ class Theme_Options implements Service {
   const THEME_OPTIONS_SLUG = 'ts-blog-options';
 
   /**
+   * Blog logo
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const BLOG_LOGO = 'blog_logo';
+
+  /**
+   * Blog favicon
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const BLOG_FAVICON = 'blog_favicon';
+
+  /**
    * Blog accent color
    *
    * @var string
@@ -171,6 +189,54 @@ class Theme_Options implements Service {
               ),
               'placement' => 'top',
               'endpoint' => 0,
+            ),
+            array(
+              'key' => 'field_5d72d32287543',
+              'label' => 'Logo',
+              'name' => static::BLOG_LOGO,
+              'type' => 'image',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'return_format' => 'array',
+              'preview_size' => 'medium',
+              'library' => 'all',
+              'min_width' => '',
+              'min_height' => '',
+              'min_size' => '',
+              'max_width' => '',
+              'max_height' => '',
+              'max_size' => '',
+              'mime_types' => '',
+            ),
+            array(
+              'key' => 'field_5d72d32327543',
+              'label' => 'Favicon',
+              'name' => static::BLOG_FAVICON,
+              'type' => 'image',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'return_format' => 'array',
+              'preview_size' => 'medium',
+              'library' => 'all',
+              'min_width' => '',
+              'min_height' => '',
+              'min_size' => '',
+              'max_width' => '',
+              'max_height' => '',
+              'max_size' => '',
+              'mime_types' => '',
             ),
             array(
               'key' => 'field_5d72ewea4f489',

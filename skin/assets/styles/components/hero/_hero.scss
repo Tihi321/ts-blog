@@ -2,6 +2,8 @@ $hero-vars: (
   bg: rgba($base-dove-color, 0.7),
   backdrop-color: $base-white-color,
   backdrop-font: 14px,
+  backdrop-active: #2ECC71,
+  backdrop-in-active: #E74C3C,
 );
 
 .hero {
@@ -41,6 +43,11 @@ $hero-vars: (
       width: 10px;
       height: 10px;
       margin-left: 5px;
+      fill: map-get-strict($hero-vars, 'backdrop-active');
+
+      &.is-inactive {
+        fill: map-get-strict($hero-vars, 'backdrop-in-active');
+      }
     }
   }
 

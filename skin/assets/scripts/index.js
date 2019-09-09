@@ -5,3 +5,6 @@ import 'whatwg-fetch';
 
 // Import React apps
 import './apps';
+
+// Import scripts.
+import './components';

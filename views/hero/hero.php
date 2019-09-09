@@ -11,9 +11,9 @@
 
 ?>
 <header class="<?php echo esc_attr( "{$class_name}__outer" ); ?>">
-  <button class="<?php echo esc_attr( "{$class_name}__hide-btn" ); ?>">
+  <button class="<?php echo esc_attr( "{$class_name}__hide-btn js-{$class_name}-hide-btn" ); ?>">
     <span class="<?php echo esc_attr( "{$class_name}__hide-text" ); ?>"><?php esc_html_e( 'Backdrop', 'ts-blog' ); ?></span>
-    <svg class="<?php echo esc_attr( "{$class_name}__hide-icon" ); ?>" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" /></svg>
+    <svg class="<?php echo esc_attr( "{$class_name}__hide-icon js-{$class_name}-hide-icon" ); ?>" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" /></svg>
   </button>
   <?php
   if ( is_single() ) {

@@ -5,16 +5,13 @@
  * @package TS_Blog\Views\Listing\Articles
  */
 
-$image = [
-  'image' => '',
-];
-
 $class_name = 'article-grid';
 
+$image     = apply_filters( 'tsb_get_post_image', 'card' );
 $post_date = get_the_date();
 ?>
 <article class="<?php echo esc_attr( "{$class_name}__item" ); ?>">
-  <a class="<?php echo esc_attr( "{$class_name}__image" ); ?>" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo esc_url( $image['image'] ); ?>)"></a>
+  <a class="<?php echo esc_attr( "{$class_name}__image" ); ?>" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo esc_url( $image['url'] ); ?>)"></a>
   <header class="<?php echo esc_attr( "{$class_name}__content" ); ?>">
     <div class="<?php echo esc_attr( "{$class_name}__meta" ); ?>">
       <span class="<?php echo esc_attr( "{$class_name}__date" ); ?>">

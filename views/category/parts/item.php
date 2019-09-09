@@ -10,7 +10,7 @@ $is_active_class = 'is-active';
 
 $page_category   = $wp_query->get_queried_object();
 $category_url    = isset( $item ) ? get_category_link( $item->term_id ) : false;
-$active_category = ( isset( $item ) && $page_category->term_id === $item->term_id ) ? " {$is_active_class}" : '';
+$active_category = ( isset( $page_category ) && $page_category->term_id === $item->term_id ) ? " {$is_active_class}" : '';
 
 ?>
 

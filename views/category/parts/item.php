@@ -5,12 +5,16 @@
  * @package TS_Blog\Views\Category\Parts
  */
 
-$category_url    = get_category_link( $item->term_id );
-$active_category = ( isset( $page_category ) && $page_category->term_id === $item->term_id ) ? ' active-category' : '';
+$class_name      = 'category-menu';
+$is_active_class = 'is-active';
+
+$page_category   = $wp_query->get_queried_object();
+$category_url    = isset( $item ) ? get_category_link( $item->term_id ) : false;
+$active_category = ( isset( $item ) && $page_category->term_id === $item->term_id ) ? " {$is_active_class}" : '';
 
 ?>
 
-<a class="category-menu__item<?php echo esc_attr( $active_category ); ?>" href="<?php echo esc_url( $category_url ); ?>">
+<a class="<?php echo esc_attr( "{$class_name}__item" ); ?><?php echo esc_attr( $active_category ); ?>" href="<?php echo esc_url( $category_url ); ?>">
   <?php
     echo esc_html( $item->name );
   ?>

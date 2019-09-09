@@ -14,13 +14,15 @@ $listing_description = get_field( Theme_Options::LISTING_DESCRIPTION, 'option' )
 
 $listing_image_url = $listing_image['url'] ?? '';
 
+$class_name = 'hero';
+
 ?>
-<div class="background-class">
-  <div class="image-element" style="background-image: url(<?php echo esc_attr( $listing_image_url ); ?>);"></div>
+<div class="<?php echo esc_attr( "{$class_name}__background" ); ?>">
+  <div class="<?php echo esc_attr( "{$class_name}__image" ); ?>" style="background-image: url(<?php echo esc_attr( $listing_image_url ); ?>);"></div>
 </div>
 <?php if ( $listing_description ) { ?>
-    <div class="hero-description js-hero-description">
-      <div class="container">
+    <div class="<?php echo esc_attr( "{$class_name}__description js-{$class_name}-description" ); ?>">
+      <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
         <?php echo wp_kses_post( $listing_description ); ?>
       </div>
     </div>

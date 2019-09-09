@@ -49,6 +49,28 @@ class Theme implements Service {
   public function register() {
     add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
     add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+    add_filter( 'tsb_get_default_class', [ $this, 'get_default_class' ] );
+  }
+
+  /**
+   * Returns default classes
+   *
+   * @param string $item Item class to return.
+   *
+   * @return string
+   *
+   * @since 1.0.0
+   */
+  public function get_default_class( $item ) : string {
+
+    switch ( $item ) {
+      case 'container':
+            return 'container';
+      default:
+            return '';
+    }
+
+    return '';
   }
 
   /**

@@ -10,7 +10,7 @@
 ?>
 
 <footer class="footer">
-  <div class="footer__container conatiner">
+  <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
     <span><?php echo esc_html( date( 'Y' ) ); ?> Tihomir Selak</span>
   </div>
 </footer>

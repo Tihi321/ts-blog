@@ -18,6 +18,7 @@ if ( have_posts() ) {
 
   ?>
   <section class="article-grid">
+    <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
   <?php
 
   while ( have_posts() ) {
@@ -32,6 +33,7 @@ if ( have_posts() ) {
   );
 
   ?>
+  </div>
 </section>
   <?php
 } else {

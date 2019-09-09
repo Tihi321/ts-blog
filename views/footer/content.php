@@ -10,7 +10,7 @@
 ?>
 
 <footer class="footer">
-  <div class="footer__container">
-  <!-- insert content here -->
+  <div class="footer__container conatiner">
+    <span><?php echo esc_html( date( 'Y' ) ); ?> Tihomir Selak</span>
   </div>
 </footer>

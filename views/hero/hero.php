@@ -27,12 +27,18 @@
     }
     ?>
     </div>
+    <div class="<?php echo esc_attr( "{$class_name}__title-bar" ); ?>">
+      <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
     <?php
     $post_categories = locate_template( 'views/hero/parts/post-categories.php' );
 
     if ( ! empty( $post_categories ) ) {
       include $post_categories;
     }
+    ?>
+      </div>
+    </div>
+    <?php
   } else {
     ?>
     <div class="<?php echo esc_attr( "{$class_name}__inner" ); ?>">
@@ -44,12 +50,18 @@
     }
     ?>
     </div>
+    <div class="<?php echo esc_attr( "{$class_name}__title-bar" ); ?>">
+      <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
     <?php
     $category_menu_template = locate_template( 'views/category/menu.php' );
 
     if ( ! empty( $category_menu_template ) ) {
       include $category_menu_template;
     }
+    ?>
+      </div>
+    </div>
+    <?php
   }
   ?>
 </header>

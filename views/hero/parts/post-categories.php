@@ -5,7 +5,7 @@
  * @package TS_Blog\Views\Hero\Parts
  */
 
-$class_name = 'category-menu';
+$class_name = 'category-menu-single';
 $categories = get_the_category( get_the_ID() );
 
 ?>

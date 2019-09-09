@@ -65,7 +65,7 @@ class Theme implements Service {
 
     switch ( $item ) {
       case 'container':
-            return 'container';
+            return 'tsb__container';
       default:
             return '';
     }

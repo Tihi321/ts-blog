@@ -18,7 +18,7 @@ const plugins = [
   new BrowserSyncPlugin(
     {
       host: 'localhost',
-      port: 3000,
+      port: 4000,
       proxy: config.proxyUrl,
       files: [
         {

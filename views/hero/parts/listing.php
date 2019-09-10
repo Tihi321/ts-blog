@@ -23,7 +23,9 @@ $class_name = 'hero';
 <?php if ( $listing_description ) { ?>
     <div class="<?php echo esc_attr( "{$class_name}__description js-{$class_name}-description" ); ?>">
       <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
+        <div class="<?php echo esc_attr( "{$class_name}__content" ); ?>">
         <?php echo wp_kses_post( $listing_description ); ?>
+        </div>
       </div>
     </div>
 <?php } ?>

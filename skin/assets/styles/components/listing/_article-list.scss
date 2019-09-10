@@ -1,0 +1,14 @@
+.article-list {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__item {
+    margin: 5px 0;
+  }
+
+  &__title {
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0;
+  }
+}

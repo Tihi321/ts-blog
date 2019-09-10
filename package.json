@@ -60,9 +60,11 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "autoprefixer": "^9.6.1",
+    "classnames": "^2.2.6",
     "cssnano": "^4.1.10",
     "eightshift-frontend-libs": "^1.0.18",
     "layzr.js": "^2.2.2",
+    "lottie-web": "^5.5.7",
     "media-blender": "^2.1.0",
     "normalize-scss": "^7.0.1",
     "postcss-cssnext": "^3.1.0",

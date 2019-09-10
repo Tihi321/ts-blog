@@ -17,6 +17,8 @@ $class_name = 'hero';
 </div>
 <div class="<?php echo esc_attr( "{$class_name}__description js-{$class_name}-description" ); ?>">
   <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
-    <?php the_title(); ?>
+    <div class="<?php echo esc_attr( "{$class_name}__content" ); ?>">
+      <?php the_title(); ?>
+    </div>
   </div>
 </div>

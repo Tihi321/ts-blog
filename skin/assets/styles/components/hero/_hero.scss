@@ -6,6 +6,20 @@ $hero-vars: (
   backdrop-in-active: #E74C3C,
 );
 
+$desc-vars: (
+  outline-color: $base-white-color,
+  color: $base-white-color,
+  sizes: (
+    mobile: (
+      font-size: 18px,
+      line-height: 1.25,
+    ),
+    tablet: (
+      font-size: 24px,
+    ),
+  )
+);
+
 .hero {
   &__outer {
     position: relative;
@@ -93,6 +107,49 @@ $hero-vars: (
 
     &.is-hidden {
       opacity: 0;
+    }
+  }
+
+  &__content {
+    @include responsive($desc-vars, 'sizes');
+    color: map-get-strict($desc-vars, 'color');
+
+    a {
+      display: inline-block;
+      padding: 0 5px;
+      color: map-get-strict($desc-vars, 'color');
+      text-decoration: none;
+      background-color: var(--accent-color);
+      transition: opacity 0.3s ease;
+
+      &:focus {
+        outline: 1px solid map-get-strict($desc-vars, 'outline-color');
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+    }
+  }
+
+  &__lottie {
+    &-outer {
+      height: 100%;
+      pointer-events: none;
+      text-align: center;
+      flex: 1;
+      display: flex;
+    }
+
+    &-inner {
+      flex: 1;
+      height: auto !important; /* stylelint-disable-line declaration-no-important */
+    }
+
+    &-svg {
+      width: auto !important; /* stylelint-disable-line declaration-no-important */
+      max-height: 70vh;
     }
   }
 }

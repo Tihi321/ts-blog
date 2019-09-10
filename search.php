@@ -17,26 +17,32 @@ if ( have_posts() ) {
   }
 
   ?>
-  <section class="article-list">
-    <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
+  <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
+    <section class="article-list">
   <?php
 
   while ( have_posts() ) {
     the_post();
     get_template_part( 'views/listing/articles/list' );
   }
-
-  the_posts_pagination(
-    array(
-      'screen_reader_text' => esc_html__( 'Pagination', 'ts-blog' ),
-    )
-  );
-
   ?>
-  </div>
-</section>
+  </section>
+  <?php
+    the_posts_pagination(
+      array(
+        'screen_reader_text' => esc_html__( 'Pagination', 'ts-blog' ),
+      )
+    );
+  ?>
+</div>
   <?php
 } else {
+
+  $hero_template = locate_template( 'views/hero/hero.php' );
+
+  if ( ! empty( $hero_template ) ) {
+    include $hero_template;
+  }
 
   get_template_part( 'views/listing/articles/empty' );
 

@@ -11,4 +11,15 @@ domReady(() => {
     });
   }
 
+  // -------------------------------------------------------------
+  // Lottie
+  if (document.querySelector('.js-hero-lottie')) {
+    import('./lottie').then(({ Lottie }) => {
+      const lottie = new Lottie();
+      lottie.defaultElement.forEach((element) => {
+        lottie.init(element);
+      });
+    });
+  }
+
 });

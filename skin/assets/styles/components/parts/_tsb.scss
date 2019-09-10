@@ -1,0 +1,13 @@
+$tsb-vars: (
+  width: $base-container-size,
+  gutter: $base-gutter-size,
+);
+
+.tsb {
+  &__container {
+    max-width: map-get-strict($tsb-vars, 'width');
+    padding-left: map-get-strict($tsb-vars, 'gutter');
+    padding-right: map-get-strict($tsb-vars, 'gutter');
+    margin: 0 auto;
+  }
+}

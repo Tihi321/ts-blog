@@ -17,24 +17,24 @@ if ( have_posts() ) {
   }
 
   ?>
-  <section class="article-grid">
-    <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
+  <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
+    <section class="article-grid">
   <?php
 
   while ( have_posts() ) {
     the_post();
     get_template_part( 'views/listing/articles/grid' );
   }
-
-  the_posts_pagination(
-    array(
-      'screen_reader_text' => esc_html__( 'Pagination', 'ts-blog' ),
-    )
-  );
-
   ?>
-  </div>
-</section>
+  </section>
+  <?php
+    the_posts_pagination(
+      array(
+        'screen_reader_text' => esc_html__( 'Pagination', 'ts-blog' ),
+      )
+    );
+  ?>
+</div>
   <?php
 } else {
 

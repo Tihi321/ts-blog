@@ -17,7 +17,7 @@ if ( have_posts() ) {
   }
 
   ?>
-  <section class="single">
+  <section class="single__content">
   <?php
   while ( have_posts() ) {
     the_post();

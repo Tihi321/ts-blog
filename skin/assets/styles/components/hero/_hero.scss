@@ -111,8 +111,11 @@ $desc-vars: (
   }
 
   &__content {
-    @include responsive($desc-vars, 'sizes');
     color: map-get-strict($desc-vars, 'color');
+
+    p {
+      @include responsive($desc-vars, 'sizes');
+    }
 
     a {
       display: inline-block;

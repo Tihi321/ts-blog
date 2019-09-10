@@ -14,6 +14,11 @@ $excerpt = apply_filters( 'tsb_get_excerpt', 250 );
 ?>
 <article class="<?php echo esc_attr( "{$class_name}__item" ); ?>">
   <header class="<?php echo esc_attr( "{$class_name}__header" ); ?>">
+    <h2 cclass="<?php echo esc_attr( "{$class_name}__heading" ); ?>">
+      <a class="<?php echo esc_attr( "{$class_name}__heading-link" ); ?>" href="<?php the_permalink(); ?>">
+      <?php esc_html( the_title() ); ?>
+      </a>
+    </h2>
     <div class="<?php echo esc_attr( "{$class_name}__meta" ); ?>">
       <span class="<?php echo esc_attr( "{$class_name}__date" ); ?>">
         <?php
@@ -21,11 +26,6 @@ $excerpt = apply_filters( 'tsb_get_excerpt', 250 );
         ?>
       </span>
     </div>
-    <h2 cclass="<?php echo esc_attr( "{$class_name}__heading" ); ?>">
-      <a class="<?php echo esc_attr( "{$class_name}__heading-link" ); ?>" href="<?php the_permalink(); ?>">
-      <?php esc_html( the_title() ); ?>
-      </a>
-    </h2>
   </header>
   <div class="<?php echo esc_attr( "{$class_name}__excerpt" ); ?>">
     <?php echo esc_html( $excerpt ); ?>

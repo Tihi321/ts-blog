@@ -106,13 +106,22 @@ class Theme_Options implements Service {
   const DISCLAIMER = 'disclaimer';
 
   /**
-   * Theme options listing description
+   * Theme options listing tips
    *
    * @var string
    *
    * @since 1.0.0
    */
-  const LISTING_DESCRIPTION = 'listing_description';
+  const LISTING_TIPS = 'listing_tips';
+
+  /**
+   * Theme options listing tip
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const LISTING_TIP = 'listing_tip';
 
   /**
    * Theme options listing image
@@ -140,6 +149,7 @@ class Theme_Options implements Service {
   public function register() : void {
     add_action( 'acf/init', [ $this, 'create_theme_options_page' ] );
     add_action( 'acf/init', [ $this, 'register_theme_options' ] );
+    add_filter( 'tsb_get_random_field', [ $this, 'get_random_field' ] );
   }
 
   /**
@@ -424,23 +434,44 @@ class Theme_Options implements Service {
               'mime_types' => '',
             ),
             array(
-              'key' => 'field_5d72d28b87542',
-              'label' => 'Description',
-              'name' => static::LISTING_DESCRIPTION,
-              'type' => 'wysiwyg',
+              'key' => 'field_5d77bd53bf088',
+              'label' => 'Tips',
+              'name' => static::LISTING_TIPS,
+              'type' => 'repeater',
               'instructions' => '',
-              'required' => 0,
+              'required' => 1,
               'conditional_logic' => 0,
               'wrapper' => array(
                 'width' => '',
                 'class' => '',
                 'id' => '',
               ),
-              'default_value' => '',
-              'tabs' => 'all',
-              'toolbar' => 'basic',
-              'media_upload' => 0,
-              'delay' => 0,
+              'collapsed' => '',
+              'min' => 0,
+              'max' => 0,
+              'layout' => 'table',
+              'button_label' => '',
+              'sub_fields' => array(
+                array(
+                  'key' => 'field_5d77bd6bbf089',
+                  'label' => 'Tip',
+                  'name' => static::LISTING_TIP,
+                  'type' => 'wysiwyg',
+                  'instructions' => '',
+                  'required' => 0,
+                  'conditional_logic' => 0,
+                  'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                  ),
+                  'default_value' => '',
+                  'tabs' => 'all',
+                  'toolbar' => 'basic',
+                  'media_upload' => 0,
+                  'delay' => 1,
+                ),
+              ),
             ),
             array(
               'key' => 'field_59erea43t652b',
@@ -503,5 +534,24 @@ class Theme_Options implements Service {
         )
       );
     }
+  }
+
+  /**
+   * Get random repeater field
+   *
+   * @param string $key Repeater key of the field.
+   * @since 1.0.0
+   */
+  public function get_random_field( $key ) : string {
+    $item_key = '';
+
+    if ( $key === static::LISTING_TIPS ) {
+      $item_key = static::LISTING_TIP;
+    }
+
+    $repeater   = get_field( $key, 'option' );
+    $random_key = array_rand( $repeater, 1 );
+
+    return $repeater[ $random_key ][ $item_key ];
   }
 }

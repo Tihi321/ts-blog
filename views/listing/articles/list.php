@@ -14,7 +14,7 @@ $excerpt = apply_filters( 'tsb_get_excerpt', 250 );
 ?>
 <article class="<?php echo esc_attr( "{$class_name}__item" ); ?>">
   <header class="<?php echo esc_attr( "{$class_name}__header" ); ?>">
-    <h2 cclass="<?php echo esc_attr( "{$class_name}__heading" ); ?>">
+    <h2 class="<?php echo esc_attr( "{$class_name}__heading" ); ?>">
       <a class="<?php echo esc_attr( "{$class_name}__heading-link" ); ?>" href="<?php the_permalink(); ?>">
       <?php esc_html( the_title() ); ?>
       </a>

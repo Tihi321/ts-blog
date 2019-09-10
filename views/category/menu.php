@@ -36,7 +36,6 @@ $categories      = get_categories();
     }
     ?>
   </div>
-  <div class="<?php echo esc_attr( "{$class_name}__search" ); ?>">
   <?php
     $search_template = locate_template( 'views/header/search-form.php' );
 
@@ -44,5 +43,4 @@ $categories      = get_categories();
     include $search_template;
   }
   ?>
-  </div>
 </div>

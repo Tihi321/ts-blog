@@ -111,8 +111,11 @@ $desc-vars: (
   }
 
   &__content {
-    @include responsive($desc-vars, 'sizes');
     color: map-get-strict($desc-vars, 'color');
+
+    p {
+      @include responsive($desc-vars, 'sizes');
+    }
 
     a {
       display: inline-block;
@@ -133,9 +136,14 @@ $desc-vars: (
     }
   }
 
+  &__title {
+    color: map-get-strict($desc-vars, 'color');
+  }
+
   &__lottie {
     &-outer {
       height: 100%;
+      min-height: 50vh;
       pointer-events: none;
       text-align: center;
       flex: 1;
@@ -149,7 +157,6 @@ $desc-vars: (
 
     &-svg {
       width: auto !important; /* stylelint-disable-line declaration-no-important */
-      max-height: 70vh;
     }
   }
 }

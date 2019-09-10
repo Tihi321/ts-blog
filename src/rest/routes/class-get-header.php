@@ -67,6 +67,7 @@ class Get_Header extends Base_Route implements Callable_Route {
     $linkedin_url    = get_field( Theme_Options::LINKEDIN_URL_FIELD, 'option' );
     $youtube_url     = get_field( Theme_Options::YOUTUBE_URL_FIELD, 'option' );
     $github_url      = get_field( Theme_Options::GITHUB_URL_FIELD, 'option' );
+    $wordpress_url   = get_field( Theme_Options::WORDPRESS_URL_FIELD, 'option' );
 
     $logo       = get_field( Theme_Options::BLOG_LOGO, 'option' );
     $logo_url   = $logo['url'] ?? '';
@@ -88,6 +89,7 @@ class Get_Header extends Base_Route implements Callable_Route {
         'linkedin' => \esc_url( $linkedin_url ),
         'youtube' => \esc_url( $youtube_url ),
         'github' => \esc_url( $github_url ),
+        'wordpress' => \esc_url( $wordpress_url ),
       ],
       'disclaimer' => \esc_html( $disclaimer ),
     ];

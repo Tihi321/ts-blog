@@ -5,31 +5,16 @@
  * @package TS_Blog\Views\Hero\Parts
  */
 
-$class_name = 'category-menu-single';
-$categories = get_the_category( get_the_ID() );
+$categories_class_name = 'category-menu-single';
 
 ?>
 
-<div class="<?php echo esc_attr( $class_name ); ?>">
-  <div class="<?php echo esc_attr( "{$class_name}__items" ); ?>">
-    <?php
-    if ( ! empty( $categories ) ) {
-      foreach ( $categories as $item ) {
-        if ( $item->term_id === 1 ) {
-          continue; // uncategorized category skip.
-        }
+<div class="<?php echo esc_attr( $categories_class_name ); ?>">
+<?php
+$hero_categories_template = locate_template( 'views/category/parts/categories.php' );
 
-        $category_url = get_category_link( $item->term_id );
-        ?>
-        
-        <a class="<?php echo esc_attr( "{$class_name}__item" ); ?>" href="<?php echo esc_url( $category_url ); ?>">
-          <?php
-            echo esc_html( $item->name );
-          ?>
-        </a>
-        <?php
-      }
-    }
-    ?>
-  </div>
+if ( ! empty( $hero_categories_template ) ) {
+  include $hero_categories_template;
+}
+?>
 </div>

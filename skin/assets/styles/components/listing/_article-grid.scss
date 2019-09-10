@@ -11,13 +11,13 @@ $article-grid-vars: (
 );
 
 .article-grid {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
 
   @include media(mobile up) {
     margin: 0 -10px;
+    padding-top: 50px;
   }
 
   &__item {
@@ -29,13 +29,13 @@ $article-grid-vars: (
     }
     @include media(tablet up) {
       width: 30%;
-      min-width: 200px;
+      flex-grow: 1;
     }
   }
 
   &__image {
     width: 100%;
-    min-height: 180px;
+    padding-bottom: 60%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -46,5 +46,28 @@ $article-grid-vars: (
     font-weight: bold;
     margin: 10px 0;
     text-align: center;
+  }
+
+  &__meta {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .category {
+    &__item {
+      display: inline-block;
+
+      &::before {
+        content: ',';
+      }
+
+      &:first-child::before {
+        display: none;
+      }
+    }
+  }
+
+  &__heading {
+    margin: 0;
   }
 }

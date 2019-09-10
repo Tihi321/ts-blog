@@ -133,6 +133,10 @@ $desc-vars: (
     }
   }
 
+  &__title {
+    color: map-get-strict($desc-vars, 'color');
+  }
+
   &__lottie {
     &-outer {
       height: 100%;

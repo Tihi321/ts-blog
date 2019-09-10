@@ -97,6 +97,15 @@ class Theme_Options implements Service {
   const GITHUB_URL_FIELD = 'github_url_field';
 
   /**
+   * Theme options WordPress plugins url
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const WORDPRESS_URL_FIELD = 'wordpress_url_field';
+
+  /**
    * Theme options page description
    *
    * @var string
@@ -359,6 +368,25 @@ class Theme_Options implements Service {
               'key' => 'field_4d44343t2f1b2',
               'label' => 'Google Play',
               'name' => static::GOOGLE_PLAY_URL_FIELD,
+              'type' => 'url',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => '',
+              'placeholder' => 'Url',
+              'prepend' => '',
+              'append' => '',
+              'maxlength' => '',
+            ),
+            array(
+              'key' => 'field_4d44343t232b2',
+              'label' => 'WordPress',
+              'name' => static::WORDPRESS_URL_FIELD,
               'type' => 'url',
               'instructions' => '',
               'required' => 0,

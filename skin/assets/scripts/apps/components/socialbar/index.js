@@ -31,6 +31,17 @@ const SocialBar = ({ options }) => {
         </span>
       </a>
       <a
+        alt="WordPress"
+        className={`${componentClass}__icon ${componentClass}__icon--wordpress`}
+        href={options.wordpress}
+      >
+        <span
+          className={`${componentClass}__link-content`}
+        >
+          WordPress
+        </span>
+      </a>
+      <a
         alt="youtube"
         className={`${componentClass}__icon ${componentClass}__icon--youtube`}
         href={options.youtube}

@@ -77,6 +77,12 @@ $social-vars: (
     }
   }
 
+  &__icon--wordpress {
+    &::before {
+      content: unicode($icon--wordpress);
+    }
+  }
+
   &__link-content {
     position: absolute;
     visibility: hidden;

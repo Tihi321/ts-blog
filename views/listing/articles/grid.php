@@ -9,11 +9,19 @@ $class_name = 'article-grid';
 
 $image     = apply_filters( 'tsb_get_post_image', 'card' );
 $post_date = get_the_date();
+
 ?>
 <article class="<?php echo esc_attr( "{$class_name}__item" ); ?>">
   <a class="<?php echo esc_attr( "{$class_name}__image" ); ?>" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo esc_url( $image['url'] ); ?>)"></a>
   <header class="<?php echo esc_attr( "{$class_name}__content" ); ?>">
     <div class="<?php echo esc_attr( "{$class_name}__meta" ); ?>">
+      <?php
+      $grid_categories_template = locate_template( 'views/category/parts/categories.php' );
+
+      if ( ! empty( $grid_categories_template ) ) {
+        include $grid_categories_template;
+      }
+      ?>
       <span class="<?php echo esc_attr( "{$class_name}__date" ); ?>">
         <?php
           echo esc_html( $post_date );

@@ -14,7 +14,6 @@ $article-grid-vars: (
   padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 
   @include media(mobile up) {
     margin: 0 -10px;
@@ -30,6 +29,7 @@ $article-grid-vars: (
     }
     @include media(tablet up) {
       width: 30%;
+      flex-grow: 1;
     }
   }
 
@@ -48,8 +48,23 @@ $article-grid-vars: (
     text-align: center;
   }
 
-  &__date {
+  &__meta {
     font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .category {
+    &__item {
+      display: inline-block;
+
+      &::before {
+        content: ',';
+      }
+
+      &:first-child::before {
+        display: none;
+      }
+    }
   }
 
   &__heading {

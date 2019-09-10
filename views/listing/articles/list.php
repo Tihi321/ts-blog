@@ -8,8 +8,7 @@
 $class_name = 'article-list';
 
 $post_date = get_the_date();
-
-$excerpt = apply_filters( 'tsb_get_excerpt', 250 );
+$excerpt   = apply_filters( 'tsb_get_excerpt', 250 );
 
 ?>
 <article class="<?php echo esc_attr( "{$class_name}__item" ); ?>">
@@ -20,6 +19,13 @@ $excerpt = apply_filters( 'tsb_get_excerpt', 250 );
       </a>
     </h2>
     <div class="<?php echo esc_attr( "{$class_name}__meta" ); ?>">
+      <?php
+      $grid_categories_template = locate_template( 'views/category/parts/categories.php' );
+
+      if ( ! empty( $grid_categories_template ) ) {
+        include $grid_categories_template;
+      }
+      ?>
       <span class="<?php echo esc_attr( "{$class_name}__date" ); ?>">
         <?php
           echo esc_html( $post_date );

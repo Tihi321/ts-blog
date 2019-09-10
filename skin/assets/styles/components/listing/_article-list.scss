@@ -36,4 +36,18 @@ $article-list-vars: (
     margin: 0;
     padding: 10px 0;
   }
+
+  .category {
+    &__item {
+      display: inline-block;
+
+      &::before {
+        content: ',';
+      }
+
+      &:first-child::before {
+        display: none;
+      }
+    }
+  }
 }

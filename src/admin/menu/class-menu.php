@@ -27,6 +27,8 @@ class Menu implements Service {
    */
   public function register() {
     add_action( 'after_setup_theme', [ $this, 'register_menu_positions' ], 11 );
+    add_filter( 'tsb_get_menu_by_position', [ $this, 'get_menu_by_position' ] );
+    add_filter( 'tsb_bem_menu', [ $this, 'bem_menu' ], 10, 4 );
   }
 
   /**
@@ -205,7 +207,7 @@ class Menu implements Service {
         if ( $menu_item->url === home_url( '/' ) || $menu_item->url === home_url() ) {
           $url = '/';
         } else {
-          $url = $this->trim_url( $menu_item->url );
+          $url = apply_filters( 'tsb_trim_url', $menu_item->url );
         }
       }
 
@@ -262,31 +264,5 @@ class Menu implements Service {
 
     return $tree;
 
-  }
-
-  /**
-   * Trim urls to be relative for the frontend.
-   *
-   * @param string $link Url string.
-   *
-   * @return string
-   *
-   * @since 1.0.0
-   */
-  private function trim_url( string $link ) : string {
-
-    if ( ! $link ) {
-      return '';
-    }
-
-    $parse = \wp_parse_url( $link );
-    $path  = $parse['path'] ?? '';
-    $query = $parse['query'] ?? '';
-
-    if ( ! empty( $query ) ) {
-      return $query;
-    }
-
-    return \rtrim( $path, '/' );
   }
 }

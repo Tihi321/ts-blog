@@ -1,3 +1,10 @@
-// .footer {
+$footer-vars: (
+  color: $base-white-color,
+);
 
-// }
+.footer {
+  color: map-get-strict($footer-vars, 'color');
+  background-color: var(--accent-color);
+  position: relative;
+  padding: 20px 0;
+}

@@ -76,7 +76,7 @@ const Navbar = ({
             <h1 className={`${componentClass}__title`}>Tihomimir Selak</h1>
           </a> :
           <a
-            href={logo}
+            href={home_url}
             className={`${componentClass}__link ${componentClass}__link-image`}
           >
             <img

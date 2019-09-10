@@ -14,6 +14,17 @@
 @import 'components/header/wp-admin-bar';
 @import 'components/header/header';
 
+// Components.
+@import 'components/parts/tsb';
+@import 'components/hero/hero';
+@import 'components/hero/title-bar';
+@import 'components/listing/article-grid';
+@import 'components/listing/article-list';
+@import 'components/listing/article-empty';
+@import 'components/parts/single';
+@import 'components/category/category-menu';
+@import 'components/category/category-menu-single';
+
 // Footer.
 @import 'components/footer/footer';
 

@@ -124,13 +124,13 @@ class Theme_Options implements Service {
   const LISTING_IMAGE = 'listing_image';
 
   /**
-   * Theme options footer copyright
+   * Theme options 404 animation
    *
    * @var string
    *
    * @since 1.0.0
    */
-  const FOOTER_COPYRIGHT = 'footer_copyright';
+  const PAGE_NOT_FOUND_ANIMATION = 'page_not_found_animation';
 
   /**
    * Register all the hooks
@@ -400,27 +400,8 @@ class Theme_Options implements Service {
               'endpoint' => 0,
             ),
             array(
-              'key' => 'field_5d72d28b87542',
-              'label' => 'Description',
-              'name' => static::LISTING_DESCRIPTION,
-              'type' => 'wysiwyg',
-              'instructions' => '',
-              'required' => 0,
-              'conditional_logic' => 0,
-              'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-              ),
-              'default_value' => '',
-              'tabs' => 'all',
-              'toolbar' => 'basic',
-              'media_upload' => 0,
-              'delay' => 0,
-            ),
-            array(
               'key' => 'field_5d72d2c287543',
-              'label' => 'Listing image',
+              'label' => 'Hero image',
               'name' => static::LISTING_IMAGE,
               'type' => 'image',
               'instructions' => '',
@@ -443,8 +424,27 @@ class Theme_Options implements Service {
               'mime_types' => '',
             ),
             array(
-              'key' => 'field_59eddadff652b',
-              'label' => 'Footer',
+              'key' => 'field_5d72d28b87542',
+              'label' => 'Description',
+              'name' => static::LISTING_DESCRIPTION,
+              'type' => 'wysiwyg',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => '',
+              'tabs' => 'all',
+              'toolbar' => 'basic',
+              'media_upload' => 0,
+              'delay' => 0,
+            ),
+            array(
+              'key' => 'field_59erea43t652b',
+              'label' => '404',
               'name' => '',
               'type' => 'tab',
               'instructions' => '',
@@ -459,10 +459,10 @@ class Theme_Options implements Service {
               'endpoint' => 0,
             ),
             array(
-              'key' => 'field_5d49trtt2f1b2',
-              'label' => 'Copyright',
-              'name' => static::FOOTER_COPYRIGHT,
-              'type' => 'text',
+              'key' => 'field_5d72dds284343',
+              'label' => 'Hero Animation',
+              'name' => static::PAGE_NOT_FOUND_ANIMATION,
+              'type' => 'file',
               'instructions' => '',
               'required' => 0,
               'conditional_logic' => 0,
@@ -471,11 +471,16 @@ class Theme_Options implements Service {
                 'class' => '',
                 'id' => '',
               ),
-              'default_value' => '',
-              'placeholder' => '',
-              'prepend' => '',
-              'append' => '',
-              'maxlength' => '',
+              'return_format' => 'array',
+              'preview_size' => 'medium',
+              'library' => 'all',
+              'min_width' => '',
+              'min_height' => '',
+              'min_size' => '',
+              'max_width' => '',
+              'max_height' => '',
+              'max_size' => '',
+              'mime_types' => '',
             ),
           ),
           'location'              => array(

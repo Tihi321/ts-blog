@@ -13,7 +13,6 @@ const App = (props) => {
 
   return (
     <div className={`${className}__header`}>
-      {data.loading && <div>Loading</div>}
       {!data.loading && <Navbar {...data.value} accentColor={accentColor} />}
     </div>
   );

@@ -21,6 +21,7 @@ use TS_Blog\Admin\Menu;
 use TS_Blog\Theme;
 use TS_Blog\Plugins;
 use TS_Blog\Routes;
+use TS_Blog\Utils;
 
 /**
  * The main start class.
@@ -54,6 +55,7 @@ class Main extends LibMain {
       Admin\Admin::class => [ Assets\Manifest::class ],
       Admin\Login::class,
       Admin\Media::class,
+      Admin\Excerpt::class,
 
       // Menu.
       Menu\Menu::class,
@@ -71,6 +73,9 @@ class Main extends LibMain {
 
       // Rest.
       Routes\Get_Header::class,
+
+      // Utils.
+      Utils\String_Utils::class,
     ];
   }
 }

@@ -11,7 +11,6 @@ namespace TS_Blog\Routes;
 use Eightshift_Libs\Routes\Callable_Route;
 use TS_Blog\Assets\Manifest_Helper;
 use TS_Blog\Routes\Base_Route;
-use TS_Blog\Admin\Menu\Menu;
 use TS_Blog\Plugins\Acf\Theme_Options;
 
 /**
@@ -60,8 +59,7 @@ class Get_Header extends Base_Route implements Callable_Route {
     $param         = $request->get_param( 'menu_position' );
     $menu_position = str_replace( '-', '_', $param );
 
-    $custom_menu = new Menu();
-    $menu_items  = $custom_menu->get_menu_by_position( $menu_position );
+    $menu_items = apply_filters( 'tsb_get_menu_by_position', $menu_position );
 
     // Social fields.
     $mail            = get_field( Theme_Options::MAIL_URL_FIELD, 'option' );

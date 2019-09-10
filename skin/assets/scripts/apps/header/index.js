@@ -15,6 +15,7 @@ export class Header {
       render(
         <App
           accentColor={accentColor}
+          className="navbar"
         />,
         this.headerElement
       );

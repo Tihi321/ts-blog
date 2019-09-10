@@ -9,10 +9,8 @@
  * TODO: Create this as a class with attributes.
  */
 
-use TS_Blog\Plugins\Acf\Theme_Options;
+$image = apply_filters( 'tsb_get_post_image', 'thumbnail' );
 
-$logo_img     = get_field( Theme_Options::BLOG_LOGO, 'option' );
-$logo_img_url = $logo_img['url'] ?? '';
 ?>
 
 <!-- Google Rich Snippets -->
@@ -28,7 +26,7 @@ $logo_img_url = $logo_img['url'] ?? '';
   <?php if ( ! empty( $image ) ) { ?>
   "image": {
     "@type": "ImageObject",
-    "url": "<?php echo esc_html( $image['image'] ); ?>",
+    "url": "<?php echo esc_html( $image['url'] ); ?>",
     "height": <?php echo esc_html( $image['height'] ); ?>,
     "width": <?php echo esc_html( $image['width'] ); ?>
   },
@@ -44,7 +42,7 @@ $logo_img_url = $logo_img['url'] ?? '';
     "name": "<?php echo esc_html( get_bloginfo( 'name' ) ); ?>",
     "logo": {
     "@type": "ImageObject",
-    "url": "<?php echo esc_url( $logo_img_url ); ?>",
+    "url": "<?php echo esc_url( $image['url'] ); ?>",
     "width": 220,
     "height": 60
     }

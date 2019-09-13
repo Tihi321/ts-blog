@@ -8,3 +8,6 @@
 # Mac OS custom attribute store and thumbnails
 *.DS_Store
 ._*
+
+# vsCode
+.favorites.json

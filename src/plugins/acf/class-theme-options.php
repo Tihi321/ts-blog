@@ -31,6 +31,15 @@ class Theme_Options implements Service {
    *
    * @since 1.0.0
    */
+  const CONSENT_MESSAGE = 'consent_message';
+
+  /**
+   * Blog logo
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
   const BLOG_LOGO = 'blog_logo';
 
   /**
@@ -208,6 +217,25 @@ class Theme_Options implements Service {
               ),
               'placement' => 'top',
               'endpoint' => 0,
+            ),
+            array(
+              'key' => 'field_5d7b4642fdd1a',
+              'label' => 'Consent Message',
+              'name' => static::CONSENT_MESSAGE,
+              'type' => 'textarea',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => '',
+              'placeholder' => '',
+              'maxlength' => '',
+              'rows' => '',
+              'new_lines' => '',
             ),
             array(
               'key' => 'field_5d72d32287543',

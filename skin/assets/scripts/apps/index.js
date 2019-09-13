@@ -1,4 +1,4 @@
-import { domReady } from '../utils/general';
+import { domReady } from '../utils/dom';
 
 domReady(() => {
 

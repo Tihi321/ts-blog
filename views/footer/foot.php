@@ -9,6 +9,7 @@
 
 ?>
 
+<?php require locate_template( 'views/tracking/consent.php' ); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

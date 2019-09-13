@@ -1,0 +1,57 @@
+$consent-vars: (
+  color: $base-white-color,
+  text-size: (
+    mobile: (
+      font-size: 14px,
+      line-height: 1.25,
+    ),
+    tablet: (
+      font-size: 18px,
+    ),
+  ),
+  z-index: 99999,
+);
+
+.consent {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+  padding: 15px 0;
+  transition: opacity 0.3s ease;
+  z-index: map-get-strict($consent-vars, 'z-index');
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.is-visible {
+    display: block;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    @include media(tablet up) {
+      flex-direction: row;
+    }
+  }
+
+  &__message {
+    @include responsive-deep($consent-vars, 'text-size');
+    color: map-get-strict($consent-vars, 'color');
+  }
+
+  &__btn {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: map-get-strict($consent-vars, 'color');
+  }
+}

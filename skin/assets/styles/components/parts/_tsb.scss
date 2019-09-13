@@ -6,6 +6,7 @@ $tsb-vars: (
 .tsb {
   &__container {
     max-width: map-get-strict($tsb-vars, 'width');
+    width: 100%;
     padding-left: map-get-strict($tsb-vars, 'gutter');
     padding-right: map-get-strict($tsb-vars, 'gutter');
     margin: 0 auto;

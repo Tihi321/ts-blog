@@ -62,4 +62,3 @@ $accent_color = get_field( Theme_Options::BLOG_ACCENT_COLOR_FILED, 'option' );
 </style>
 
 <?php
-get_template_part( 'views/tracking/head' );

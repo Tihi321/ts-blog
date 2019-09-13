@@ -1,4 +1,4 @@
-import { domReady } from '../utils/general';
+import { domReady } from '../utils/dom';
 
 domReady(() => {
 
@@ -19,6 +19,15 @@ domReady(() => {
       lottie.defaultElement.forEach((element) => {
         lottie.init(element);
       });
+    });
+  }
+
+  // -------------------------------------------------------------
+  // Consent
+  if (document.querySelector('.js-consent')) {
+    import('./consent').then(({ Consent }) => {
+      const consent = new Consent();
+      consent.init();
     });
   }
 

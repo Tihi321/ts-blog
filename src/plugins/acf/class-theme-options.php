@@ -605,7 +605,12 @@ class Theme_Options implements Service {
       $item_key = static::LISTING_TIP;
     }
 
-    $repeater   = get_field( $key, 'option' );
+    $repeater = get_field( $key, 'option' );
+
+    if ( ! isset( $repeater ) ) {
+      return '';
+    }
+
     $random_key = array_rand( $repeater, 1 );
 
     return $repeater[ $random_key ][ $item_key ];

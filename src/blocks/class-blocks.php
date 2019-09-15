@@ -25,6 +25,27 @@ class Blocks extends Lib_Blocks {
   public function register() {
     parent::register();
 
-    add_filter( 'allowed_block_types', [ $this, 'get_all_blocks_list' ], 9999 );
+    add_filter( 'allowed_block_types', [ $this, 'allowed_block_types' ], 9999, 2 );
+
+  }
+
+  /**
+   * Allowed blocks
+   *
+   * @param array  $allowed_blocks Array of allowed blocks.
+   * @param object $post Post object.
+   * @since 1.0.0
+   *
+   * @return array
+   */
+  public function allowed_block_types( $allowed_blocks, $post ) {
+
+    if ( $post->post_type === 'page' || $post->post_type === 'post' ) {
+
+      return $this->get_all_blocks_list( $allowed_blocks );
+    }
+
+    return $allowed_blocks;
+
   }
 }

@@ -39,6 +39,62 @@ class Enqueue extends Lib_Enqueue {
   }
 
   /**
+   * Register all the hooks
+   *
+   * @since 1.0.0
+   */
+  public function register() {
+
+    // Editor only script.
+    add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_scripts' ] );
+
+    // Editor only style.
+    add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_styles' ], 50 );
+
+    // Editor and frontend style.
+    add_action( 'enqueue_block_assets', [ $this, 'enqueue_block_style' ], 50 );
+
+    // Frontend only script.
+    add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_block_script' ] );
+  }
+
+
+  /**
+   * Register the Block Stylesheets for the admin area.
+   *
+   * @return void
+   *
+   * @since 1.0.0
+   */
+  public function enqueue_block_styles() {
+
+    $screen = get_current_screen();
+
+    if ( $screen->id === 'post' || $screen->id === 'page' ) {
+      $this->enqueue_block_editor_style();
+    }
+
+  }
+
+  /**
+   * Register the Block Scripts for the admin area.
+   *
+   * @return void
+   *
+   * @since 1.0.0
+   */
+  public function enqueue_block_scripts() {
+
+    $screen = get_current_screen();
+
+    if ( $screen->id === 'post' || $screen->id === 'page' ) {
+      $this->enqueue_block_editor_script();
+    }
+
+  }
+
+
+  /**
    * Method to provide projects manifest array.
    * Using this manifest you are able to provide project specific implementation of assets locations.
    *

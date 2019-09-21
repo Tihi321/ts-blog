@@ -6,7 +6,7 @@ const configData = getConfig('wp-content/themes/ts-blog'); // eslint-disable-lin
 
 // Export config to use in other Webpack files.
 module.exports = {
-  proxyUrl: 'https://blog.tihomir-selak.from.hr',
+  proxyUrl: 'https://blog.tihomir-selak.from.test',
   absolutePath: configData.absolutePath,
   relativePathFiles: configData.relativePathFiles,
   absolutePathFiles: configData.absolutePathFiles,

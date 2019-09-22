@@ -27,7 +27,8 @@ class Login implements Service {
    * @since 1.0.0
    */
   public function register() {
-    add_filter( 'login_headerurl', [ $this, 'custom_login_url' ] );
+    add_filter( 'login_headerurl', [ $this, 'custom_login_header_url' ] );
+    add_filter( 'login_url', [ $this, 'custom_login_url' ], 10, 3 );
   }
 
   /**
@@ -37,7 +38,21 @@ class Login implements Service {
    *
    * @since 1.0.0
    */
-  public function custom_login_url() : string {
+  public function custom_login_header_url() : string {
+    return \home_url( '/' );
+  }
+
+  /**
+   * Change default logo link with home url.
+   *
+   * @param string $login_url old login url.
+   * @param string $redirect old login url.
+   * @param bool   $force_reauth old login url.
+   * @return string
+   *
+   * @since 1.0.0
+   */
+  public function custom_login_url( $login_url, $redirect, $force_reauth ) : string {
     return \home_url( '/' );
   }
 }

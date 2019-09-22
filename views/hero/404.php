@@ -7,9 +7,10 @@
  * @since 1.0.0
  */
 
- $class_name = 'hero';
+use TS_Blog\Plugins\Acf\Theme_Options;
 
-$hero_file = get_field( Theme_Options::PAGE_NOT_FOUND_ANIMATION, 'option' );
+$class_name = 'hero';
+$hero_file  = get_field( Theme_Options::PAGE_NOT_FOUND_ANIMATION, 'option' );
 
 ?>
 <header class="<?php echo esc_attr( "{$class_name}__outer" ); ?>">

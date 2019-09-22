@@ -142,6 +142,33 @@ class Theme_Options implements Service {
   const LISTING_TIP = 'listing_tip';
 
   /**
+   * Theme options listing hero select
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const LISTING_HERO_TYPE = 'listing_hero_type';
+
+  /**
+   * Theme options listing hero select
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const LISTING_HERO_TYPE_KEY = 'field_5d8756418f02c';
+
+  /**
+   * Theme options listing lottie
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const LISTING_LOTTIE = 'listing_lottie';
+
+  /**
    * Theme options listing image
    *
    * @var string
@@ -466,13 +493,48 @@ class Theme_Options implements Service {
               'endpoint' => 0,
             ),
             array(
+              'key' => static::LISTING_HERO_TYPE_KEY,
+              'label' => 'Hero type',
+              'name' => static::LISTING_HERO_TYPE,
+              'type' => 'select',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'choices' => array(
+                'image' => 'image',
+                'lottie' => 'lottie',
+              ),
+              'default_value' => array(
+                0 => 'image',
+              ),
+              'allow_null' => 0,
+              'multiple' => 0,
+              'ui' => 0,
+              'return_format' => 'value',
+              'ajax' => 0,
+              'placeholder' => '',
+            ),
+            array(
               'key' => 'field_5d72d2c287543',
               'label' => 'Hero image',
               'name' => static::LISTING_IMAGE,
               'type' => 'image',
               'instructions' => '',
               'required' => 0,
-              'conditional_logic' => 0,
+              'conditional_logic' => array(
+                array(
+                  array(
+                    'field' => static::LISTING_HERO_TYPE_KEY,
+                    'operator' => '==contains',
+                    'value' => 'image',
+                  ),
+                ),
+              ),
               'wrapper' => array(
                 'width' => '',
                 'class' => '',
@@ -488,6 +550,33 @@ class Theme_Options implements Service {
               'max_height' => '',
               'max_size' => '',
               'mime_types' => '',
+            ),
+            array(
+              'key' => 'field_5d87568e8f02e',
+              'label' => 'Lottie animation',
+              'name' => static::LISTING_LOTTIE,
+              'type' => 'file',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => array(
+                array(
+                  array(
+                    'field' => static::LISTING_HERO_TYPE_KEY,
+                    'operator' => '==contains',
+                    'value' => 'lottie',
+                  ),
+                ),
+              ),
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'return_format' => 'array',
+              'library' => 'all',
+              'min_size' => '',
+              'max_size' => '',
+              'mime_types' => 'json',
             ),
             array(
               'key' => 'field_5d77bd53bf088',
@@ -567,7 +656,7 @@ class Theme_Options implements Service {
               'max_width' => '',
               'max_height' => '',
               'max_size' => '',
-              'mime_types' => '',
+              'mime_types' => 'json',
             ),
           ),
           'location'              => array(

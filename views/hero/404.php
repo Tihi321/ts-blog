@@ -9,6 +9,8 @@
 
  $class_name = 'hero';
 
+$hero_file = get_field( Theme_Options::PAGE_NOT_FOUND_ANIMATION, 'option' );
+
 ?>
 <header class="<?php echo esc_attr( "{$class_name}__outer" ); ?>">
   <div class="<?php echo esc_attr( "{$class_name}__inner" ); ?>">

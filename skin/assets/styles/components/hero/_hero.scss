@@ -140,6 +140,26 @@ $desc-vars: (
     color: map-get-strict($desc-vars, 'color');
   }
 
+  &__listing-lottie {
+    &-outer {
+      position: absolute;
+      display: flex;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      transform: translateX(-50%);
+    }
+
+    &-inner {
+      flex: 1;
+      height: auto !important; /* stylelint-disable-line declaration-no-important */
+    }
+
+    &-svg {
+      width: auto !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+
   &__lottie {
     &-outer {
       height: 100%;

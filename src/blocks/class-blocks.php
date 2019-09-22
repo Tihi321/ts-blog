@@ -30,7 +30,7 @@ class Blocks extends Lib_Blocks {
   }
 
   /**
-   * Allowed blocks
+   * Allowed all blocks blocks, overwrite only theme blocks.
    *
    * @param array  $allowed_blocks Array of allowed blocks.
    * @param object $post Post object.
@@ -39,12 +39,6 @@ class Blocks extends Lib_Blocks {
    * @return array
    */
   public function allowed_block_types( $allowed_blocks, $post ) {
-
-    if ( $post->post_type === 'page' || $post->post_type === 'post' ) {
-
-      return $this->get_all_blocks_list( $allowed_blocks );
-    }
-
     return $allowed_blocks;
 
   }

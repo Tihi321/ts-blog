@@ -14,6 +14,9 @@
  */
 
 import { registerBlocks } from 'EighshiftBlocksRegisterBlocks';
+
+import './editor';
+
 import { Wrapper } from './../../wrapper/wrapper';
 import blocksSettings from './../../manifest.json';
 

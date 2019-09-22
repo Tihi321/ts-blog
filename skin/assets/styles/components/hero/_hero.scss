@@ -137,6 +137,7 @@ $desc-vars: (
   }
 
   &__title {
+    text-align: center;
     color: map-get-strict($desc-vars, 'color');
   }
 

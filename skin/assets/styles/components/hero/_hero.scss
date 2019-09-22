@@ -1,5 +1,5 @@
 $hero-vars: (
-  bg: rgba($base-dove-color, 0.7),
+  bg: rgba($base-shaft-color, 0.75),
   backdrop-color: $base-white-color,
   backdrop-font: 14px,
   backdrop-active: #2ECC71,
@@ -90,6 +90,12 @@ $desc-vars: (
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+  }
+
+  &__animated {
+    @include animation(background-loop, 80s, linear);
+    animation-iteration-count: infinite;
+    background-repeat: repeat-x;
   }
 
   &__description {

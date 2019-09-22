@@ -506,8 +506,9 @@ class Theme_Options implements Service {
                 'id' => '',
               ),
               'choices' => array(
-                'image' => 'image',
-                'lottie' => 'lottie',
+                'image' => 'Image',
+                'animated-image' => 'Animated image',
+                'lottie' => 'Lottie',
               ),
               'default_value' => array(
                 0 => 'image',
@@ -532,6 +533,13 @@ class Theme_Options implements Service {
                     'field' => static::LISTING_HERO_TYPE_KEY,
                     'operator' => '==contains',
                     'value' => 'image',
+                  ),
+                ),
+                array(
+                  array(
+                    'field' => static::LISTING_HERO_TYPE_KEY,
+                    'operator' => '==contains',
+                    'value' => 'animated-image',
                   ),
                 ),
               ),

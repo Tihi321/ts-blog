@@ -10,7 +10,7 @@
 use TS_Blog\Plugins\Acf\Theme_Options;
 
 $listing_type = get_field( Theme_Options::LISTING_HERO_TYPE, 'option' );
-$hero_file    = ( $listing_type === 'image' ) ? get_field( Theme_Options::LISTING_IMAGE, 'option' ) : get_field( Theme_Options::LISTING_LOTTIE, 'option' );
+$hero_file    = ( $listing_type === 'lottie' ) ? get_field( Theme_Options::LISTING_LOTTIE, 'option' ) : get_field( Theme_Options::LISTING_IMAGE, 'option' );
 $listing_tips = apply_filters( 'tsb_get_random_field', Theme_Options::LISTING_TIPS );
 
 
@@ -20,7 +20,7 @@ $lottie_class_name = 'hero__listing-lottie';
 
 ?>
   <?php
-  $hero_temaplate = ( $listing_type === 'image' ) ? locate_template( 'views/hero/parts/image.php' ) : locate_template( 'views/hero/parts/lottie.php' );
+  $hero_temaplate = ( $listing_type === 'lottie' ) ? locate_template( 'views/hero/parts/lottie.php' ) : locate_template( 'views/hero/parts/image.php' );
 
   if ( ! empty( $hero_temaplate ) ) {
     include $hero_temaplate;

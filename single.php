@@ -10,7 +10,7 @@
 get_header();
 
 if ( have_posts() ) {
-  $hero_template = locate_template( 'views/hero/hero.php' );
+  $hero_template = locate_template( 'src/blocks/layout/hero/hero.php' );
 
   if ( ! empty( $hero_template ) ) {
     include $hero_template;
@@ -28,7 +28,7 @@ if ( have_posts() ) {
   </section>
   <?php
 
-  require locate_template( 'views/parts/google-rich-snippets.php' );
+  require locate_template( 'src/blocks/components/google-rich-snippets/google-rich-snippets.php' );
 }
 
 get_footer();

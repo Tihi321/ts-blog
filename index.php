@@ -10,7 +10,7 @@
 get_header();
 
 if ( have_posts() ) {
-    $hero_template = locate_template( 'views/hero/hero.php' );
+    $hero_template = locate_template( 'src/blocks/layout/hero/hero.php' );
 
   if ( ! empty( $hero_template ) ) {
     include $hero_template;
@@ -23,7 +23,7 @@ if ( have_posts() ) {
 
   while ( have_posts() ) {
     the_post();
-    get_template_part( 'views/listing/articles/grid' );
+    get_template_part( 'src/blocks/layout/listing/articles/grid' );
   }
   ?>
   </section>
@@ -38,7 +38,7 @@ if ( have_posts() ) {
   <?php
 } else {
 
-  get_template_part( 'views/listing/articles/empty' );
+  get_template_part( 'src/blocks/layout/listing/articles/empty' );
 
 };
 

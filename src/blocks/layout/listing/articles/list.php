@@ -2,7 +2,7 @@
 /**
  * List Simple Article
  *
- * @package TS_Blog\Views\Listing\Articles
+ * @package TS_Blog\Layout\Listing\Articles
  */
 
 $class_name = 'article-list';
@@ -20,7 +20,7 @@ $excerpt   = apply_filters( 'tsb_get_excerpt', 250 );
     </h2>
     <div class="<?php echo esc_attr( "{$class_name}__meta" ); ?>">
       <?php
-      $grid_categories_template = locate_template( 'views/category/parts/categories.php' );
+      $grid_categories_template = locate_template( 'src/blocks/layout/category/parts/categories.php' );
 
       if ( ! empty( $grid_categories_template ) ) {
         include $grid_categories_template;
@@ -36,5 +36,5 @@ $excerpt   = apply_filters( 'tsb_get_excerpt', 250 );
   <div class="<?php echo esc_attr( "{$class_name}__excerpt" ); ?>">
     <?php echo esc_html( $excerpt ); ?>
   </div>
-  <?php require locate_template( 'views/parts/google-rich-snippets.php' ); ?>
+  <?php require locate_template( 'src/blocks/components/google-rich-snippets/google-rich-snippets.php' ); ?>
 </article>

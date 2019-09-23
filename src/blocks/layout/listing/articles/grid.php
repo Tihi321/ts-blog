@@ -2,7 +2,7 @@
 /**
  * Grid Article
  *
- * @package TS_Blog\Views\Listing\Articles
+ * @package TS_Blog\Layout\Listing\Articles
  */
 
 $class_name = 'article-grid';
@@ -16,7 +16,7 @@ $post_date = get_the_date();
   <header class="<?php echo esc_attr( "{$class_name}__content" ); ?>">
     <div class="<?php echo esc_attr( "{$class_name}__meta" ); ?>">
       <?php
-      $grid_categories_template = locate_template( 'views/category/parts/categories.php' );
+      $grid_categories_template = locate_template( 'src/blocks/layout/category/parts/categories.php' );
 
       if ( ! empty( $grid_categories_template ) ) {
         include $grid_categories_template;
@@ -34,5 +34,5 @@ $post_date = get_the_date();
       </a>
     </h2>
   </header>
-  <?php require locate_template( 'views/parts/google-rich-snippets.php' ); ?>
+  <?php require locate_template( 'src/blocks/components/google-rich-snippets/google-rich-snippets.php' ); ?>
 </article>

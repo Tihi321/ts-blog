@@ -11,7 +11,7 @@ $page_class_name = 'page-not-found';
 
 get_header();
 
-$hero_template = locate_template( 'views/hero/404.php' );
+$hero_template = locate_template( 'src/blocks/layout/hero/404.php' );
 
 if ( ! empty( $hero_template ) ) {
   include $hero_template;

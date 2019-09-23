@@ -2,7 +2,7 @@
 /**
  * Hero listing
  *
- * @package TS_Blog\Views\Hero\Parts
+ * @package TS_Blog\Layout\Hero\Parts
  *
  * @since 1.0.0
  */
@@ -20,7 +20,7 @@ $lottie_class_name = 'hero__listing-lottie';
 
 ?>
   <?php
-  $hero_temaplate = ( $listing_type === 'lottie' ) ? locate_template( 'views/hero/parts/lottie.php' ) : locate_template( 'views/hero/parts/image.php' );
+  $hero_temaplate = ( $listing_type === 'lottie' ) ? locate_template( 'src/blocks/layout/hero/parts/lottie.php' ) : locate_template( 'src/blocks/layout/hero/parts/image.php' );
 
   if ( ! empty( $hero_temaplate ) ) {
     include $hero_temaplate;

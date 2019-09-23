@@ -16,7 +16,7 @@ if ( have_posts() ) {
     the_content();
   }
 
-  require locate_template( 'views/parts/google-rich-snippets.php' );
+  require locate_template( 'src/blocks/components/google-rich-snippets/google-rich-snippets.php' );
 }
 
 get_footer();

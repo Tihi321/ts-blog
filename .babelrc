@@ -54,7 +54,7 @@
     [
       "@wordpress/babel-plugin-makepot",
       {
-        "output": "src/languages/ts_blog_js.pot"
+        "output": "languages/ts_blog_js.pot"
       }
     ]
   ]

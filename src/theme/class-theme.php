@@ -10,7 +10,6 @@ namespace TS_Blog\Theme;
 
 use Eightshift_Libs\Core\Service;
 use Eightshift_Libs\Manifest\Manifest_Data;
-use TS_Blog\Routes\Get_Menus;
 
 /**
  * Class Theme

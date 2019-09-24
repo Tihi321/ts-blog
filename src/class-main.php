@@ -48,6 +48,10 @@ class Main extends LibMain {
   protected function get_service_classes() : array {
     return [
 
+      // Utils.
+      Utils\String_Utils::class,
+      Utils\Excerpt::class,
+
       // Assets.
       Manifest\Manifest::class,
 
@@ -55,7 +59,6 @@ class Main extends LibMain {
       Admin\Admin::class => [ Manifest\Manifest::class ],
       Admin\Login::class,
       Admin\Media::class,
-      Admin\Excerpt::class,
 
       // Menu.
       Menu\Menu::class,
@@ -73,9 +76,6 @@ class Main extends LibMain {
 
       // Rest.
       Routes\Get_Header::class,
-
-      // Utils.
-      Utils\String_Utils::class,
     ];
   }
 }

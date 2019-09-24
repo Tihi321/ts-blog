@@ -3,10 +3,10 @@
  * The Excerpt specific functionality.
  *
  * @since   1.0.0
- * @package TS_Blog\Admin
+ * @package TS_Blog\Utils
  */
 
-namespace TS_Blog\Admin;
+namespace TS_Blog\Utils;
 
 use Eightshift_Libs\Core\Service;
 

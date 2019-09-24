@@ -23,7 +23,7 @@ if ( have_posts() ) {
 
   while ( have_posts() ) {
     the_post();
-    get_template_part( 'src/blocks/layout/listing/components/list/list.php' );
+    get_template_part( 'src/blocks/layout/listing/components/list/list' );
   }
   ?>
   </section>

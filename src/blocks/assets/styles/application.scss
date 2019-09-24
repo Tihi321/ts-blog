@@ -19,7 +19,7 @@
 
 
 // Find all layout components and require component_name-style.scss inside it.
-@import './../../layout/*/*-style.scss';
+@import './../../layout/*/**/*-style.scss';
 
 // Find all components inside apps and import their styles.
 @import '../scripts/apps/components/*/style.scss';

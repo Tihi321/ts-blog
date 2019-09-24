@@ -53,7 +53,7 @@
     <div class="<?php echo esc_attr( "{$class_name}__title-bar" ); ?>">
       <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
     <?php
-    $category_menu_template = locate_template( 'src/blocks/layout/category/components/item/item.php' );
+    $category_menu_template = locate_template( 'src/blocks/layout/category/menu.php' );
 
     if ( ! empty( $category_menu_template ) ) {
       include $category_menu_template;

@@ -4,6 +4,7 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 
+// Eightshift blocks.
 const blocks = require('./../vendor/infinum/eightshift-blocks/webpack');
 
 // Plugins.
@@ -39,20 +40,12 @@ const loaders = {
     {
       test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
       exclude: [/fonts/, /node_modules/],
-      loader: 'file-loader',
-      options: {
-        name: '[name].[ext]',
-        outputPath: 'assets',
-      },
+      use: 'file-loader?name=[name].[ext]',
     },
     {
       test: /\.(eot|otf|ttf|woff|woff2|svg)$/,
       exclude: [/images/, /node_modules/],
-      loader: 'file-loader',
-      options: {
-        name: '[name].[ext]',
-        outputPath: 'fonts',
-      },
+      use: 'file-loader?name=[name].[ext]',
     },
     {
       test: /\.scss$/,
@@ -93,6 +86,6 @@ const base = {
   module: loaders,
 };
 
-// Combine base with blocks specific config.
-// If Gutenberg is not used, blocks config can be removed.
+// Combine base with react specific config.
+// If Gutenberg is not used, react config can be removed.
 module.exports = merge(base, blocks);

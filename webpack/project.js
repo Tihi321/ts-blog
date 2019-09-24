@@ -3,9 +3,9 @@
 // Other build files.
 const config = require('./config');
 
-// Main Webpack build setup - Website.
+// Main Webpack build setup - Project specific.
 const project = {
-  context: config.absolutePath,
+  context: config.appPath,
   entry: {
     application: [config.assetsEntry],
     applicationAdmin: [config.assetsAdminEntry],
@@ -19,5 +19,6 @@ const project = {
   },
 };
 
-// Define what output will export for specific build.
+// Export project specific configs.
+// IF you have multiple builds a flag can be added to the package.json config and use switch case to determin the build config.
 module.exports = project;

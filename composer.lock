@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3415392f3441053f65d38d074e137a60",
+    "content-hash": "6beaa06cb4f8a6ff7b73eb466d4abc58",
     "packages": [
         {
             "name": "infinum/eightshift-blocks",
-            "version": "1.0.7",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/infinum/eightshift-blocks.git",
-                "reference": "419b2a92423a2f944799b9071abd3e14ebe61532"
+                "reference": "d5476b9e74a4e2add11b37e997771601c7ca4bc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/infinum/eightshift-blocks/zipball/419b2a92423a2f944799b9071abd3e14ebe61532",
-                "reference": "419b2a92423a2f944799b9071abd3e14ebe61532",
+                "url": "https://api.github.com/repos/infinum/eightshift-blocks/zipball/d5476b9e74a4e2add11b37e997771601c7ca4bc9",
+                "reference": "d5476b9e74a4e2add11b37e997771601c7ca4bc9",
                 "shasum": ""
             },
             "require": {
-                "infinum/eightshift-libs": "^0.8.0",
+                "infinum/eightshift-libs": "^0.9.0",
                 "php": ">=7.0"
             },
             "require-dev": {
@@ -41,9 +41,9 @@
             "authors": [
                 {
                     "name": "Eightshift team",
-                    "role": "Developer / IT Manager",
                     "email": "team@eightshift.com",
-                    "homepage": "https://eightshift.com/"
+                    "homepage": "https://eightshift.com/",
+                    "role": "Developer / IT Manager"
                 }
             ],
             "description": "WordPress Blocks libs developed by Eightshift team to use in modern WordPress.",
@@ -56,20 +56,20 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2019-07-29T11:29:52+00:00"
+            "time": "2019-09-13T11:36:29+00:00"
         },
         {
             "name": "infinum/eightshift-libs",
-            "version": "0.8.0",
+            "version": "0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/infinum/eightshift-libs.git",
-                "reference": "bb9f27b4f456268e94fbc67c7561431da633ce8a"
+                "reference": "4468870d749a03da4150e12c7acceb192fbbe150"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/infinum/eightshift-libs/zipball/bb9f27b4f456268e94fbc67c7561431da633ce8a",
-                "reference": "bb9f27b4f456268e94fbc67c7561431da633ce8a",
+                "url": "https://api.github.com/repos/infinum/eightshift-libs/zipball/4468870d749a03da4150e12c7acceb192fbbe150",
+                "reference": "4468870d749a03da4150e12c7acceb192fbbe150",
                 "shasum": ""
             },
             "require": {
@@ -105,7 +105,7 @@
                 "installer",
                 "plugin"
             ],
-            "time": "2019-07-19T12:44:09+00:00"
+            "time": "2019-09-12T21:36:13+00:00"
         },
         {
             "name": "jeremeamia/superclosure",

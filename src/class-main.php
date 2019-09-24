@@ -14,7 +14,7 @@ namespace TS_Blog\Core;
 use Eightshift_Libs\Core\Main as LibMain;
 
 use TS_Blog\Admin;
-use TS_Blog\Assets;
+use TS_Blog\Manifest;
 use TS_Blog\General;
 use TS_Blog\Blocks;
 use TS_Blog\Admin\Menu;
@@ -48,24 +48,27 @@ class Main extends LibMain {
   protected function get_service_classes() : array {
     return [
 
+      // Utils.
+      Utils\String_Utils::class,
+      Utils\Excerpt::class,
+
       // Assets.
-      Assets\Manifest::class,
+      Manifest\Manifest::class,
 
       // Admin.
-      Admin\Admin::class => [ Assets\Manifest::class ],
+      Admin\Admin::class => [ Manifest\Manifest::class ],
       Admin\Login::class,
       Admin\Media::class,
-      Admin\Excerpt::class,
 
       // Menu.
       Menu\Menu::class,
 
       // Blocks.
-      Blocks\Enqueue::class => [ Assets\Manifest::class ],
+      Blocks\Enqueue::class => [ Manifest\Manifest::class ],
       Blocks\Blocks::class,
 
       // Theme.
-      Theme\Theme::class => [ Assets\Manifest::class ],
+      Theme\Theme::class => [ Manifest\Manifest::class ],
 
       // Plugins.
       Plugins\Acf\Theme_Options::class,
@@ -73,9 +76,6 @@ class Main extends LibMain {
 
       // Rest.
       Routes\Get_Header::class,
-
-      // Utils.
-      Utils\String_Utils::class,
     ];
   }
 }

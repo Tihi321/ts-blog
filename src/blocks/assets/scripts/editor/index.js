@@ -1,4 +1,4 @@
-import { domReady } from '../../../../../skin/assets/scripts/utils/dom';
+import { domReady } from '../utils/dom';
 import { DeregisterCoreBlocks } from './deregister-core-blocks';
 
 domReady(() => {

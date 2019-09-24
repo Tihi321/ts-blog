@@ -10,7 +10,11 @@
  */
 
 // Globals.
-@import './../../../../skin/assets/styles/shared';
+// Utils Shared across project.
+@import 'parts/shared';
+
+//Icons
+@import 'icons/icons';
 
 // Register Wrapper block styles.
 @import './../../wrapper/wrapper-style.scss';

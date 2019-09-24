@@ -1,6 +1,8 @@
 # Project Specific
 /skin/public
 
+public
+
 # Project dev files
 /vendor
 /node_modules

@@ -6,8 +6,7 @@ export class DeregisterCoreBlocks {
     const allBlocks = getBlockTypes();
 
     allBlocks.forEach((block) => {
-      const prefix = block.name.split('/')[0];
-      if (prefix === 'core' || prefix === 'core-embed') {
+      if (block.name.startsWith('core') || block.name.startsWith('core-embed')) {
         unregisterBlockType(block.name);
       }
     });

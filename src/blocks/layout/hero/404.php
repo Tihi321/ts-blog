@@ -16,7 +16,7 @@ $hero_file  = get_field( Theme_Options::PAGE_NOT_FOUND_ANIMATION, 'option' );
 <header class="<?php echo esc_attr( "{$class_name}__outer" ); ?>">
   <div class="<?php echo esc_attr( "{$class_name}__inner" ); ?>">
   <?php
-  $hero_lottie_template = locate_template( 'src/blocks/layout/hero/parts/lottie.php' );
+  $hero_lottie_template = locate_template( 'src/blocks/layout/hero/components/lottie/lottie.php' );
 
   if ( ! empty( $hero_lottie_template ) ) {
     include $hero_lottie_template;

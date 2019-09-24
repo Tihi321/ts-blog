@@ -20,7 +20,7 @@
     ?>
     <div class="<?php echo esc_attr( "{$class_name}__inner" ); ?>">
     <?php
-    $hero_single_template = locate_template( 'src/blocks/layout/hero/parts/single.php' );
+    $hero_single_template = locate_template( 'src/blocks/layout/hero/components/single/single.php' );
 
     if ( ! empty( $hero_single_template ) ) {
       include $hero_single_template;
@@ -30,7 +30,7 @@
     <div class="<?php echo esc_attr( "{$class_name}__title-bar" ); ?>">
       <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
     <?php
-    $post_categories = locate_template( 'src/blocks/layout/hero/parts/post-categories.php' );
+    $post_categories = locate_template( 'src/blocks/layout/hero/components/post-categories/post-categories.php' );
 
     if ( ! empty( $post_categories ) ) {
       include $post_categories;
@@ -43,7 +43,7 @@
     ?>
     <div class="<?php echo esc_attr( "{$class_name}__inner" ); ?>">
     <?php
-    $hero_listing_template = locate_template( 'src/blocks/layout/hero/parts/listing.php' );
+    $hero_listing_template = locate_template( 'src/blocks/layout/hero/components/listing/listing.php' );
 
     if ( ! empty( $hero_listing_template ) ) {
       include $hero_listing_template;
@@ -53,7 +53,7 @@
     <div class="<?php echo esc_attr( "{$class_name}__title-bar" ); ?>">
       <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
     <?php
-    $category_menu_template = locate_template( 'src/blocks/layout/category/menu.php' );
+    $category_menu_template = locate_template( 'src/blocks/layout/category/components/item/item.php' );
 
     if ( ! empty( $category_menu_template ) ) {
       include $category_menu_template;

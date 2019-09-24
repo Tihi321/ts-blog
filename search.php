@@ -23,7 +23,7 @@ if ( have_posts() ) {
 
   while ( have_posts() ) {
     the_post();
-    get_template_part( 'src/blocks/layout/listing/articles/list' );
+    get_template_part( 'src/blocks/layout/listing/components/list/list.php' );
   }
   ?>
   </section>
@@ -44,7 +44,7 @@ if ( have_posts() ) {
     include $hero_template;
   }
 
-  get_template_part( 'src/blocks/layout/listing/articles/empty' );
+  get_template_part( 'src/blocks/layout/listing/components/empty/empty' );
 
 };
 

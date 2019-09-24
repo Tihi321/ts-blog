@@ -27,7 +27,7 @@ $categories      = get_categories();
           continue; // uncategorized category skip.
         }
 
-        $category_item_template = locate_template( 'src/blocks/layout/category/parts/item.php' );
+        $category_item_template = locate_template( 'src/blocks/layout/category/components/item/item.php' );
 
         if ( ! empty( $category_item_template ) ) {
           include $category_item_template;
@@ -37,7 +37,7 @@ $categories      = get_categories();
     ?>
   </div>
   <?php
-    $search_template = locate_template( 'src/blocks/layout/header/search-form.php' );
+    $search_template = locate_template( 'src/blocks/layout/header/conponents/search-form/search-form.php' );
 
   if ( ! empty( $search_template ) ) {
     include $search_template;

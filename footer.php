@@ -13,5 +13,5 @@
 
 <?php
 
-get_template_part( 'src/blocks/layout/footer/content' );
-get_template_part( 'src/blocks/layout/footer/foot' );
+get_template_part( 'src/blocks/layout/footer/components/content/content' );
+get_template_part( 'src/blocks/layout/footer/footer.php' );

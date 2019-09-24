@@ -1,0 +1,14 @@
+// Vendors - node modules
+@import '~media-blender';
+@import 'eightshift-frontend-libs';
+
+// Project specific.
+@import 'utils/colors';
+@import 'utils/shared-variables';
+@import 'utils/functions';
+@import 'utils/placeholders';
+
+// mixins.
+@import 'utils/mixins/animations';
+@import 'utils/mixins/responsive-deep';
+

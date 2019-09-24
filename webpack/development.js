@@ -18,13 +18,13 @@ const plugins = [
   new BrowserSyncPlugin(
     {
       host: 'localhost',
-      port: 4000,
+      port: 3000,
       proxy: config.proxyUrl,
       files: [
         {
           match: [
-            'wp-content/themes/**/*.php',
-            'wp-content/plugins/**/*.php',
+            '**/*.php',
+            '**/*.css',
           ],
         },
       ],

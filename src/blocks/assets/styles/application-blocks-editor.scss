@@ -10,7 +10,8 @@
  */
 
 // Globals.
-@import './../../../../skin/assets/styles/shared';
+// Utils Shared across project.
+@import 'parts/shared';
 
 // Ovveride default editor styles.
 @import 'EighshiftEditorStyleOverride';

@@ -13,7 +13,7 @@
 <html <?php language_attributes(); ?>>
 <head>
   <?php
-    get_template_part( 'src/blocks/layout/header/head' );
+    get_template_part( 'src/blocks/layout/header/conponents/head/head' );
     wp_head();
   ?>
 </head>

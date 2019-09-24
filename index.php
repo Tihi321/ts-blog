@@ -23,7 +23,7 @@ if ( have_posts() ) {
 
   while ( have_posts() ) {
     the_post();
-    get_template_part( 'src/blocks/layout/listing/articles/grid' );
+    get_template_part( 'src/blocks/layout/listing/components/grid/grid' );
   }
   ?>
   </section>
@@ -38,7 +38,7 @@ if ( have_posts() ) {
   <?php
 } else {
 
-  get_template_part( 'src/blocks/layout/listing/articles/empty' );
+  get_template_part( 'src/blocks/layout/listing/components/empty/empty' );
 
 };
 

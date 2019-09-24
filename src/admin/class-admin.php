@@ -9,7 +9,7 @@
 namespace TS_Blog\Admin;
 
 use Eightshift_Libs\Core\Service;
-use Eightshift_Libs\Assets\Manifest_Data;
+use Eightshift_Libs\Manifest\Manifest_Data;
 
 /**
  * Class Admin

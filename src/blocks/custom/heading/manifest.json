@@ -1,13 +1,14 @@
 {
   "blockName": "heading",
   "title": "Heading",
-  "description" : "Heading Block",
+  "description" : "Heading block with custom settings.",
   "category": "common",
   "icon": {
-    "src": "editor-textcolor"
+    "src": "heading"
   },
   "keywords": [
-    "Heading"
+    "Header",
+    "Title"
   ],
   "attributes": {
     "content": {
@@ -15,19 +16,15 @@
     },
     "level": {
       "type": "number",
-      "default": 1
+      "default": 2
     },
     "styleAlign": {
       "type": "string",
-      "default": "left"
-    },
-    "styleColor": {
-      "type": "string",
-      "default": "default"
+      "default": "center"
     },
     "styleSize": {
       "type": "string",
-      "default": "default"
+      "default": "huge"
     }
   }
 }

@@ -4,13 +4,10 @@ import { RichText } from '@wordpress/editor';
 
 export const HeadingEditor = (props) => {
   const {
-    blockClass,
     content,
-    onChangeContent,
-    level,
     styleAlign,
-    styleColor,
     styleSize,
+    onChangeContent,
   } = props;
 
   const componentClass = 'heading';
@@ -18,16 +15,13 @@ export const HeadingEditor = (props) => {
   const headingClass = classnames([
     componentClass,
     `${componentClass}__align--${styleAlign}`,
-    `${componentClass}__color--${styleColor}`,
     `${componentClass}__size--${styleSize}`,
-    `${blockClass}__heading`,
   ]);
 
   return (
     <RichText
-      tagName={`h${level}`}
+      placeholder={__('Add your heading', 'ts-blog')}
       className={headingClass}
-      placeholder={__('Add your heading', 'eightshift-block')}
       onChange={onChangeContent}
       value={content}
     />

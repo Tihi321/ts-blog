@@ -1,46 +1,96 @@
 $heading: (
-  colors: (
-    default: $base-black-color,
-    primary: $base-primary-color,
-  ),
+  highlight-color: $base-primary-color,
+  color: $base-mine-color,
   sizes: (
     mobile: (
-      default: (
-        font-size: 64px,
-        line-height: 1,
+      colossal: (
+        font-size: 50px,
+        line-height: 1.04,
+      ),
+      giant: (
+        font-size: 50px,
+        line-height: 1.16,
+      ),
+      huge: (
+        font-size: 36px,
+        line-height: 1.11,
       ),
       big: (
-        font-size: 42px,
-        line-height: 1.1,
+        font-size: 36px,
+        line-height: 1.11,
+      ),
+      largest: (
+        font-size: 24px,
+        line-height: 1.25,
+      ),
+      larger: (
+        font-size: 24px,
+        line-height: 1.25,
+      ),
+      large: (
+        font-size: 18px,
+        line-height: 1,
       ),
     ),
     tablet: (
-      default: (
-        font-size: 115px,
-        line-height: 0.9,
+      colossal: (
+        font-size: calc-dynamic-font-size(50px, 150px),
+      ),
+      giant: (
+        font-size: calc-dynamic-font-size(50px, 115px),
+      ),
+      huge: (
+        font-size: calc-dynamic-font-size(36px, 80px),
       ),
       big: (
-        font-size: 90px,
-        line-height: 1,
+        font-size: calc-dynamic-font-size(36px, 50px),
+      ),
+      largest: (
+        font-size: calc-dynamic-font-size(24px, 36px),
       ),
     ),
-  )
+    huge: (
+      colossal: (
+        font-size: 150px,
+        line-height: 1.17,
+      ),
+      giant: (
+        font-size: 115px,
+        line-height: 1.06,
+      ),
+      huge: (
+        font-size: 80px,
+        line-height: 1.03,
+      ),
+      big: (
+        font-size: 50px,
+        line-height: 1.04,
+      ),
+      largest: (
+        font-size: 36px,
+        line-height: 1.11,
+      ),
+    ),
+  ),
 );
 
 .heading {
-  @extend %heading-reset;
-  font-weight: bold;
-  color: inherit;
+  @extend %heading;
+  color: map-get-strict($heading, color);
+  transition: {
+    property: font-size, line-height;
+    duration: 0.2s;
+  }
 
-  &__color {
-    @include modifiers(map-get-strict($heading, colors), color);
+  &__align {
+    @include text-align-modifiers();
   }
 
   &__size {
     @include responsive-modifiers($heading, sizes);
   }
 
-  &__align {
-    @include text-align-modifiers;
+  &__highlight {
+    color: map-get-strict($heading, highlight-color);
   }
 }

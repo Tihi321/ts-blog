@@ -9,6 +9,7 @@ export const ParagraphEditor = (props) => {
     onChangeContent,
     styleAlign,
     styleColor,
+    styleSize,
     removeStyle,
   } = props;
 
@@ -18,14 +19,14 @@ export const ParagraphEditor = (props) => {
     componentClass,
     `${componentClass}__color--${styleColor}`,
     `${componentClass}__align--${styleAlign}`,
+    `${componentClass}__size--${styleSize}`,
     `${blockClass}__paragraph`,
   ]);
 
   return (
     <RichText
-      tagName="p"
       className={removeStyle ? '' : paragraphClass}
-      placeholder={__('Add your paragraph', 'eightshift-block')}
+      placeholder={__('Add your paragraph', 'ts-blog')}
       onChange={onChangeContent}
       value={content}
     />

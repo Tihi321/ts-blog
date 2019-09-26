@@ -15,6 +15,8 @@ export const Paragraph = (props) => {
       content,
       styleAlign,
       styleColor,
+      styleSize,
+      removeStyle,
     },
   } = props;
 
@@ -24,16 +26,18 @@ export const Paragraph = (props) => {
     <Fragment>
       <InspectorControls>
         <ParagraphOptions
-          styleAlign={styleAlign}
-          onChangeStyleAlign={actions.onChangeStyleAlign}
           styleColor={styleColor}
           onChangeStyleColor={actions.onChangeStyleColor}
+          styleSize={styleSize}
+          onChangeStyleSize={actions.onChangeStyleSize}
+          removeStyle={removeStyle}
         />
       </InspectorControls>
       <BlockControls>
         <ParagraphToolbar
           styleAlign={styleAlign}
           onChangeStyleAlign={actions.onChangeStyleAlign}
+          removeStyle={removeStyle}
         />
       </BlockControls>
       <ParagraphEditor
@@ -42,6 +46,8 @@ export const Paragraph = (props) => {
         onChangeContent={actions.onChangeContent}
         styleAlign={styleAlign}
         styleColor={styleColor}
+        styleSize={styleSize}
+        removeStyle={removeStyle}
       />
     </Fragment>
   );

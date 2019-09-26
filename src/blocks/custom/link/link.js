@@ -1,11 +1,12 @@
 import { Fragment } from '@wordpress/element';
-import { InspectorControls } from '@wordpress/editor';
+import { InspectorControls, BlockControls } from '@wordpress/editor';
 
 import { getActions } from 'EighshiftBlocksGetActions';
 import manifest from './manifest.json';
 
 import { LinkEditor } from '../../components/link/components/link-editor';
 import { LinkOptions } from '../../components/link/components/link-options';
+import { LinkToolbar } from '../../components/link/components/link-toolbar';
 
 export const Link = (props) => {
   const {
@@ -13,7 +14,10 @@ export const Link = (props) => {
       blockClass,
       title,
       url,
+      icon,
       styleColor,
+      styleAlign,
+      isAnchor,
     },
   } = props;
 
@@ -26,14 +30,27 @@ export const Link = (props) => {
           url={url}
           onChangeUrl={actions.onChangeUrl}
           styleColor={styleColor}
-          onChangeColor={actions.onChangeColor}
+          onChangeStyleColor={actions.onChangeStyleColor}
+          icon={icon}
+          onChangeIcon={actions.onChangeIcon}
+          isAnchor={isAnchor}
+          onChangeIsAnchor={actions.onChangeIsAnchor}
         />
       </InspectorControls>
+      <BlockControls>
+        <LinkToolbar
+          styleAlign={styleAlign}
+          onChangeStyleAlign={actions.onChangeStyleAlign}
+        />
+      </BlockControls>
       <LinkEditor
         blockClass={blockClass}
         title={title}
         onChangeTitle={actions.onChangeTitle}
         styleColor={styleColor}
+        icon={icon}
+        styleAlign={styleAlign}
+        isAnchor={isAnchor}
       />
     </Fragment>
   );

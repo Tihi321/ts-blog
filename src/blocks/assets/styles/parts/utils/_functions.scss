@@ -1,3 +1,16 @@
 @function unicode($str) {
   @return unquote('\"') + $str + unquote('\"');
 }
+
+// Caclculate dynamic fonts using linear function for calculations.
+@function calc-dynamic-font-size($min-font, $max-font, $min-width: tablet, $max-width: large) {
+
+  $min-width: nth(map-get-strict($media-breakpoints, $min-width), 1) * 1px;
+  $max-width: nth(map-get-strict($media-breakpoints, $max-width), 2) * 1px;
+
+  $ratio: (($max-font - $min-font)/($max-width - $min-width));
+  $factor: $min-font - ($ratio * $min-width);
+
+  @return calc(#{$ratio} * 100vw + #{$factor});
+}
+  

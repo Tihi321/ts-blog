@@ -1,13 +1,14 @@
 {
   "blockName": "paragraph",
   "title": "Paragraph",
-  "description" : "Paragraph Block",
+  "description" : "Paragraph block with custom settings.",
   "category": "common",
   "icon": {
-    "src": "editor-rtl"
+    "src": "editor-paragraph"
   },
   "keywords": [
-    "Paragraph"
+    "paragraph",
+    "paragraph block"
   ],
   "attributes": {
     "content": {
@@ -21,9 +22,13 @@
       "type": "string",
       "default": "default"
     },
-    "styleType": {
+    "styleSize": {
       "type": "string",
-      "default": "primary"
+      "default": "default"
+    },
+    "removeStyle": {
+      "type": "bool",
+      "default": false
     }
   }
 }

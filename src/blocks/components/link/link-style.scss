@@ -1,20 +1,40 @@
 $link: (
+  font-family: $secondary-font-family,
+  icon-color: $base-primary-color,
   colors: (
     default: (
       normal: (
         color: $base-primary-color,
       ),
       hover: (
-        color: $base-black-color,
+        color: $base-primary-color,
       ),
     ),
   )
 );
 
 .link {
+  $this: &;
+  font-family: map-get-strict($link, font-family);
+  font-weight: bold;
   text-decoration: none;
+  display: block;
 
   &__color {
     @include link-modifiers($link, colors);
+  }
+
+  &__align {
+    @include text-align-modifiers();
+  }
+
+  &__icon {
+    @include animated-icon(map-get-strict($link, icon-color));
+  }
+
+  &:hover {
+    #{$this}__icon {
+      @include animated-icon-hover;
+    }
   }
 }

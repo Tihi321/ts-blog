@@ -2,9 +2,10 @@ $lists: (
   default: (
     mobile: (
       font-size: 18px,
-      line-height: 1.44,
+      line-height: 1.33,
     ),
   ),
+  secondary-font-family: $secondary-font-family,
 );
 
 .lists {
@@ -14,5 +15,22 @@ $lists: (
 
   li {
     @extend %list-reset;
+    display: flex;
+    padding-bottom: 12px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &::before {
+      content: '\2014';
+      margin-right: 15px;
+    }
+  }
+
+  &__type {
+    &--secondary {
+      font-family: map-get-strict($lists, secondary-font-family);
+    }
   }
 }

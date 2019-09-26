@@ -1,0 +1,40 @@
+@mixin animated-icon($color) {
+  margin-left: 20px;
+  vertical-align: middle;
+  position: relative;
+  padding-right: 7px;
+  height: 11px;
+  display: inline-flex;
+  align-items: center;
+
+  &::before {
+    background-color: $color;
+    height: 1px;
+    display: block;
+    content: '';
+    width: 0;
+    transition: {
+      property: width;
+      timing-function: ease-in-out;
+      duration: 0.3s;
+    }
+  }
+
+  &::after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    right: 0;
+    border-width: 6px 0 6px 7px;
+    border-color: transparent transparent transparent $color;
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+@mixin animated-icon-hover() {
+  &::before {
+    width: 21px;
+  }
+}

@@ -19,6 +19,18 @@
     "styleColor": {
       "type": "string",
       "default": "default"
+    },
+    "styleAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "icon": {
+      "type": "string",
+      "default": "arrow-right"
+    },
+    "isAnchor": {
+      "type": "bool",
+      "default": false
     }
   }
 }

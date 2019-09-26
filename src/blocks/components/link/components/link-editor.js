@@ -8,6 +8,8 @@ export const LinkEditor = (props) => {
     title,
     onChangeTitle,
     styleColor,
+    styleAlign,
+    icon,
   } = props;
 
   const componentClass = 'link';
@@ -15,6 +17,8 @@ export const LinkEditor = (props) => {
   const linkClass = classnames([
     componentClass,
     `${componentClass}__color--${styleColor}`,
+    `${componentClass}__icon--${icon}`,
+    `${componentClass}__align--${styleAlign}`,
     `${blockClass}__link`,
   ]);
 

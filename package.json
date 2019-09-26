@@ -67,6 +67,7 @@
     "lottie-web": "^5.5.7",
     "media-blender": "^2.1.0",
     "normalize-scss": "^7.0.1",
+    "scrollmonitor": "^1.2.4",
     "postcss-cssnext": "^3.1.0",
     "postcss-font-magician": "^2.2.2",
     "react-use": "^12.2.0",

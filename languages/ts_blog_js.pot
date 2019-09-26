@@ -16,8 +16,6 @@ msgid "Button Color"
 msgstr ""
 
 #: src/blocks/components/button/components/button-options.js:28
-#: src/blocks/components/heading/components/heading-options.js:21
-#: src/blocks/components/paragraph/components/paragraph-options.js:23
 msgid "Primary"
 msgstr ""
 
@@ -26,7 +24,6 @@ msgid "Button Size"
 msgstr ""
 
 #: src/blocks/components/button/components/button-options.js:40
-#: src/blocks/components/heading/components/heading-options.js:33
 #: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:103
 msgid "Big"
 msgstr ""
@@ -36,9 +33,8 @@ msgid "Button Size Width"
 msgstr ""
 
 #: src/blocks/components/button/components/button-options.js:51
-#: src/blocks/components/heading/components/heading-options.js:32
-#: src/blocks/components/link/components/link-options.js:21
-#: src/blocks/components/paragraph/components/paragraph-options.js:22
+#: src/blocks/components/link/components/link-options.js:25
+#: src/blocks/components/paragraph/components/paragraph-options.js:24
 #: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:121
 msgid "Default"
 msgstr ""
@@ -55,20 +51,46 @@ msgstr ""
 msgid "Button ID"
 msgstr ""
 
-#: src/blocks/components/heading/components/heading-editor.js:30
+#: src/blocks/components/heading/components/heading-editor.js:23
+#: src/blocks/custom/image-text/components/image-text-editor.js:51
 msgid "Add your heading"
 msgstr ""
 
-#: src/blocks/components/heading/components/heading-options.js:13
+#: src/blocks/components/heading/components/heading-options.js:11
 msgid "Heading Details"
 msgstr ""
 
-#: src/blocks/components/heading/components/heading-options.js:17
-msgid "Heading Color"
+#: src/blocks/components/heading/components/heading-options.js:15
+msgid "Heading Size"
 msgstr ""
 
-#: src/blocks/components/heading/components/heading-options.js:29
-msgid "Heading Size"
+#: src/blocks/components/heading/components/heading-options.js:18
+msgid "Colossal (150px)"
+msgstr ""
+
+#: src/blocks/components/heading/components/heading-options.js:19
+msgid "Giant (115px)"
+msgstr ""
+
+#: src/blocks/components/heading/components/heading-options.js:20
+msgid "Huge (80px)"
+msgstr ""
+
+#: src/blocks/components/heading/components/heading-options.js:21
+msgid "Big (50px)"
+msgstr ""
+
+#: src/blocks/components/heading/components/heading-options.js:22
+#: src/blocks/components/paragraph/components/paragraph-options.js:38
+msgid "Largest (24px)"
+msgstr ""
+
+#: src/blocks/components/heading/components/heading-options.js:23
+msgid "Larger (22px)"
+msgstr ""
+
+#: src/blocks/components/heading/components/heading-options.js:24
+msgid "Large (20px)"
 msgstr ""
 
 #: src/blocks/components/image/components/image-options.js:11
@@ -76,39 +98,90 @@ msgid "Image Settings"
 msgstr ""
 
 #: src/blocks/components/image/components/image-options.js:14
+#: src/blocks/custom/image-text/components/image-text-options.js:26
 msgid "Image"
 msgstr ""
 
-#: src/blocks/components/link/components/link-editor.js:23
+#: src/blocks/components/link/components/link-editor.js:27
 msgid "Add Link Title"
 msgstr ""
 
-#: src/blocks/components/link/components/link-options.js:14
+#: src/blocks/components/link/components/link-options.js:18
 msgid "Link Details"
 msgstr ""
 
-#: src/blocks/components/link/components/link-options.js:18
+#: src/blocks/components/link/components/link-options.js:22
 msgid "Link Color"
 msgstr ""
 
-#: src/blocks/components/link/components/link-options.js:29
+#: src/blocks/components/link/components/link-options.js:33
+msgid "Icon"
+msgstr ""
+
+#: src/blocks/components/link/components/link-options.js:36
+msgid "None"
+msgstr ""
+
+#: src/blocks/components/link/components/link-options.js:37
+msgid "Arrow Right"
+msgstr ""
+
+#: src/blocks/components/link/components/link-options.js:45
+#: src/blocks/wrapper/components/wrapper-options.js:213
+msgid "Anchor"
+msgstr ""
+
+#: src/blocks/components/link/components/link-options.js:53
 msgid "Link Url"
 msgstr ""
 
-#: src/blocks/components/lists/components/lists-editor.js:26
+#: src/blocks/components/lists/components/lists-editor.js:28
 msgid "Add your list item"
 msgstr ""
 
-#: src/blocks/components/paragraph/components/paragraph-editor.js:28
+#: src/blocks/components/lists/components/lists-options.js:11
+msgid "List Details"
+msgstr ""
+
+#: src/blocks/components/lists/components/lists-options.js:15
+msgid "List Font Type"
+msgstr ""
+
+#: src/blocks/components/lists/components/lists-options.js:18
+msgid "Sans Serif Font"
+msgstr ""
+
+#: src/blocks/components/lists/components/lists-options.js:19
+msgid "Serif Font"
+msgstr ""
+
+#: src/blocks/components/paragraph/components/paragraph-editor.js:29
+#: src/blocks/custom/image-text/components/image-text-editor.js:58
 msgid "Add your paragraph"
 msgstr ""
 
-#: src/blocks/components/paragraph/components/paragraph-options.js:15
+#: src/blocks/components/paragraph/components/paragraph-options.js:17
 msgid "Paragraph Details"
 msgstr ""
 
-#: src/blocks/components/paragraph/components/paragraph-options.js:19
+#: src/blocks/components/paragraph/components/paragraph-options.js:21
 msgid "Paragraph Color"
+msgstr ""
+
+#: src/blocks/components/paragraph/components/paragraph-options.js:25
+msgid "Silver"
+msgstr ""
+
+#: src/blocks/components/paragraph/components/paragraph-options.js:26
+msgid "White"
+msgstr ""
+
+#: src/blocks/components/paragraph/components/paragraph-options.js:34
+msgid "Paragraph Font Size"
+msgstr ""
+
+#: src/blocks/components/paragraph/components/paragraph-options.js:37
+msgid "Default (18px)"
 msgstr ""
 
 #: src/blocks/components/video/components/video-options.js:11
@@ -117,6 +190,38 @@ msgstr ""
 
 #: src/blocks/components/video/components/video-options.js:14
 msgid "Video"
+msgstr ""
+
+#: src/blocks/custom/image-text/components/image-text-editor.js:39
+msgid "Lottie Animation"
+msgstr ""
+
+#: src/blocks/custom/image-text/components/image-text-options.js:19
+msgid "Image Text Settings"
+msgstr ""
+
+#: src/blocks/custom/image-text/components/image-text-options.js:23
+msgid "Type"
+msgstr ""
+
+#: src/blocks/custom/image-text/components/image-text-options.js:27
+msgid "Lottie"
+msgstr ""
+
+#: src/blocks/custom/image-text/components/image-text-options.js:34
+msgid "Image Position"
+msgstr ""
+
+#: src/blocks/custom/image-text/components/image-text-options.js:37
+msgid "Left"
+msgstr ""
+
+#: src/blocks/custom/image-text/components/image-text-options.js:38
+msgid "Right"
+msgstr ""
+
+#: src/blocks/custom/image-text/components/image-text-options.js:46
+msgid "Image or Video"
 msgstr ""
 
 #: src/blocks/toolbars/heading-level.js:8
@@ -175,10 +280,6 @@ msgstr ""
 
 #: src/blocks/wrapper/components/wrapper-options.js:202
 msgid "Add Unique ID to the block."
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:213
-msgid "Anchor"
 msgstr ""
 
 #: src/blocks/wrapper/components/wrapper-options.js:216

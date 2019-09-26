@@ -3,10 +3,10 @@
  * Template for the Wrapping Advance block.
  *
  * @since 1.0.0
- * @package Infinum\Blocks.
+ * @package TS_Blog\Blocks.
  */
 
-namespace Infinum\Blocks;
+namespace TS_Blog\Blocks;
 
 // Used to add or remove wrapper.
 $has_wrapper = $attributes['hasWrapper'] ?? true;

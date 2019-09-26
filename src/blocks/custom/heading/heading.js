@@ -15,7 +15,6 @@ export const Heading = (props) => {
       content,
       level,
       styleAlign,
-      styleColor,
       styleSize,
     },
   } = props;
@@ -26,8 +25,6 @@ export const Heading = (props) => {
     <Fragment>
       <InspectorControls>
         <HeadingOptions
-          styleColor={styleColor}
-          onChangeStyleColor={actions.onChangeStyleColor}
           styleSize={styleSize}
           onChangeStyleSize={actions.onChangeStyleSize}
         />
@@ -46,7 +43,6 @@ export const Heading = (props) => {
         onChangeContent={actions.onChangeContent}
         level={level}
         styleAlign={styleAlign}
-        styleColor={styleColor}
         styleSize={styleSize}
       />
     </Fragment>

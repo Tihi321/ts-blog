@@ -1,12 +1,13 @@
 {
   "blockName": "lists",
   "title": "Lists",
-  "description" : "Lists Block",
+  "description" : "Lists block with custom settings.",
   "category": "common",
   "icon": {
-    "src": "editor-rtl"
+    "src": "editor-ul"
   },
   "keywords": [
+    "List",
     "Lists"
   ],
   "attributes": {
@@ -16,6 +17,10 @@
     "ordered": {
       "type": "string",
       "default": "ul"
+    },
+    "styleType": {
+      "type": "string",
+      "default": "primary"
     }
   }
 }

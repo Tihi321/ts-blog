@@ -1,18 +1,68 @@
 $paragraph: (
-  colors: (
-    default: $base-black-color,
-    primary: $base-primary-color,
+  sizes: (
+    mobile: (
+      big: (
+        font-size: 20px,
+        line-height: 1.38,
+      ),
+      largest: (
+        font-size: 20px,
+        line-height: 1.4,
+      ),
+      larger: (
+        font-size: 20px,
+        line-height: 1.3,
+      ),
+      default: (
+        font-size: 18px,
+        line-height: 1.56,
+      ),
+      small: (
+        font-size: 16px,
+        line-height: 1,
+      ),
+    ),
+    tablet: (
+      big: (
+        font-size: calc-dynamic-font-size(20px, 26px),
+      ),
+      largest: (
+        font-size: calc-dynamic-font-size(20px, 24px),
+      ),
+    ),
+    huge: (
+      big: (
+        font-size: 26px,
+      ),
+      largest: (
+        font-size: 24px,
+        line-height: 1.33,
+      ),
+    ),
   ),
+  colors: (
+    default: $base-mine-color,
+    silver: $base-silver-color,
+    white: $base-white-color,
+  )
 );
 
 .paragraph {
   @extend %paragraph-reset;
-
-  &__color {
-    @include modifiers(map-get-strict($paragraph, colors), color);
+  transition: {
+    property: font-size, line-height;
+    duration: 0.2s;
   }
 
   &__align {
-    @include text-align-modifiers;
+    @include text-align-modifiers();
+  }
+
+  &__size {
+    @include responsive-modifiers($paragraph, sizes);
+  }
+
+  &__color {
+    @include modifiers-deep($paragraph, colors, color);
   }
 }

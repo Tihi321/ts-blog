@@ -9,12 +9,14 @@ export const ListsEditor = (props) => {
     onChangeContent,
     ordered,
     onChangeOrdered,
+    styleType,
   } = props;
 
   const componentClass = 'lists';
 
   const listsClass = classnames([
     componentClass,
+    `${componentClass}__type--${styleType}`,
     `${blockClass}__lists`,
   ]);
 
@@ -23,7 +25,7 @@ export const ListsEditor = (props) => {
       tagName={ordered}
       multiline="li"
       className={listsClass}
-      placeholder={__('Add your list item', 'eightshift-block')}
+      placeholder={__('Add your list item', 'ts-blog')}
       onChange={onChangeContent}
       value={content}
       onTagNameChange={onChangeOrdered}

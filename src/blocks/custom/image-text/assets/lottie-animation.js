@@ -3,20 +3,20 @@ import scrollMonitor from 'scrollmonitor';
 
 export class LottieAnimation {
   constructor(containerElement) {
-    this.$items = $(containerElement);
+    this.lottieElements = document.querySelectorAll(containerElement);
   }
 
   init() {
     const items = [];
 
-    $.each(this.$items, (index, element) => {
+    this.lottieElements.forEach((element, index) => {
       this.lottieParms = {
         container: element,
         renderer: 'svg',
         loop: false,
         autoplay: false,
         progressiveLoad: true,
-        path: $(element).attr('data-animation'),
+        path: element.dataset.animation,
       };
 
       // Prepare animation.
@@ -32,8 +32,6 @@ export class LottieAnimation {
           items[index] = true;
         }
       });
-      
-      
     });
   }
 

@@ -4,20 +4,29 @@ export const WrapperEditor = (props) => {
   const {
     children,
     attributes: {
+      id,
       styleBackgroundColor,
-      styleTextColor,
+
       styleContentWidth,
       styleContentOffset,
       styleContainerWidth,
       styleContainerSpacing,
       styleSpacingTop,
-      styleSpacingTopTablet,
-      styleSpacingTopMobile,
       styleSpacingBottom,
+
+      styleContentWidthTablet,
+      styleContentOffsetTablet,
+      styleContainerWidthTablet,
+      styleContainerSpacingTablet,
+      styleSpacingTopTablet,
       styleSpacingBottomTablet,
+
+      styleContentWidthMobile,
+      styleContentOffsetMobile,
+      styleContainerWidthMobile,
+      styleContainerSpacingMobile,
+      styleSpacingTopMobile,
       styleSpacingBottomMobile,
-      styleShowOnlyMobile,
-      id,
     },
   } = props;
 
@@ -25,27 +34,52 @@ export const WrapperEditor = (props) => {
 
   const wrapperClass = classnames([
     wrapperMainClass,
-    `${wrapperMainClass}__bg-color--${styleBackgroundColor}`,
-    `${wrapperMainClass}__text-color--${styleTextColor}`,
-    `${wrapperMainClass}__width--${styleContentWidth}`,
-    `${wrapperMainClass}__spacing-top--${styleSpacingTop}`,
-    `${wrapperMainClass}__spacing-top-tablet--${styleSpacingTopTablet}`,
-    `${wrapperMainClass}__spacing-top-mobile--${styleSpacingTopMobile}`,
-    `${wrapperMainClass}__spacing-bottom--${styleSpacingBottom}`,
-    `${wrapperMainClass}__spacing-bottom-tablet--${styleSpacingBottomTablet}`,
-    `${wrapperMainClass}__spacing-bottom-mobile--${styleSpacingBottomMobile}`,
-    `${wrapperMainClass}__show-only-mobile--${styleShowOnlyMobile}`,
+    styleBackgroundColor && `${wrapperMainClass}__bg-color--${styleBackgroundColor}`,
+
+    // Desktop.
+    styleContentWidth && `${wrapperMainClass}__content-width--${styleContentWidth}`,
+    styleSpacingTop && `${wrapperMainClass}__spacing-top--${styleSpacingTop}`,
+    styleSpacingBottom && `${wrapperMainClass}__spacing-bottom--${styleSpacingBottom}`,
+
+    // Tablet.
+    styleContentWidthTablet && `${wrapperMainClass}__content-width-tablet--${styleContentWidthTablet}`,
+    styleSpacingTopTablet && `${wrapperMainClass}__spacing-top-tablet--${styleSpacingTopTablet}`,
+    styleSpacingBottomTablet && `${wrapperMainClass}__spacing-bottom-tablet--${styleSpacingBottomTablet}`,
+
+    // Mobile.
+    styleContentWidthMobile && `${wrapperMainClass}__content-width-mobile--${styleContentWidthMobile}`,
+    styleSpacingTopMobile && `${wrapperMainClass}__spacing-top-mobile--${styleSpacingTopMobile}`,
+    styleSpacingBottomMobile && `${wrapperMainClass}__spacing-bottom-mobile--${styleSpacingBottomMobile}`,
   ]);
 
   const wrapperContainerClass = classnames([
     `${wrapperMainClass}__container`,
-    `${wrapperMainClass}__container-width--${styleContainerWidth}`,
-    `${wrapperMainClass}__container-spacing--${styleContainerSpacing}`,
+
+    // Desktop.
+    styleContainerWidth && `${wrapperMainClass}__container-width--${styleContainerWidth}`,
+    styleContainerSpacing && `${wrapperMainClass}__container-spacing--${styleContainerSpacing}`,
+
+    // Tablet.
+    styleContainerWidthTablet && `${wrapperMainClass}__container-width-tablet--${styleContainerWidthTablet}`,
+    styleContainerSpacingTablet && `${wrapperMainClass}__container-spacing-tablet--${styleContainerSpacingTablet}`,
+
+    // Mobile.
+    styleContainerWidthMobile && `${wrapperMainClass}__container-width-mobile--${styleContainerWidthMobile}`,
+    styleContainerSpacingMobile && `${wrapperMainClass}__container-spacing-mobile--${styleContainerSpacingMobile}`,
+    
   ]);
 
   const wrapperInnerClass = classnames([
     `${wrapperMainClass}__inner`,
-    `${wrapperMainClass}__inner-offset--${styleContentOffset}`,
+
+    // Desktop.
+    styleContentOffset && `${wrapperMainClass}__inner-offset--${styleContentOffset}`,
+
+    // Tablet.
+    styleContentOffsetTablet && `${wrapperMainClass}__inner-offset-tablet--${styleContentOffsetTablet}`,
+
+    // Mobile.
+    styleContentOffsetMobile && `${wrapperMainClass}__inner-offset-mobile--${styleContentOffsetMobile}`,
   ]);
 
   return (

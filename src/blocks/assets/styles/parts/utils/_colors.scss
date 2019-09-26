@@ -8,18 +8,23 @@ https://github.com/infinum/eightshift-frontend-libs/blob/develop/scss/_colors.sc
 
 /* colors */
 
-$base-shaft-color:      #333333;
+$base-mine-color:       #333333;
 $base-dove-color:       #666666;
 $base-witty-color:      #FFFFF9;
-
+$base-silver-color:     #CCCCCC;
 $base-juniper-color:    #788D93;
-
 $base-contessa-color:   #C97C7A;
 $base-glacier-color:    #83B5CA;
+$base-horizon-color:    #6693AC;
 $base-patina-color:     #609295;
+$base-success-color:    #6E8F50;
 $base-smoky-color:      #67597A;
 $base-juan-color:       #28536B;
+$base-sand-color:       #F4F4F4;
 
+
+$base-primary-color: $base-juan-color;
+$base-secondary-color: $base-patina-color;
 
 $base-text-color: $base-juniper-color;
 $base-background-color: $base-witty-color;

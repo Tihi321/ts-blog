@@ -1,4 +1,47 @@
 {
   "namespace": "ts-blog",
-  "background": "#900000"
+  "background": "#6693AC",
+  "maxCols": 12,
+  "colors": {
+    "mine": {
+      "name": "mine",
+      "color": "#333333"
+    },
+    "contessa": {
+      "name": "contessa",
+      "color": "#C97C7A"
+    },
+    "horizon": {
+      "name": "horizon",
+      "color": "#6693AC"
+    },
+    "juan": {
+      "name": "juan",
+      "color": "#28536B"
+    },
+    "smoky": {
+      "name": "smoky",
+      "color": "#67597A"
+    },
+    "patina": {
+      "name": "patina",
+      "color": "#609295"
+    },
+    "success": {
+      "name": "success",
+      "color": "#6E8F50"
+    },
+    "silver": {
+      "name": "silver",
+      "color": "#CCCCCC"
+    },
+    "sand": {
+      "name": "sand",
+      "color": "#F4F4F4"
+    },
+    "white": {
+      "name": "white",
+      "color": "#FFFFFF"
+    }
+  }
 }

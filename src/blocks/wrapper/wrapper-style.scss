@@ -1,13 +1,27 @@
 $wrapper: (
   background-colors: (
-    'default': $base-background-color,
-    'primary': $base-primary-color,
-    'black': $base-black-color,
-  ),
-  text-colors: (
-    'default': $base-text-color,
+    mine: $base-mine-color,
+    silver:  $base-silver-color,
+    contessa:  $base-contessa-color,
+    horizon:  $base-horizon-color,
+    patina:  $base-patina-color,
+    smoky:  $base-smoky-color,
+    juan:  $base-juan-color,
+    success:  $base-success-color,
+    sand:  $base-sand-color,
+    white:  $base-white-color,
   ),
   spacings: (
+    great:      300px,
+    gigantic:   280px,
+    gargantuan: 260px,
+    extensive:  240px,
+    enormous:   220px,
+    colossal:   200px,
+    hugest:     180px,
+    huger:      160px,
+    huge:       140px,
+    giant:      120px,
     biggest:    100px,
     bigger:     90px,
     big:        80px,
@@ -18,58 +32,30 @@ $wrapper: (
     medium:     30px,
     small:      20px,
     tiny:       10px,
-    no-spacing: 0
-  ),
-  container-spacings: (
-    default: $base-gutter-size,
     no-spacing: 0,
   ),
   containers: (
     default: $base-container-size,
-    medium: 1110px,
-    no-width: auto,
+    big: 1340px,
+  ),
+  right-edge-offset: (
+    tablet: map-get-strict($container-spacing, mobile),
+    desktop: map-get-strict($container-spacing, large),
+    custom-big: 50px,
   ),
 );
 
 .wrapper {
   $this: &;
-  position: relative;
 
-  &__show-only-mobile--true {
-    @include media(tablet up) {
-      display: none;
-    }
-  }
+  &__anchor {
+    position: absolute;
+    left: -9999px;
+    z-index: -1;
+    margin-top: -(map-get-deep($globals, header-height, mobile));
 
-  &__spacing-top {
-    @include modifiers-deep($wrapper, spacings, padding-top);
-  }
-
-  &__spacing-top-tablet {
-    @include media(tablet) {
-      @include modifiers-deep($wrapper, spacings, padding-top);
-    }
-  }
-
-  &__spacing-top-mobile {
-    @include media(mobile down) {
-      @include modifiers-deep($wrapper, spacings, padding-top);
-    }
-  }
-
-  &__spacing-bottom {
-    @include modifiers-deep($wrapper, spacings, padding-bottom);
-  }
-
-  &__spacing-bottom-tablet {
-    @include media(tablet) {
-      @include modifiers-deep($wrapper, spacings, padding-bottom);
-    }
-  }
-
-  &__spacing-bottom-mobile {
-    @include media(mobile down) {
-      @include modifiers-deep($wrapper, spacings, padding-bottom);
+    @include media(large up) {
+      margin-top: -(map-get-deep($globals, header-height, large));
     }
   }
 
@@ -77,8 +63,152 @@ $wrapper: (
     @include modifiers-deep($wrapper, background-colors, background-color);
   }
 
-  &__text-color {
-    @include modifiers-deep($wrapper, text-colors, color);
+  &__content-width {
+    @include flex-grid-width-modifiers($wrapper: #{$this}__inner);
+
+    &-tablet {
+      @include media(tablet) {
+        @include flex-grid-width-modifiers($wrapper: #{$this}__inner);
+      }
+    }
+
+    &-mobile {
+      @include media(mobile down) {
+        @include flex-grid-width-modifiers($wrapper: #{$this}__inner);
+      }
+    }
+  }
+
+  // Content Offset.
+  &__inner-offset {
+    &--content-spacing {
+      padding-left: calc-grid-width(4);
+    }
+
+    &--content-spacing-small {
+      padding-left: calc-grid-width(1);
+    }
+
+    &--right-edge {
+      margin-left: map-get-deep($wrapper, right-edge-offset, tablet);
+    }
+
+    &--center {
+      margin: 0 auto;
+    }
+  }
+
+  &__inner-offset-tablet {
+    @include media(tablet) {
+      &--content-spacing {
+        padding-left: calc-grid-width(4);
+      }
+
+      &--content-spacing-small {
+        padding-left: calc-grid-width(1);
+      }
+
+      &--right-edge {
+        margin-left: map-get-deep($wrapper, right-edge-offset, tablet);
+      }
+
+      &--center {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__inner-offset-mobile {
+    @include media(mobile down) {
+      &--content-spacing {
+        padding-left: calc-grid-width(4);
+      }
+
+      &--content-spacing-small {
+        padding-left: calc-grid-width(1);
+      }
+
+      &--right-edge {
+        margin-left: map-get-deep($wrapper, right-edge-offset, tablet);
+      }
+
+      &--center {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__container-width {
+    @include modifiers-deep($wrapper, containers, max-width);
+
+    &-tablet {
+      @include media(tablet) {
+        @include modifiers-deep($wrapper, containers, max-width);
+      }
+    }
+
+    &-mobile {
+      @include media(mobile down) {
+        @include modifiers-deep($wrapper, containers, max-width);
+      }
+    }
+  }
+
+  &__container-spacing {
+    &--default {
+      @extend %container-spacing;
+    }
+  }
+
+  &__spacing-top {
+    @include modifiers-deep($wrapper, spacings, padding-top);
+
+    &-tablet {
+      @include media(tablet) {
+        @include modifiers-deep($wrapper, spacings, padding-top);
+      }
+    }
+
+    &-mobile {
+      @include media(mobile down) {
+        @include modifiers-deep($wrapper, spacings, padding-top);
+      }
+    }
+  }
+
+
+  &__spacing-bottom {
+    @include modifiers-deep($wrapper, spacings, padding-bottom);
+
+    &-tablet {
+      @include media(tablet) {
+        @include modifiers-deep($wrapper, spacings, padding-bottom);
+      }
+    }
+
+    &-mobile {
+      @include media(mobile down) {
+        @include modifiers-deep($wrapper, spacings, padding-bottom);
+      }
+    }
+  }
+
+  &__hide-block {
+    @include media(desktop up) {
+      display: none;
+    }
+
+    &-tablet {
+      @include media(tablet) {
+        display: none;
+      }
+    }
+
+    &-mobile {
+      @include media(mobile down) {
+        display: none;
+      }
+    }
   }
 
   &__container {
@@ -87,28 +217,16 @@ $wrapper: (
     display: flex;
   }
 
-  &__container-spacing {
-    @include modifiers-deep($wrapper, container-spacings, padding-left);
-    @include modifiers-deep($wrapper, container-spacings, padding-right);
-  }
-
-  &__container-width {
-    @include modifiers-deep($wrapper, containers, max-width);
-  }
-
   &__inner {
     @include flex-grid-width;
   }
 
-  &__width {
-    @include media(desktop up) {
-      @include flex-grid-width-modifiers($wrapper: #{$this}__inner);
-    }
-  }
+  // Used to toggle state using toggle-block.
+  &.is-hidden-small {
+    display: none;
 
-  &__inner-offset {
-    &--center {
-      margin: 0 auto;
+    @include media(mobile up) {
+      display: block;
     }
   }
 }

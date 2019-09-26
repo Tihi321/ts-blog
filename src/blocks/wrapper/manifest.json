@@ -3,57 +3,90 @@
     "id": {
       "type": "string"
     },
-    "styleContentWidth": {
-      "type": "string",
-      "default": "12"
-    },
-    "styleContentOffset": {
-      "type": "string",
-      "default": "none"
-    },
-    "styleContainerSpacing": {
-      "type": "string",
-      "default": "default"
-    },
-    "styleContainerWidth": {
-      "type": "string",
-      "default": "medium"
-    },
-    "styleTextColor": {
-      "type": "string",
-      "default": "default"
+    "anchor": {
+      "type": "string"
     },
     "styleBackgroundColor": {
       "type": "string",
       "default": "white"
     },
-    "styleSpacingTop": {
+    "hasWrapper": {
+      "type": "bool",
+      "default": true
+    },
+
+    "styleContentWidth": {
+      "type": "number",
+      "default": 12
+    },
+    "styleContentOffset": {
       "type": "string",
-      "default": "no-spacing"
+      "default": "center"
     },
-    "styleSpacingTopTablet": {
-      "type": "string"
+    "styleContainerWidth": {
+      "type": "string",
+      "default": "default"
     },
-    "styleSpacingTopMobile": {
+    "styleContainerSpacing": {
+      "type": "string",
+      "default": "default"
+    },
+    "styleSpacingTop": {
       "type": "string"
     },
     "styleSpacingBottom": {
       "type": "string",
       "default": "default"
     },
+    "styleHideBlock": {
+      "type": "bool",
+      "default": false
+    },
+
+    "styleContentWidthTablet": {
+      "type": "number"
+    },
+    "styleContentOffsetTablet": {
+      "type": "string"
+    },
+    "styleContainerWidthTablet": {
+      "type": "string"
+    },
+    "styleContainerSpacingTablet": {
+      "type": "string"
+    },
+    "styleSpacingTopTablet": {
+      "type": "string"
+    },
     "styleSpacingBottomTablet": {
+      "type": "string"
+    },
+    "styleHideBlockTablet": {
+      "type": "bool",
+      "default": false
+    },
+
+    "styleContentWidthMobile": {
+      "type": "number"
+    },
+    "styleContentOffsetMobile": {
+      "type": "string"
+    },
+    "styleContainerWidthMobile": {
+      "type": "string"
+    },
+    "styleContainerSpacingMobile": {
+      "type": "string"
+    },
+    "styleSpacingTopMobile": {
       "type": "string"
     },
     "styleSpacingBottomMobile": {
       "type": "string"
     },
-    "styleShowOnlyMobile": {
-      "type": "string",
-      "default": "false"
-    },
-    "hasWrapper": {
+    "styleHideBlockMobile": {
       "type": "bool",
-      "default": true
+      "default": false
     }
   }
 }

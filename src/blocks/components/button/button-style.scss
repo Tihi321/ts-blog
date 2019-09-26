@@ -2,12 +2,11 @@ $btn: (
   colors: (
     default: (
       normal: (
-        background-color: $base-black-color,
+        background-color: $base-contessa-color,
         color: $base-white-color,
       ),
       hover: (
-        background-color: $base-white-color,
-        color: $base-black-color,
+        background-color: lighten($base-contessa-color, 5%),
       ),
     ),
     primary: (
@@ -16,8 +15,7 @@ $btn: (
         color: $base-white-color,
       ),
       hover: (
-        background-color: $base-black-color,
-        color: $base-white-color,
+        background-color: lighten($base-primary-color, 5%),
       ),
     ),
   ),
@@ -60,7 +58,6 @@ $btn: (
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-  border-radius: 50px;
   transition: {
     property: background-color, color, border-color;
     timing-function: ease-in;

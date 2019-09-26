@@ -7,10 +7,12 @@ https://github.com/infinum/eightshift-frontend-libs/blob/develop/scss/_core.scss
 */
 
 $media-breakpoints: (
-  small: 0 480,
-  mobile: 481 767,
+  small: 0 543,
+  mobile: 544 767,
   tablet: 768 991,
-  desktop: 992
+  desktop: 992 1023,
+  large: 1024 1239,
+  huge: 1240,
 );
 
 //Base
@@ -21,3 +23,16 @@ $base-icons-font-family: 'portfolio';
 // Container
 $base-container-size: 1024px;
 $base-gutter-size: 24px;
+
+$globals: (
+  header-height: (
+    mobile: 56px,
+    large: 80px,
+  ),
+);
+
+$container-spacing: (
+  mobile: 32px,
+  large: 40px,
+);
+

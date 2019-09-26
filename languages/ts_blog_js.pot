@@ -27,6 +27,7 @@ msgstr ""
 
 #: src/blocks/components/button/components/button-options.js:40
 #: src/blocks/components/heading/components/heading-options.js:33
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:103
 msgid "Big"
 msgstr ""
 
@@ -38,7 +39,7 @@ msgstr ""
 #: src/blocks/components/heading/components/heading-options.js:32
 #: src/blocks/components/link/components/link-options.js:21
 #: src/blocks/components/paragraph/components/paragraph-options.js:22
-#: src/blocks/wrapper/components/wrapper-options.js:134
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:121
 msgid "Default"
 msgstr ""
 
@@ -122,162 +123,234 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:104
-msgid "Content Offset"
+#: src/blocks/wrapper/components/wrapper-options.js:101
+msgid "Desktop Layout Options"
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:107
-msgid "No offset"
+#: src/blocks/wrapper/components/wrapper-options.js:102
+msgid "This options will only control desktop screens options."
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:108
-msgid "Center"
+#: src/blocks/wrapper/components/wrapper-options.js:125
+msgid "Tablet Layout Options"
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:115
-msgid "Container"
+#: src/blocks/wrapper/components/wrapper-options.js:126
+msgid ""
+"This options will only control tablet screens options. If nothing is set, "
+"parent options will be used."
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:118
-msgid "Container Width"
+#: src/blocks/wrapper/components/wrapper-options.js:149
+msgid "Mobile Layout Options"
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:122
-msgid "Medium"
+#: src/blocks/wrapper/components/wrapper-options.js:150
+msgid ""
+"This options will only control mobile screens options. If nothing is set, "
+"parent options will be used."
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:123
-msgid "No Width"
+#: src/blocks/wrapper/components/wrapper-options.js:176
+msgid "Block Colors"
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:131
-msgid "Container Spacing"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:135
-msgid "No Spacing"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:142
-msgid "Spacing TOP"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:172
-msgid "Spacing BOTTOM"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:175
-msgid "Desktop"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:184
-msgid "Tablet"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:193
-msgid "Mobile"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:201
-msgid "Visibility"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:204
-msgid "Show Block Only On Mobile"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:207
-msgid "False"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:208
-msgid "True"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:215
-msgid "General"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:218
-msgid "Section ID"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:48
-msgid "Not Set"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:49
-msgid "Biggest (100px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:50
-msgid "Bigger (90px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:51
-msgid "Big (80px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:52
-msgid "Largest (70px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:53
-msgid "Larger (60px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:54
-msgid "Large (50px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:55
-msgid "Default (40px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:56
-msgid "Medium (30px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:57
-msgid "Small (20px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:58
-msgid "Tiny (10px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:59
-msgid "No padding (0px)"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:63
-msgid "Utility"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:64
-msgid "Colors"
-msgstr ""
-
-#: src/blocks/wrapper/components/wrapper-options.js:68
+#: src/blocks/wrapper/components/wrapper-options.js:182
 msgid "Background Color"
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:72
-msgid "Grey"
+#: src/blocks/wrapper/components/wrapper-options.js:185
+msgid ""
+"Change Block Background color. Block spacing will be included in block "
+"background color."
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-options.js:193
+msgid "Block General"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-options.js:199
+msgid "Block ID"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-options.js:202
+msgid "Add Unique ID to the block."
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-options.js:213
+msgid "Anchor"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-options.js:216
+msgid "Adds data-anchor attribut to the block that is used for scroll to option."
 msgstr ""
 
 #: src/blocks/wrapper/components/wrapper-options.js:73
-msgid "Black"
+msgid "Block Responsive Layout"
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:81
-msgid "Text Color"
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:114
+msgid "Container Spacing"
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:91
-msgid "Content"
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:117
+msgid "Change Container spacing on the left and right."
 msgstr ""
 
-#: src/blocks/wrapper/components/wrapper-options.js:95
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:120
+msgid "Not Set"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:122
+msgid "No Spacing"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:133
+msgid "Spacing Top"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:136
+msgid "Change Block Spacing from the top."
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:148
+msgid "Spacing Bottom"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:151
+msgid "Change Block Spacing from the bottom."
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:160
+msgid "Hide Block"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:161
+msgid "Toggle block visibility."
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:27
+msgid "Great (300px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:28
+msgid "Gigantic (280px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:29
+msgid "Gargantuan (260px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:30
+msgid "Extensive (240px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:31
+msgid "Enormous (220px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:32
+msgid "Colossal (200px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:33
+msgid "Hugest (180px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:34
+msgid "Huger (160px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:35
+msgid "Huge (140px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:36
+msgid "Giant (120px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:37
+msgid "Biggest (100px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:38
+msgid "Bigger (90px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:39
+msgid "Big (80px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:40
+msgid "Largest (70px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:41
+msgid "Larger (60px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:42
+msgid "Large (50px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:43
+msgid "Default (40px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:44
+msgid "Medium (30px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:45
+msgid "Small (20px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:46
+msgid "Tiny (10px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:47
+msgid "None (0px)"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:57
 msgid "Content Width"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:60
+msgid "Change block width in %d columns range. Example 6 = 50% screen width."
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:74
+msgid "Content Offset"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:77
+msgid "Change content position inside a block."
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:81
+msgid "Content Spacing"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:82
+msgid "Content Spacing Small"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:83
+msgid "Right Edge"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:84
+msgid "Center"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:95
+msgid "Container Width"
+msgstr ""
+
+#: src/blocks/wrapper/components/wrapper-responsive-tab-content.js:98
+msgid ""
+"Change Container width. Changing this option will affect total width for "
+"Content Width option."
 msgstr ""

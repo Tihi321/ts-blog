@@ -19,9 +19,6 @@
 // Ovveride default editor styles.
 @import 'EighshiftEditorStyleOverride';
 
-// Register Wrapper block styles.
-@import './../../wrapper/wrapper-editor.scss';
-
 // Find all components and require component_name-style.scss inside it.
 @import './../../components/*/*-editor.scss';
 

@@ -25,12 +25,6 @@
   list-style: none;
 }
 
-%input-reset {
-  padding: 0;
-  border: none;
-  appearance: none;
-}
-
 %font-icon {
   // use !important to prevent issues with browser extensions that change fonts
   font-family: $base-icons-font-family !important; /* stylelint-disable-line declaration-no-important */
@@ -43,28 +37,21 @@
   @include font-smoothing();
 }
 
-%site-padding-correction {
-  margin-left: (-$base-gutter-size);
-  margin-right: (-$base-gutter-size);
+%heading {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-family: $secondary-font-family;
+  font-size: inherit;
+  line-height: inherit;
 }
 
-%site-padding {
-  padding-left: $base-gutter-size;
-  padding-right: $base-gutter-size;
-}
+%container-spacing {
+  padding-left: map-get-strict($container-spacing, mobile);
+  padding-right: map-get-strict($container-spacing, mobile);
 
-%bg-image {
-  background: {
-    size: cover;
-    position: center;
-    repeat: no-repeat;
-  }
-}
-
-%clearfix {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
+  @include media(large up) {
+    padding-left: map-get-strict($container-spacing, large);
+    padding-right: map-get-strict($container-spacing, large);
   }
 }

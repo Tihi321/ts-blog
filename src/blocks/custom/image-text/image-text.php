@@ -43,15 +43,15 @@ $content_class    = "{$block_class}__paragraph";
     <?php } ?>
 
     <?php
+    $size = $attributes['size'] ?? 'large';
+
     if ( $media_type === 'image' ) {
-        $media = \wp_get_attachment_image(
-          $attributes['mediaId'] ?? null,
-          $attributes['mediaSize'] ?? 'large',
-          '',
-          [ 'class' => $img_class ]
+        $media = \wp_get_attachment_image_src(
+          $attributes['mediaId'],
+          $size
         );
       ?>
-      <img class="<?php echo esc_attr( $img_class ); ?>" src="<?php echo esc_url( $media ); ?>" />
+      <img class="<?php echo esc_attr( $img_class ); ?>" src="<?php echo esc_url( $media[0] ); ?>" />
     <?php } ?>
   </div>
 

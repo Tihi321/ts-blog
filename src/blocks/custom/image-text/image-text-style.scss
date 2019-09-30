@@ -38,6 +38,10 @@ $block-image-text: (
     flex-direction: row;
     height: 100vh;
     padding-bottom: 0;
+
+    &__media-position--right {
+      flex-direction: row-reverse;
+    }
   }
 
   &__media-wrap {

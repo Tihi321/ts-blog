@@ -114,6 +114,7 @@ class Theme implements Service {
       TB_THEME_NAME . '-scripts',
       'themeLocalization',
       [
+        'quotesEndpoint' => \esc_html( TB_THEME_NAME . '/' . API_VERSION . '/quotes' ),
         'headerEndpoint' => \esc_html( TB_THEME_NAME . '/' . API_VERSION . '/header' ),
         'restUrl' => \rest_url(),
         'ajaxurl' => \admin_url( 'admin-ajax.php' ),

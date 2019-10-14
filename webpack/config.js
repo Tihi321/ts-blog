@@ -44,7 +44,7 @@ const configData = getConfig(
 
 // Export config to use in other Webpack files.
 module.exports = {
-  proxyUrl: 'quizess.projects.test',
+  proxyUrl: 'https://quizess.projects.test/',
   absolutePath: configData.absolutePath,
   outputPath: configData.outputPath,
   publicPath: configData.publicPath,

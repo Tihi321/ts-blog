@@ -142,6 +142,33 @@ class Theme_Options implements Service {
   const LISTING_TIP = 'listing_tip';
 
   /**
+   * Theme options listing tips
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const QUOTES_KEY = 'quotes_key';
+
+  /**
+   * Theme options listing tip
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const QUOTE_KEY = 'quote_key';
+
+  /**
+   * Theme options listing tip
+   *
+   * @var string
+   *
+   * @since 1.0.0
+   */
+  const AUTHOR_KEY = 'author_key';
+
+  /**
    * Theme options listing hero select
    *
    * @var string
@@ -665,6 +692,81 @@ class Theme_Options implements Service {
               'max_height' => '',
               'max_size' => '',
               'mime_types' => 'json',
+            ),
+            array(
+              'key' => 'field_59er3243t652b',
+              'label' => 'Quotes',
+              'name' => '',
+              'type' => 'tab',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'placement' => 'top',
+              'endpoint' => 0,
+            ),
+            array(
+              'key' => 'field_5da4f45d7c258',
+              'label' => 'Quotes',
+              'name' => static::QUOTES_KEY,
+              'type' => 'repeater',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'collapsed' => '',
+              'min' => 0,
+              'max' => 0,
+              'layout' => 'table',
+              'button_label' => '',
+              'sub_fields' => array(
+                array(
+                  'key' => 'field_5da4f4737c259',
+                  'label' => 'Quote',
+                  'name' => static::QUOTE_KEY,
+                  'type' => 'text',
+                  'instructions' => '',
+                  'required' => 1,
+                  'conditional_logic' => 0,
+                  'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                  ),
+                  'default_value' => '',
+                  'placeholder' => '',
+                  'prepend' => '',
+                  'append' => '',
+                  'maxlength' => '',
+                ),
+                array(
+                  'key' => 'field_5da4f48f7c25a',
+                  'label' => 'Author',
+                  'name' => static::AUTHOR_KEY,
+                  'type' => 'text',
+                  'instructions' => '',
+                  'required' => 0,
+                  'conditional_logic' => 0,
+                  'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                  ),
+                  'default_value' => '',
+                  'placeholder' => '',
+                  'prepend' => '',
+                  'append' => '',
+                  'maxlength' => '',
+                ),
+              ),
             ),
           ),
           'location'              => array(

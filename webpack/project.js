@@ -2,10 +2,18 @@
 
 // Other build files.
 const config = require('./config');
+const path = require('path');
 
 // Main Webpack build setup - Project specific.
 const project = {
   context: config.appPath,
+  resolve: {
+    alias: {
+      svelte: path.resolve('node_modules', 'svelte'),
+    },
+    extensions: ['.mjs', '.js', '.svelte'],
+    mainFields: ['svelte', 'browser', 'module', 'main'],
+  },
   entry: {
     application: [config.assetsEntry],
     applicationAdmin: [config.assetsAdminEntry],

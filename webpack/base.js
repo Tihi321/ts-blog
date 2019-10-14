@@ -38,6 +38,19 @@ const loaders = {
       use: 'babel-loader',
     },
     {
+      test: /\.svelte$/,
+      exclude: /node_modules/,
+      use: [
+        {
+          loader: 'svelte-loader',
+          options: {
+            emitCss: false,
+            hotReload: false,
+          },
+        },
+      ],
+    },
+    {
       test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
       exclude: [/fonts/, /node_modules/],
       use: 'file-loader?name=[name].[ext]',

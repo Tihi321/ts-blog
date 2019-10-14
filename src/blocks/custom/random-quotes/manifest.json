@@ -1,0 +1,19 @@
+{
+  "blockName": "random-quotes",
+  "title": "Random Quotes",
+  "description" : "Random Quotes block",
+  "category": "common",
+  "icon": {
+    "src": "format-image"
+  },
+  "keywords": [
+    "quotes",
+    "text"
+  ],
+  "attributes": {
+    "quotes": {
+      "type": "number",
+      "default": 1
+    }
+  }
+}

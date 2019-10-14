@@ -76,6 +76,7 @@ class Main extends LibMain {
 
       // Rest.
       Routes\Get_Header::class,
+      Routes\Get_Random_Quotes::class,
     ];
   }
 }

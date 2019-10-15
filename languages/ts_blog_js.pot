@@ -224,8 +224,12 @@ msgstr ""
 msgid "Image or Video"
 msgstr ""
 
-#: src/blocks/custom/random-quotes/random-quotes.js:23
+#: src/blocks/custom/random-quotes/random-quotes.js:25
 msgid "Number of random quotes"
+msgstr ""
+
+#: src/blocks/custom/random-quotes/random-quotes.js:33
+msgid "Interval"
 msgstr ""
 
 #: src/blocks/toolbars/heading-level.js:8

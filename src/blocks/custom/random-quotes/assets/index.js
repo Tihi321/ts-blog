@@ -3,12 +3,11 @@ import { domReady } from '../../../assets/scripts/utils/dom';
 domReady(() => {
 
   // -------------------------------------------------------------
-  // Quotes
-  if (document.querySelector('.js-block-quotes')) {
-    import('./app.svelte').then(({ App }) => {
-      const app = new App({
-        target: document.querySelector('.js-block-quotes'),
-      });
+  // Random quotes
+  if (document.querySelector('.js-block-random-quotes')) {
+    import('./quotes').then(({ Quotes }) => {
+      const quotes = new Quotes();
+      quotes.init();
     });
   }
 

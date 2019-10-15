@@ -12,9 +12,6 @@ export const Quote = (props) => {
     },
   } = props;
 
-  console.log(quotes);
-  console.log(interval);
-
   const actions = getAllActions(props, manifest);
 
   const componentClass = 'block-random-quotes-editor';

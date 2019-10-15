@@ -39,7 +39,7 @@ export const Quote = (props) => {
       <div>
         <h2>Random quotes</h2>
         <div>
-          <div>number of quotes: {quotes}</div>
+          <div>Number of quotes: {quotes}</div>
           <div>Time before quotes switch: {interval}</div>
         </div>
       </div>

@@ -12,12 +12,12 @@
   ],
   "attributes": {
     "quotes": {
-      "type": "number",
-      "default": 1
+      "type": "string",
+      "default": "1"
     },
     "interval": {
-      "type": "number",
-      "default": 20000
+      "type": "string",
+      "default": "20000"
     }
   }
 }

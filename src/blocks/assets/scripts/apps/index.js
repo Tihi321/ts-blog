@@ -5,7 +5,7 @@ domReady(() => {
   // -------------------------------------------------------------
   // Header App
   if (document.querySelector('.js-header')) {
-    import('./header').then(({ Header }) => {
+    import('./header/index.js').then(({ Header }) => {
       const header = new Header();
       header.init();
     });

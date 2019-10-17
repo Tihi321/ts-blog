@@ -8,8 +8,8 @@ export const WrapperResponsiveTabContent = (props) => {
   const {
     contentWidth,
     contentOffset,
-    constainerWidth,
-    constainerSpacing,
+    containerWidth,
+    containerSpacing,
     spacingTop,
     spacingBottom,
     hideBlock,
@@ -96,7 +96,7 @@ export const WrapperResponsiveTabContent = (props) => {
             </Fragment>
           }
           help={__('Change Container width. Changing this option will affect total width for Content Width option.', 'ts-blog')}
-          value={constainerWidth}
+          value={containerWidth}
           options={[
             { label: __('Not Set', 'ts-blog'), value: '' },
             { label: __('Default', 'ts-blog'), value: 'default' },
@@ -115,7 +115,7 @@ export const WrapperResponsiveTabContent = (props) => {
             </Fragment>
           }
           help={__('Change Container spacing on the left and right.', 'ts-blog')}
-          value={constainerSpacing}
+          value={containerSpacing}
           options={[
             { label: __('Not Set', 'ts-blog'), value: '' },
             { label: __('Default', 'ts-blog'), value: 'default' },

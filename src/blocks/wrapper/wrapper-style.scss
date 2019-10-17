@@ -1,15 +1,9 @@
+// stylelint-disable max-nesting-depth
+
 $wrapper: (
   background-colors: (
-    mine: $base-mine-color,
-    silver:  $base-silver-color,
-    contessa:  $base-contessa-color,
-    horizon:  $base-horizon-color,
-    patina:  $base-patina-color,
-    smoky:  $base-smoky-color,
-    juan:  $base-juan-color,
-    success:  $base-success-color,
+    white: $base-white-color,
     sand:  $base-sand-color,
-    white:  $base-white-color,
   ),
   spacings: (
     great:      300px,
@@ -38,11 +32,6 @@ $wrapper: (
     default: $base-container-size,
     big: 1340px,
   ),
-  right-edge-offset: (
-    tablet: map-get-strict($container-spacing, mobile),
-    desktop: map-get-strict($container-spacing, large),
-    custom-big: 50px,
-  ),
 );
 
 .wrapper {
@@ -63,169 +52,119 @@ $wrapper: (
     @include modifiers-deep($wrapper, background-colors, background-color);
   }
 
-  &__content-width {
-    @include flex-grid-width-modifiers($wrapper: #{$this}__inner);
-
-    &-tablet {
-      @include media(tablet) {
-        @include flex-grid-width-modifiers($wrapper: #{$this}__inner);
-      }
-    }
-
-    &-mobile {
-      @include media(mobile down) {
-        @include flex-grid-width-modifiers($wrapper: #{$this}__inner);
-      }
-    }
-  }
-
-  // Content Offset.
-  &__inner-offset {
-    &--content-spacing {
-      padding-left: calc-grid-width(4);
-    }
-
-    &--content-spacing-small {
-      padding-left: calc-grid-width(1);
-    }
-
-    &--right-edge {
-      margin-left: map-get-deep($wrapper, right-edge-offset, tablet);
-    }
-
-    &--center {
-      margin: 0 auto;
-    }
-  }
-
-  &__inner-offset-tablet {
-    @include media(tablet) {
-      &--content-spacing {
-        padding-left: calc-grid-width(4);
-      }
-
-      &--content-spacing-small {
-        padding-left: calc-grid-width(1);
-      }
-
-      &--right-edge {
-        margin-left: map-get-deep($wrapper, right-edge-offset, tablet);
-      }
-
-      &--center {
-        margin: 0 auto;
-      }
-    }
-  }
-
-  &__inner-offset-mobile {
-    @include media(mobile down) {
-      &--content-spacing {
-        padding-left: calc-grid-width(4);
-      }
-
-      &--content-spacing-small {
-        padding-left: calc-grid-width(1);
-      }
-
-      &--right-edge {
-        margin-left: map-get-deep($wrapper, right-edge-offset, tablet);
-      }
-
-      &--center {
-        margin: 0 auto;
-      }
-    }
-  }
-
-  &__container-width {
-    @include modifiers-deep($wrapper, containers, max-width);
-
-    &-tablet {
-      @include media(tablet) {
-        @include modifiers-deep($wrapper, containers, max-width);
-      }
-    }
-
-    &-mobile {
-      @include media(mobile down) {
-        @include modifiers-deep($wrapper, containers, max-width);
-      }
-    }
-  }
-
-  &__container-spacing {
-    &--default {
-      @extend %container-spacing;
-    }
-  }
-
   &__spacing-top {
-    @include modifiers-deep($wrapper, spacings, padding-top);
-
-    &-tablet {
-      @include media(tablet) {
-        @include modifiers-deep($wrapper, spacings, padding-top);
-      }
-    }
-
-    &-mobile {
-      @include media(mobile down) {
-        @include modifiers-deep($wrapper, spacings, padding-top);
-      }
+    @include responsive-selectors {
+      @include modifiers-deep($wrapper, spacings, padding-top);
     }
   }
-
 
   &__spacing-bottom {
-    @include modifiers-deep($wrapper, spacings, padding-bottom);
-
-    &-tablet {
-      @include media(tablet) {
-        @include modifiers-deep($wrapper, spacings, padding-bottom);
-      }
-    }
-
-    &-mobile {
-      @include media(mobile down) {
-        @include modifiers-deep($wrapper, spacings, padding-bottom);
-      }
+    @include responsive-selectors {
+      @include modifiers-deep($wrapper, spacings, padding-bottom);
     }
   }
 
   &__hide-block {
-    @include media(desktop up) {
+    @include responsive-visibility-selectors {
       display: none;
-    }
-
-    &-tablet {
-      @include media(tablet) {
-        display: none;
-      }
-    }
-
-    &-mobile {
-      @include media(mobile down) {
-        display: none;
-      }
     }
   }
 
+  // Container DIV.
   &__container {
     margin: 0 auto;
     width: 100%;
     display: flex;
   }
 
+  &__container-width {
+    @include responsive-selectors {
+      @include modifiers-deep($wrapper, containers, max-width);
+    }
+  }
+
+  &__container-spacing {
+    @include responsive-selectors {
+      &--default {
+        @include container-spacing;
+      }
+
+      &--no-spacing {
+        padding: 0;
+      }
+    }
+  }
+
+  // Inner Container Div.
   &__inner {
     @include flex-grid-width;
   }
 
+  &__inner-content-width {
+    @include responsive-selectors {
+      @include flex-grid-width-modifiers;
+    }
+  }
+
+  // Content Offset.
+  &__inner-offset {
+    @include responsive-selectors {
+      &--content-spacing {
+        padding-left: calc-grid-width(4);
+        margin: 0;
+      }
+
+      &--content-spacing-small {
+        padding-left: calc-grid-width(1);
+        margin: 0;
+      }
+
+      &--right-edge {
+        @include media(mobile up) {
+          margin-left: map-get-strict($container-spacing, mobile);
+        }
+        @include media(large up) {
+          margin-left: map-get-strict($container-spacing, large);
+        }
+        @include media(huge up) {
+          margin-left: 50px;
+        }
+
+        padding: 0;
+      }
+
+      &--center {
+        margin: 0 auto;
+        padding: 0;
+      }
+    }
+  }
+
   // Used to toggle state using toggle-block.
-  &.is-hidden-small {
+  &.is-hidden-large {
+    display: none;
+  }
+
+  &.is-hidden-desktop {
     display: none;
 
-    @include media(mobile up) {
+    @include media(large up) {
+      display: block;
+    }
+  }
+
+  &.is-hidden-tablet {
+    display: none;
+
+    @include media(desktop up) {
+      display: block;
+    }
+  }
+
+  &.is-hidden-mobile {
+    display: none;
+
+    @include media(tablet up) {
       display: block;
     }
   }

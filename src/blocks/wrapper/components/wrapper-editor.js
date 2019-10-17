@@ -14,6 +14,13 @@ export const WrapperEditor = (props) => {
       styleSpacingTop,
       styleSpacingBottom,
 
+      styleContentWidthDesktop,
+      styleContentOffsetDesktop,
+      styleContainerWidthDesktop,
+      styleContainerSpacingDesktop,
+      styleSpacingTopDesktop,
+      styleSpacingBottomDesktop,
+
       styleContentWidthTablet,
       styleContentOffsetTablet,
       styleContainerWidthTablet,
@@ -36,18 +43,19 @@ export const WrapperEditor = (props) => {
     wrapperMainClass,
     styleBackgroundColor && `${wrapperMainClass}__bg-color--${styleBackgroundColor}`,
 
-    // Desktop.
-    styleContentWidth && `${wrapperMainClass}__content-width--${styleContentWidth}`,
+    // Large.
     styleSpacingTop && `${wrapperMainClass}__spacing-top--${styleSpacingTop}`,
     styleSpacingBottom && `${wrapperMainClass}__spacing-bottom--${styleSpacingBottom}`,
 
+    // Desktop.
+    styleSpacingTopDesktop && `${wrapperMainClass}__spacing-top-desktop--${styleSpacingTopDesktop}`,
+    styleSpacingBottomDesktop && `${wrapperMainClass}__spacing-bottom-desktop--${styleSpacingBottomDesktop}`,
+
     // Tablet.
-    styleContentWidthTablet && `${wrapperMainClass}__content-width-tablet--${styleContentWidthTablet}`,
     styleSpacingTopTablet && `${wrapperMainClass}__spacing-top-tablet--${styleSpacingTopTablet}`,
     styleSpacingBottomTablet && `${wrapperMainClass}__spacing-bottom-tablet--${styleSpacingBottomTablet}`,
 
     // Mobile.
-    styleContentWidthMobile && `${wrapperMainClass}__content-width-mobile--${styleContentWidthMobile}`,
     styleSpacingTopMobile && `${wrapperMainClass}__spacing-top-mobile--${styleSpacingTopMobile}`,
     styleSpacingBottomMobile && `${wrapperMainClass}__spacing-bottom-mobile--${styleSpacingBottomMobile}`,
   ]);
@@ -55,9 +63,13 @@ export const WrapperEditor = (props) => {
   const wrapperContainerClass = classnames([
     `${wrapperMainClass}__container`,
 
-    // Desktop.
+    // Large.
     styleContainerWidth && `${wrapperMainClass}__container-width--${styleContainerWidth}`,
     styleContainerSpacing && `${wrapperMainClass}__container-spacing--${styleContainerSpacing}`,
+
+    // Desktop.
+    styleContainerWidthDesktop && `${wrapperMainClass}__container-width-desktop--${styleContainerWidthDesktop}`,
+    styleContainerSpacingDesktop && `${wrapperMainClass}__container-spacing-desktop--${styleContainerSpacingDesktop}`,
 
     // Tablet.
     styleContainerWidthTablet && `${wrapperMainClass}__container-width-tablet--${styleContainerWidthTablet}`,
@@ -72,13 +84,20 @@ export const WrapperEditor = (props) => {
   const wrapperInnerClass = classnames([
     `${wrapperMainClass}__inner`,
 
-    // Desktop.
+    // Large.
+    styleContentWidth && `${wrapperMainClass}__inner-content-width--${styleContentWidth}`,
     styleContentOffset && `${wrapperMainClass}__inner-offset--${styleContentOffset}`,
 
+    // Desktop.
+    styleContentWidthDesktop && `${wrapperMainClass}__inner-content-width-desktop--${styleContentWidthDesktop}`,
+    styleContentOffsetDesktop && `${wrapperMainClass}__inner-offset-desktop--${styleContentOffsetDesktop}`,
+
     // Tablet.
+    styleContentWidthTablet && `${wrapperMainClass}__inner-content-width-tablet--${styleContentWidthTablet}`,
     styleContentOffsetTablet && `${wrapperMainClass}__inner-offset-tablet--${styleContentOffsetTablet}`,
 
     // Mobile.
+    styleContentWidthMobile && `${wrapperMainClass}__inner-content-width-mobile--${styleContentWidthMobile}`,
     styleContentOffsetMobile && `${wrapperMainClass}__inner-offset-mobile--${styleContentOffsetMobile}`,
   ]);
 

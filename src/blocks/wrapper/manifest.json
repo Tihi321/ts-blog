@@ -43,11 +43,36 @@
       "default": false
     },
 
-    "styleContentWidthTablet": {
+    "styleContentWidthDesktop": {
       "type": "number"
     },
-    "styleContentOffsetTablet": {
+    "styleContentOffsetDesktop": {
       "type": "string"
+    },
+    "styleContainerWidthDesktop": {
+      "type": "string"
+    },
+    "styleContainerSpacingDesktop": {
+      "type": "string"
+    },
+    "styleSpacingTopDesktop": {
+      "type": "string"
+    },
+    "styleSpacingBottomDesktop": {
+      "type": "string"
+    },
+    "styleHideBlockDesktop": {
+      "type": "bool",
+      "default": false
+    },
+
+    "styleContentWidthTablet": {
+      "type": "number",
+      "default": 11
+    },
+    "styleContentOffsetTablet": {
+      "type": "string",
+      "default": "content-spacing-small"
     },
     "styleContainerWidthTablet": {
       "type": "string"
@@ -67,10 +92,12 @@
     },
 
     "styleContentWidthMobile": {
-      "type": "number"
+      "type": "number",
+      "default": 12
     },
     "styleContentOffsetMobile": {
-      "type": "string"
+      "type": "string",
+      "default": "center"
     },
     "styleContainerWidthMobile": {
       "type": "string"

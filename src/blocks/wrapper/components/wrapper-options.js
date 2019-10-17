@@ -21,6 +21,14 @@ export const WrapperOptions = (props) => {
       styleSpacingBottom,
       styleHideBlock,
 
+      styleContentWidthDesktop,
+      styleContentOffsetDesktop,
+      styleContainerWidthDesktop,
+      styleContainerSpacingDesktop,
+      styleSpacingTopDesktop,
+      styleSpacingBottomDesktop,
+      styleHideBlockDesktop,
+
       styleContentWidthTablet,
       styleContentOffsetTablet,
       styleContainerWidthTablet,
@@ -46,6 +54,14 @@ export const WrapperOptions = (props) => {
       onChangeStyleSpacingBottom,
       onChangeStyleHideBlock,
 
+      onChangeStyleContentWidthDesktop,
+      onChangeStyleContentOffsetDesktop,
+      onChangeStyleContainerWidthDesktop,
+      onChangeStyleContainerSpacingDesktop,
+      onChangeStyleSpacingTopDesktop,
+      onChangeStyleSpacingBottomDesktop,
+      onChangeStyleHideBlockDesktop,
+
       onChangeStyleContentWidthTablet,
       onChangeStyleContentOffsetTablet,
       onChangeStyleContainerWidthTablet,
@@ -70,14 +86,19 @@ export const WrapperOptions = (props) => {
 
   return (
     <Fragment>
-      <PanelBody title={__('Block Responsive Layout', 'ts-blog')} initialOpen={false}>
+      <PanelBody title={__('Block Responsive Layout', 'ts-blog')} initialOpen={true}>
         <TabPanel
           className="custom-button-tabs"
           activeClass="button button-primary"
           tabs={[
             {
-              name: 'desktop',
+              name: 'large',
               title: <Dashicon icon="desktop" />,
+              className: 'tab-large button button-secondary custom-button-with-icon',
+            },
+            {
+              name: 'desktop',
+              title: <Dashicon icon="laptop" />,
               className: 'tab-desktop button button-secondary custom-button-with-icon',
             },
             {
@@ -95,11 +116,11 @@ export const WrapperOptions = (props) => {
         >
           {(tab) => (
             <Fragment>
-              {tab.name === 'desktop' && (
+              {tab.name === 'large' && (
                 <Fragment>
                   <br />
-                  <strong className="notice-title">{__('Desktop Layout Options', 'ts-blog')}</strong>
-                  <p>{__('This options will only control desktop screens options.', 'ts-blog')}</p>
+                  <strong className="notice-title">{__('Large Layout Options', 'ts-blog')}</strong>
+                  <p>{__('This options will only control large screens options.', 'ts-blog')}</p>
                   <br />
                   <WrapperResponsiveTabContent
                     contentWidth={styleContentWidth}
@@ -116,6 +137,30 @@ export const WrapperOptions = (props) => {
                     onChangeSpacingTop={onChangeStyleSpacingTop}
                     onChangeSpacingBottom={onChangeStyleSpacingBottom}
                     onChangeHideBlock={onChangeStyleHideBlock}
+                  />
+                </Fragment>
+              )}
+              {tab.name === 'desktop' && (
+                <Fragment>
+                  <br />
+                  <strong className="notice-title">{__('Desktop Layout Options', 'ts-blog')}</strong>
+                  <p>{__('This options will only control desktop screens options. If nothing is set, parent options will be used.', 'ts-blog')}</p>
+                  <br />
+                  <WrapperResponsiveTabContent
+                    contentWidth={styleContentWidthDesktop}
+                    contentOffset={styleContentOffsetDesktop}
+                    containerWidth={styleContainerWidthDesktop}
+                    containerSpacing={styleContainerSpacingDesktop}
+                    spacingTop={styleSpacingTopDesktop}
+                    spacingBottom={styleSpacingBottomDesktop}
+                    hideBlock={styleHideBlockDesktop}
+                    onChangeContentWidth={onChangeStyleContentWidthDesktop}
+                    onChangeContentOffset={onChangeStyleContentOffsetDesktop}
+                    onChangeContainerWidth={onChangeStyleContainerWidthDesktop}
+                    onChangeContainerSpacing={onChangeStyleContainerSpacingDesktop}
+                    onChangeSpacingTop={onChangeStyleSpacingTopDesktop}
+                    onChangeSpacingBottom={onChangeStyleSpacingBottomDesktop}
+                    onChangeHideBlock={onChangeStyleHideBlockDesktop}
                   />
                 </Fragment>
               )}
@@ -183,7 +228,10 @@ export const WrapperOptions = (props) => {
               </Fragment>
             }
             help={__('Change Block Background color. Block spacing will be included in block background color.', 'ts-blog')}
-            colors={globalSettings.colors}
+            colors={[
+              globalSettings.colors.white,
+              globalSettings.colors.sand,
+            ]}
             value={styleBackgroundColor}
             onChange={onChangeStyleBackgroundColor}
           />

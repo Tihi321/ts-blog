@@ -1,0 +1,58 @@
+// Create responsive selectors.
+@mixin responsive-selectors {
+  @content;
+
+  &-desktop {
+    @include media(desktop down) {
+      @content;
+    }
+  }
+
+  &-tablet {
+    @include media(tablet down) {
+      @content;
+    }
+  }
+
+  &-mobile {
+    @include media(mobile down) {
+      @content;
+    }
+  }
+}
+
+// Create responsive selectors for visibility.
+@mixin responsive-visibility-selectors {
+  @include media(large up) {
+    @content;
+  }
+
+  &-desktop {
+    @include media(desktop) {
+      @content;
+    }
+  }
+
+  &-tablet {
+    @include media(tablet) {
+      @content;
+    }
+  }
+
+  &-mobile {
+    @include media(mobile down) {
+      @content;
+    }
+  }
+}
+
+// Define default container spacing.
+@mixin container-spacing {
+  padding-left: map-get-strict($container-spacing, mobile);
+  padding-right: map-get-strict($container-spacing, mobile);
+
+  @include media(large up) {
+    padding-left: map-get-strict($container-spacing, large);
+    padding-right: map-get-strict($container-spacing, large);
+  }
+}

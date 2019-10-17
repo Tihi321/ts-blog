@@ -1,0 +1,109 @@
+$repeater-vars: (
+  colors: (
+    item-odd: rgba($base-success-color, 0.3),
+    item-even: rgba($base-hippie-color, 0.3),
+    arrow: $base-white-color,
+    arrow-bg: $base-hippie-color,
+    border: rgba($base-black-color, 0.5),
+    triangle: $base-black-color,
+    button-color: $base-white-color,
+    button-remove: $base-crimson-color,
+    button-add: $base-success-color,
+  ),
+);
+
+.repeater {
+  &__select-button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    background: none;
+  }
+
+  &__select-text {
+    flex: 1;
+  }
+
+  .icon--tringle {
+    fill: map-get-deep($repeater-vars, colors, triangle);
+    width: 10px;
+    height: auto;
+    margin: auto;
+  }
+
+  &__select-icon-up {
+    .icon--tringle {
+      transform: rotate(-85deg);
+    }
+  }
+
+  &__select-icon-down {
+    .icon--tringle {
+      transform: rotate(85deg);
+    }
+  }
+
+  &__options {
+    margin-top: 5px;
+    border: 1px solid map-get-deep($repeater-vars, colors, border);
+    max-height: 210px;
+    overflow: auto;
+  }
+
+  &__option-label {
+    padding: 5px 0;
+    display: block;
+  }
+
+  &__options-item {
+    padding: 20px 10px;
+  }
+
+  &__options-item:nth-child(odd) {
+    background: map-get-deep($repeater-vars, colors, item-odd);
+  }
+
+  &__options-item:nth-child(even) {
+    background: map-get-deep($repeater-vars, colors, item-even);
+  }
+
+  &__arrows {
+    display: flex;
+    padding: 10px 0;
+  }
+
+  .icon--arrow-up,
+  .icon--arrow-down {
+    width: 15px;
+    height: auto;
+    fill: map-get-deep($repeater-vars, colors, arrow);
+  }
+
+  &__button-up,
+  &__button-down {
+    border: none;
+    background: map-get-deep($repeater-vars, colors, arrow-bg);
+    flex: 1;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  &__button-remove,
+  &__button-add {
+    color: map-get-deep($repeater-vars, colors, button-color);
+    display: block;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__button-remove {
+    background: map-get-deep($repeater-vars, colors, button-remove);
+  }
+
+  &__button-add {
+    background: map-get-deep($repeater-vars, colors, button-add);
+  }
+}

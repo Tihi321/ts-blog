@@ -8,7 +8,7 @@
     },
     "styleBackgroundColor": {
       "type": "string",
-      "default": "white"
+      "default": ""
     },
     "hasWrapper": {
       "type": "bool",

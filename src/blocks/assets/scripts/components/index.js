@@ -5,7 +5,7 @@ domReady(() => {
   // -------------------------------------------------------------
   // Hero
   if (document.querySelector('.js-hero-hide-btn')) {
-    import('./hero').then(({ Hero }) => {
+    import('./hero.js').then(({ Hero }) => {
       const hero = new Hero();
       hero.init();
     });
@@ -14,7 +14,7 @@ domReady(() => {
   // -------------------------------------------------------------
   // Lottie
   if (document.querySelector('.js-hero-lottie')) {
-    import('./lottie').then(({ Lottie }) => {
+    import('./lottie.js').then(({ Lottie }) => {
       const lottie = new Lottie();
       lottie.defaultElement.forEach((element) => {
         lottie.init(element);
@@ -25,7 +25,7 @@ domReady(() => {
   // -------------------------------------------------------------
   // Consent
   if (document.querySelector('.js-consent')) {
-    import('./consent').then(({ Consent }) => {
+    import('./consent.js').then(({ Consent }) => {
       const consent = new Consent();
       consent.init();
     });
@@ -34,7 +34,7 @@ domReady(() => {
   // -------------------------------------------------------------
   // Share url
   if (document.querySelector('.js-share-url')) {
-    import('./share').then(({ Share }) => {
+    import('./share.js').then(({ Share }) => {
       const share = new Share();
       share.init();
     });

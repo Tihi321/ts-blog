@@ -16,12 +16,27 @@ $share-vars: (
   $this: &;
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+
+  @include media(mobile up) {
+    width: auto;
+    justify-content: center;
+  }
 
   &__title {
     @include responsive($share-vars, 'sizes');
     margin: 0;
-    padding-right: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+
+    @include media(mobile up) {
+      text-align: left;
+      width: auto;
+      padding: 0 10px;
+    }
   }
 
   &__svg {

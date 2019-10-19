@@ -3,11 +3,11 @@ $share-vars: (
   backdrop-color: $base-white-color,
   sizes: (
     mobile: (
-      font-size: 18px,
+      font-size: 14px,
       line-height: 1.25,
     ),
     tablet: (
-      font-size: 24px,
+      font-size: 18px,
     ),
   )
 );
@@ -39,15 +39,14 @@ $share-vars: (
     }
   }
 
-  &__svg {
-    transition: opacity 0.3s ease;
-  }
-
   &__icon {
+    @include responsive($share-vars, 'sizes');
     display: inline-block;
+    padding: 0 5px;
     cursor: pointer;
+    transition: opacity 0.3s ease;
 
-    &:hover #{$this}__svg {
+    &:hover {
       opacity: 0.7;
     }
   }
@@ -55,5 +54,6 @@ $share-vars: (
   &__url {
     background: none;
     border: none;
+    padding: 0 5px;
   }
 }

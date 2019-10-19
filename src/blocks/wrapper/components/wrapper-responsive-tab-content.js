@@ -57,7 +57,7 @@ export const WrapperResponsiveTabContent = (props) => {
               {__('Content Width', 'ts-blog')}
             </Fragment>
           }
-          help={sprintf(__('Change block width in %d columns range. Example 6 = 50% screen width.', 'ts-blog'), globalSettings.maxCols)}
+          help={__('Change blocks width in columns range. Example 6 = 50% screen width.', 'ts-blog')}
           value={contentWidth}
           onChange={onChangeContentWidth}
           min={1}

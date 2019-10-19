@@ -16,7 +16,7 @@
     <svg class="<?php echo esc_attr( "{$class_name}__hide-icon js-{$class_name}-hide-icon" ); ?>" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" /></svg>
   </button>
   <?php
-  if ( is_single() ) {
+  if ( is_single() || is_page() ) {
     ?>
     <div class="<?php echo esc_attr( "{$class_name}__inner" ); ?>">
     <?php
@@ -29,19 +29,29 @@
     </div>
     <div class="<?php echo esc_attr( "{$class_name}__title-bar" ); ?>">
       <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?> <?php echo esc_attr( "{$class_name}__title-bar-inner" ); ?>">
-    <?php
-    $post_categories = locate_template( 'src/blocks/layout/hero/components/post-categories/post-categories.php' );
+        <div class="<?php echo esc_attr( "{$class_name}__title-outer" ); ?>">
+          <h1 class="<?php echo esc_attr( "{$class_name}__title" ); ?>"><?php the_title(); ?></h1>
+          <div class="<?php echo esc_attr( "{$class_name}__meta" ); ?>">
+          <?php
+          if ( is_single() ) {
+            $post_categories = locate_template( 'src/blocks/layout/hero/components/post-categories/post-categories.php' );
 
-    if ( ! empty( $post_categories ) ) {
-      include $post_categories;
-    }
+            if ( ! empty( $post_categories ) ) {
+              include $post_categories;
+            }
+          }
+          ?>
+          </div>
+        </div>
+        <div class="<?php echo esc_attr( "{$class_name}__share" ); ?>">
+        <?php
+        $share_template = locate_template( 'src/blocks/layout/hero/components/share/share.php' );
 
-    $share_template = locate_template( 'src/blocks/layout/hero/components/share/share.php' );
-
-    if ( ! empty( $share_template ) ) {
-      include $share_template;
-    }
-    ?>
+        if ( ! empty( $share_template ) ) {
+          include $share_template;
+        }
+        ?>
+        </div>
       </div>
     </div>
     <?php
@@ -56,7 +66,7 @@
     }
     ?>
     </div>
-    <div class="<?php echo esc_attr( "{$class_name}__title-bar" ); ?>">
+    <div class="<?php echo esc_attr( "{$class_name}__listing-bar" ); ?>">
       <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
     <?php
     $category_menu_template = locate_template( 'src/blocks/layout/category/menu.php' );

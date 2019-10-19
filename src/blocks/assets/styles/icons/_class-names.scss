@@ -53,3 +53,24 @@
     color: #FFFFFF;
   }
 }
+
+.icon--twitter {
+  &::before {
+    content: unicode($icon--twitter);
+    color: #FFFFFF;
+  }
+}
+
+.icon--link {
+  &::before {
+    content: unicode($icon--link);
+    color: #FFFFFF;
+  }
+}
+
+.icon--facebook {
+  &::before {
+    content: unicode($icon--facebook);
+    color: #FFFFFF;
+  }
+}

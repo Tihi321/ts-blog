@@ -1,0 +1,31 @@
+$listing-vars: (
+  text: (
+    color: $base-white-color,
+    sizes: (
+      mobile: (
+        font-size: 24px,
+        line-height: 1.25,
+      ),
+      tablet: (
+        font-size: 32px,
+      ),
+    ),
+  ),
+  font-family: $secondary-font-family,
+);
+
+.hero__listing-bar {
+  @include responsive-deep($listing-vars, 'text', 'sizes');
+  color: map-get-deep($listing-vars, 'text', 'color');
+  font-family: map-get-strict($listing-vars, 'font-family');
+  background-color: var(--accent-color);
+  padding: 20px 0;
+  margin: 0;
+
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}

@@ -7,7 +7,11 @@
  * @since 1.0.0
  */
 
+use TS_Blog\Plugins\Acf\Page_Options;
+
 $image = apply_filters( 'tsb_get_post_image', 'hero' );
+
+$quote = get_field( Page_Options::QUOTE_KEY, get_the_ID() );
 
 $class_name = 'hero';
 
@@ -17,8 +21,8 @@ $class_name = 'hero';
 </div>
 <div class="<?php echo esc_attr( "{$class_name}__description js-{$class_name}-description" ); ?>">
   <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
-    <h1 class="<?php echo esc_attr( "{$class_name}__title" ); ?>">
-      <?php the_title(); ?>
-    </h1>
+    <div class="<?php echo esc_attr( "{$class_name}__content" ); ?>">
+      <?php echo wp_kses_post( $quote ); ?>
+    </div>
   </div>
 </div>

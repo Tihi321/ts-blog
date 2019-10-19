@@ -1,10 +1,19 @@
 $title-vars: (
   text: (
     color: $base-white-color,
-    sizes: (
+    meta-sizes: (
+      mobile: (
+        font-size: 12px,
+        line-height: 1.25,
+      ),
+      tablet: (
+        font-size: 14px,
+      ),
+    ),
+    title-sizes: (
       mobile: (
         font-size: 24px,
-        line-height: 1.25,
+        line-height: 1.5,
       ),
       tablet: (
         font-size: 32px,
@@ -14,18 +23,56 @@ $title-vars: (
   font-family: $secondary-font-family,
 );
 
-.hero__title-bar {
-  @include responsive-deep($title-vars, 'text', 'sizes');
-  color: map-get-deep($title-vars, 'text', 'color');
-  font-family: map-get-strict($title-vars, 'font-family');
-  background-color: var(--accent-color);
-  padding: 20px 0;
-  margin: 0;
+.hero {
+  &__title-bar {
+    color: map-get-deep($title-vars, 'text', 'color');
+    font-family: map-get-strict($title-vars, 'font-family');
+    background-color: var(--accent-color);
+    padding: 20px 0;
+    margin: 0;
 
-  &-inner {
+    .category-menu-single__items {
+      margin: 0;
+    }
+
+    .category-menu-single__item {
+      @include responsive-deep($title-vars, 'text', 'meta-sizes');
+      margin: 0;
+
+      &::after {
+        content: ',';
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+
+  &__title-bar-inner {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
+    @include media(mobile up) {
+      align-items: flex-end;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @include responsive-deep($title-vars, 'text', 'title-sizes');
+    color: map-get-deep($title-vars, 'text', 'color');
+    margin: 0;
+    text-align: center;
+
+    @include media(mobile up) {
+      text-align: left;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 }

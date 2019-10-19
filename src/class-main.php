@@ -73,6 +73,7 @@ class Main extends LibMain {
       // Plugins.
       Plugins\Acf\Theme_Options::class,
       Plugins\Acf\Menu_Options::class,
+      Plugins\Acf\Page_Options::class,
 
       // Rest.
       Routes\Get_Header::class,

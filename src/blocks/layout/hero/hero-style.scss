@@ -1,5 +1,3 @@
-@import './components/share/share';
-
 $hero-vars: (
   bg: rgba($base-mine-color, 0.75),
   backdrop-color: $base-white-color,
@@ -142,11 +140,6 @@ $desc-vars: (
       }
 
     }
-  }
-
-  &__title {
-    text-align: center;
-    color: map-get-strict($desc-vars, 'color');
   }
 
   &__listing-lottie {

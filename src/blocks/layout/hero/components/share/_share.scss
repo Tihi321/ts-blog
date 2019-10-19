@@ -1,0 +1,44 @@
+$share-vars: (
+  bg: rgba($base-mine-color, 0.75),
+  backdrop-color: $base-white-color,
+  sizes: (
+    mobile: (
+      font-size: 18px,
+      line-height: 1.25,
+    ),
+    tablet: (
+      font-size: 24px,
+    ),
+  )
+);
+
+.share {
+  $this: &;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+
+  &__title {
+    @include responsive($share-vars, 'sizes');
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  &__svg {
+    transition: opacity 0.3s ease;
+  }
+
+  &__icon {
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover #{$this}__svg {
+      opacity: 0.7;
+    }
+  }
+
+  &__url {
+    background: none;
+    border: none;
+  }
+}

@@ -28,12 +28,18 @@
     ?>
     </div>
     <div class="<?php echo esc_attr( "{$class_name}__title-bar" ); ?>">
-      <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?>">
+      <div class="<?php echo esc_attr( apply_filters( 'tsb_get_default_class', 'container' ) ); ?> <?php echo esc_attr( "{$class_name}__title-bar-inner" ); ?>">
     <?php
     $post_categories = locate_template( 'src/blocks/layout/hero/components/post-categories/post-categories.php' );
 
     if ( ! empty( $post_categories ) ) {
       include $post_categories;
+    }
+
+    $share_template = locate_template( 'src/blocks/layout/hero/components/share/share.php' );
+
+    if ( ! empty( $share_template ) ) {
+      include $share_template;
     }
     ?>
       </div>

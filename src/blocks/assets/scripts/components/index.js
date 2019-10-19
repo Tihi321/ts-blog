@@ -31,4 +31,13 @@ domReady(() => {
     });
   }
 
+  // -------------------------------------------------------------
+  // Share url
+  if (document.querySelector('.js-share-url')) {
+    import('./share').then(({ Share }) => {
+      const share = new Share();
+      share.init();
+    });
+  }
+
 });

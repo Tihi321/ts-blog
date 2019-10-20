@@ -1,16 +1,10 @@
-import { domReady } from '../../../assets/scripts/utils/dom';
+const imageTextSelector = '.js-block-image-text';
 
-domReady(() => {
+if (document.querySelectorAll(imageTextSelector).length) {
+  import('./lottie-animation').then(({ LottieAnimation }) => {
 
-  const imageTextSelector = '.js-block-image-text';
+    const lottieAnimation = new LottieAnimation(`${imageTextSelector}-lottie`);
 
-  if (document.querySelectorAll(imageTextSelector).length) {
-    import('./lottie-animation').then(({ LottieAnimation }) => {
-  
-      const lottieAnimation = new LottieAnimation(`${imageTextSelector}-lottie`);
-  
-      lottieAnimation.init();
-    });
-  }
-
-});
+    lottieAnimation.init();
+  });
+}

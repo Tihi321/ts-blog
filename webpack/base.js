@@ -27,6 +27,8 @@ const plugins = [
 // All Optimizations used in production and development build.
 const optimization = {
   runtimeChunk: false,
+  namedModules: true,
+  namedChunks: true,
 };
 
 // All Loaders used in production and development build.

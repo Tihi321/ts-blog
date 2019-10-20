@@ -62,6 +62,7 @@
     "autoprefixer": "^9.6.1",
     "classnames": "^2.2.6",
     "copy-to-clipboard": "^3.2.0",
+    "core-js": "^3.3.2",
     "cssnano": "^4.1.10",
     "eightshift-frontend-libs": "^1.0.18",
     "layzr.js": "^2.2.2",

@@ -1,10 +1,16 @@
-const imageTextSelector = '.js-block-image-text';
+import { domReady } from '../../../assets/scripts/utils/dom';
 
-if (document.querySelectorAll(imageTextSelector).length) {
-  import('./lottie-animation').then(({ LottieAnimation }) => {
+domReady(() => {
 
-    const lottieAnimation = new LottieAnimation(`${imageTextSelector}-lottie`);
+  const imageTextSelector = '.js-block-image-text';
 
-    lottieAnimation.init();
-  });
-}
+  if (document.querySelectorAll(imageTextSelector).length) {
+    import('./lottie-animation').then(({ LottieAnimation }) => {
+  
+      const lottieAnimation = new LottieAnimation(`${imageTextSelector}-lottie`);
+  
+      lottieAnimation.init();
+    });
+  }
+
+});

@@ -4,7 +4,7 @@
       "@babel/preset-env",
       {
         "modules": false,
-        "useBuiltIns": "entry",
+        "useBuiltIns": "usage",
         "corejs": { "version": 3, "proposals": true },
         "targets": {
           "browsers": [
@@ -29,7 +29,12 @@
         "loose": true
       }
     ],
-    "@babel/plugin-syntax-dynamic-import",
+    [
+      "@babel/plugin-syntax-dynamic-import",
+      {
+        "allChunks": true
+      }
+    ],
     [
       "@babel/plugin-proposal-object-rest-spread",
       {

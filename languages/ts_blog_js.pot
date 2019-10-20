@@ -51,7 +51,7 @@ msgstr ""
 msgid "Button ID"
 msgstr ""
 
-#: src/blocks/components/heading/components/heading-editor.js:23
+#: src/blocks/components/heading/components/heading-editor.js:25
 #: src/blocks/custom/image-text/components/image-text-editor.js:51
 msgid "Add your heading"
 msgstr ""
@@ -155,7 +155,7 @@ msgstr ""
 msgid "Serif Font"
 msgstr ""
 
-#: src/blocks/components/paragraph/components/paragraph-editor.js:29
+#: src/blocks/components/paragraph/components/paragraph-editor.js:30
 #: src/blocks/custom/image-text/components/image-text-editor.js:58
 msgid "Add your paragraph"
 msgstr ""

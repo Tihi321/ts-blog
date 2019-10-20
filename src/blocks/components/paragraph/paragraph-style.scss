@@ -65,4 +65,8 @@ $paragraph: (
   &__color {
     @include modifiers-deep($paragraph, colors, color);
   }
+
+  p {
+    margin: 10px 0;
+  }
 }

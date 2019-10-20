@@ -6,15 +6,6 @@ $category-vars: (
       line-height: 1.5,
     ),
     tablet: (
-      font-size: 22px,
-    ),
-  ),
-  search-text-size: (
-    mobile: (
-      font-size: 16px,
-      line-height: 1.5,
-    ),
-    tablet: (
       font-size: 18px,
     ),
   ),
@@ -36,11 +27,13 @@ $category-vars: (
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 -10px;
+    flex: 1;
+    margin: 0 -5px;
     padding-top: 20px;
     order: 2;
 
     @include media(tablet up) {
+      justify-content: flex-start;
       order: 0;
       padding-top: 0;
     }
@@ -50,7 +43,7 @@ $category-vars: (
     @include responsive-deep($category-vars, 'text-size');
     color: map-get-strict($category-vars, 'color');
     padding: 5px 10px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -67,7 +60,7 @@ $category-vars: (
 
   .hero-search {
     &__form {
-      @include responsive-deep($category-vars, 'search-text-size');
+      @include responsive-deep($category-vars, 'text-size');
       display: flex;
       align-items: center;
       flex-direction: column;

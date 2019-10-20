@@ -29,6 +29,7 @@ class Login implements Service {
   public function register() {
     add_filter( 'login_headerurl', [ $this, 'custom_login_header_url' ] );
     add_filter( 'login_url', [ $this, 'custom_login_url' ], 10, 3 );
+    add_filter( 'logout_url', [ $this, 'custom_logout_url' ], 10, 3 );
   }
 
   /**
@@ -43,7 +44,7 @@ class Login implements Service {
   }
 
   /**
-   * Change default logo link with home url.
+   * Change default login url.
    *
    * @param string $login_url old login url.
    * @param string $redirect old login url.
@@ -52,7 +53,20 @@ class Login implements Service {
    *
    * @since 1.0.0
    */
-  public function custom_login_url( $login_url, $redirect, $force_reauth ) : string {
+  public function custom_login_url( string $login_url, string $redirect, bool $force_reauth ) : string {
     return \home_url( '/' );
+  }
+
+  /**
+   * Change default logout url.
+   *
+   * @param string $logout_url old logout url.
+   * @param string $redirect old logout url.
+   * @return string
+   *
+   * @since 1.0.0
+   */
+  public function custom_logout_url( string $logout_url, string $redirect ) : string {
+    return \home_url( '/ulaz.php' );
   }
 }

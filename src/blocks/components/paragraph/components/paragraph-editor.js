@@ -25,7 +25,6 @@ export const ParagraphEditor = (props) => {
 
   return (
     <RichText
-      multiline="p"
       className={removeStyle ? '' : paragraphClass}
       placeholder={__('Add your paragraph', 'ts-blog')}
       onChange={onChangeContent}

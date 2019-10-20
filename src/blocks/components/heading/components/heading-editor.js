@@ -5,7 +5,6 @@ import { RichText } from '@wordpress/editor';
 export const HeadingEditor = (props) => {
   const {
     content,
-    level,
     styleAlign,
     styleSize,
     onChangeContent,
@@ -21,7 +20,6 @@ export const HeadingEditor = (props) => {
 
   return (
     <RichText
-      tagName={`h${level}`}
       placeholder={__('Add your heading', 'ts-blog')}
       className={headingClass}
       onChange={onChangeContent}

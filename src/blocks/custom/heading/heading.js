@@ -41,7 +41,6 @@ export const Heading = (props) => {
         blockClass={blockClass}
         content={content}
         onChangeContent={actions.onChangeContent}
-        level={level}
         styleAlign={styleAlign}
         styleSize={styleSize}
       />
